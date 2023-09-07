@@ -1,0 +1,35 @@
+services:
+  php:
+    build:
+      context: "./php"
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www
+      - ./apache/var/log:/var/log
+      - ./apache/etc/php.ini:/usr/local/etc/php/php.ini
+      - ./apache/etc/apache2.conf:/etc/apache2/apache2.conf
+      - ./apache/etc/security.conf:/etc/apache2/conf-available/security.conf
+      - ./apache/vhost/000-default.conf:/etc/apache2/sites-available/000-default.conf
+    container_name: cont-php
+  mysql:
+    build:
+      context: "./mysql"
+    ports:
+      - "3231:3306"
+    volumes:
+      - ./mysql/my.cnf:/etc/my.cnf
+      - ./mysql/config:/etc/mysql/conf.d
+      - ./persistent-mysql:/var/lib/mysql
+    container_name: cont-mysql
+  mssql:
+    build:
+      context: "./mssql"
+    ports:
+      - "1433:1433"
+    volumes:
+      - ./persistent-mssql/data:/var/opt/mssql/data
+      - ./persistent-mssql/log:/var/opt/mssql/log
+      - ./persistent-mssql/secrets:/var/opt/mssql/secrets
+      - ./persistent-mssql/backup:/var/opt/mssql/backup
+    container_name: cont-mssql
