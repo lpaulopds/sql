@@ -44,7 +44,7 @@ sudo docker container exec -it CONTAINERID bash
 ```  
   
 >[!Warning]
->É preciso ter uma usuário mssql no host do container  
+>É preciso ter um usuário mssql no host do container  
 >para poder administrar a persistência do banco de dados.  
 >Caso não tenha, execute os comandos abaixo:
 ```bash
