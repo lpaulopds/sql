@@ -81,3 +81,4 @@
 2023-09-08 05:48:12.80 spid60      XE session 'telemetry_xevents' started.
 2023-09-08 05:50:18.98 spid60      Attempting to load library 'xplog70.dll' into memory. This is an informational message only. No user action is required.
 2023-09-08 05:50:19.53 spid60      Using 'xplog70.dll' version '2022.160.4065' to execute extended stored procedure 'xp_msver'. This is an informational message only; no user action is required.
+2023-09-08 05:54:21.35 spid60      Using 'dbghelp.dll' version '4.0.5'
