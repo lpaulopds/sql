@@ -5,9 +5,9 @@ Repositório criado para documentar as queries do curso completo
 de Banco de Dados e SQL, sem mistérios! Esse repositório irá ser  
 útil para garantir o aprendizado e consultas no futuro.  
   
-
+  
 >[!NOTE]
->As queries explicadas nas aulas estão no diretório: 'queries-curso'.  
+>As queries explicadas nas aulas estão nos diretórios: 'queries-*'.  
   
 ### **Comandos para acessar as bases de dados e tabelas criadas durante o curso.**
 Execute o comando abaixo na raiz do projeto para subir  
@@ -30,19 +30,23 @@ mysql -u root -p
 ```  
   
 #### **Para entrar no container MSSQL e executar queries:**  
-1. Entrar no container MSSQL  
+1. Veja os ids dos containers   
+```bash
+sudo docker ps
+```
+2. Entrar no container MSSQL  
 ```bash
 sudo docker container exec -it CONTAINERID bash
 ```  
-2. Já no bash dentro do container MSSQL, conecte no banco:  
+3. Já no bash dentro do container MSSQL, conecte no banco:  
 ```bash
 /opt/mssql-tools/bin/sqlcmd -S localhost -U SA
 ```  
->[!Warning]
->Se não tiver o sql server instalado no linux,  
->será preciso ter um usuário mssql para administrar  
->a persistência do container do banco de dados.  
   
+>[!Warning]
+>É preciso ter uma usuário mssql no host do container  
+>para poder administrar a persistência do banco de dados.  
+>Caso não tenha, execute os comandos abaixo:
 ```bash
 sudo useradd -u 1001 mssql
 ```
