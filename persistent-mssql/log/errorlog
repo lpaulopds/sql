@@ -75,3 +75,5 @@
 2023-09-08 21:25:29.55 spid47s     The Database Mirroring endpoint is in disabled or stopped state.
 2023-09-08 21:25:29.77 spid47s     Service Broker manager has started.
 2023-09-08 21:25:29.81 spid19s     Recovery is complete. This is an informational message only. No user action is required.
+2023-09-08 21:30:32.20 spid65      XE session 'telemetry_xevents' stopping.
+2023-09-08 21:30:32.32 spid65      XE session 'telemetry_xevents' started.
