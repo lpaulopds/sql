@@ -57,8 +57,8 @@ sudo chown -R mssql:lpaulopds persistent-mssql
 ----------------------
   
 >[!NOTE]
->A senha do usuário root do MySQL está no arquivo: 'compose.yaml'  
->A senha do usuário SA do MSSQL está no arquivo: 'mssql/Dockerfile.'  
+>Senha do usuário root do MySQL está no arquivo: 'compose.yaml'.  
+>Senha do usuário SA do MSSQL está no arquivo: 'mssql/Dockerfile'.  
   
 ### **Mais informações**
 #### **Docker**
