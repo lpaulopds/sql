@@ -77,3 +77,5 @@
 2023-09-09 03:45:58.44 spid31s     Attribute synchronization manager initialized
 2023-09-09 03:51:01.21 spid65      XE session 'telemetry_xevents' stopping.
 2023-09-09 03:51:01.28 spid65      XE session 'telemetry_xevents' started.
+2023-09-09 03:53:06.75 spid65      Attempting to load library 'xplog70.dll' into memory. This is an informational message only. No user action is required.
+2023-09-09 03:53:06.92 spid65      Using 'xplog70.dll' version '2022.160.4065' to execute extended stored procedure 'xp_msver'. This is an informational message only; no user action is required.
