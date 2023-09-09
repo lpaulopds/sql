@@ -77,3 +77,11 @@
 2023-09-09 01:48:32.76 spid36s     Attribute synchronization manager initialized
 2023-09-09 01:53:43.23 spid59      XE session 'telemetry_xevents' stopping.
 2023-09-09 01:53:43.31 spid59      XE session 'telemetry_xevents' started.
+2023-09-09 01:55:52.70 spid59      Attempting to load library 'xplog70.dll' into memory. This is an informational message only. No user action is required.
+2023-09-09 01:55:52.86 spid59      Using 'xplog70.dll' version '2022.160.4065' to execute extended stored procedure 'xp_msver'. This is an informational message only; no user action is required.
+2023-09-09 01:56:03.60 spid59      [5]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
+2023-09-09 01:56:03.61 spid59      Starting up database 'db_teste'.
+2023-09-09 01:56:03.61 spid59      RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [5]
+2023-09-09 01:56:03.61 spid59      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 5.
+2023-09-09 01:56:04.00 spid59      Parallel redo is started for database 'db_teste' with worker pool size [2].
+2023-09-09 01:56:04.25 spid59      Parallel redo is shutdown for database 'db_teste' with worker pool size [2].
