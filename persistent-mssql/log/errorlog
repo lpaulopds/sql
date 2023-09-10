@@ -94,3 +94,44 @@
 2023-09-10 01:06:38.51 spid51      XE session 'telemetry_xevents' started.
 2023-09-10 01:08:44.96 spid51      Attempting to load library 'xplog70.dll' into memory. This is an informational message only. No user action is required.
 2023-09-10 01:08:45.05 spid51      Using 'xplog70.dll' version '2022.160.4065' to execute extended stored procedure 'xp_msver'. This is an informational message only; no user action is required.
+2023-09-10 01:12:33.36 spid51      Using 'dbghelp.dll' version '4.0.5'
+2023-09-10 01:24:49.73 spid51      XE session 'telemetry_xevents' stopping.
+2023-09-10 01:24:49.76 spid51      XE session 'telemetry_xevents' started.
+2023-09-10 01:46:18.16 spid57      [6]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
+2023-09-10 01:46:18.17 spid57      Starting up database 'empresa'.
+2023-09-10 01:46:18.17 spid57      RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [6]
+2023-09-10 01:46:18.18 spid57      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 6.
+2023-09-10 01:46:18.38 spid57      Parallel redo is started for database 'empresa' with worker pool size [2].
+2023-09-10 01:46:18.45 spid57      Parallel redo is shutdown for database 'empresa' with worker pool size [2].
+2023-09-10 01:46:22.94 spid57      [6]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
+2023-09-10 01:46:22.95 spid57      Starting up database 'empresa'.
+2023-09-10 01:46:22.96 spid57      RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [6]
+2023-09-10 01:46:22.96 spid57      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 6.
+2023-09-10 01:46:23.13 spid57      Parallel redo is started for database 'empresa' with worker pool size [2].
+2023-09-10 01:46:23.29 spid57      Parallel redo is shutdown for database 'empresa' with worker pool size [2].
+2023-09-10 01:47:45.08 spid68      [6]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
+2023-09-10 01:47:45.09 spid68      Starting up database 'empresa'.
+2023-09-10 01:47:45.09 spid68      RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [6]
+2023-09-10 01:47:45.10 spid68      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 6.
+2023-09-10 01:47:45.35 spid68      Parallel redo is started for database 'empresa' with worker pool size [2].
+2023-09-10 01:47:45.66 spid68      Parallel redo is shutdown for database 'empresa' with worker pool size [2].
+2023-09-10 02:05:40.68 spid61      [6]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
+2023-09-10 02:05:40.70 spid61      Starting up database 'empresa'.
+2023-09-10 02:05:40.70 spid61      RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [6]
+2023-09-10 02:05:40.70 spid61      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 6.
+2023-09-10 02:05:40.94 spid61      Parallel redo is started for database 'empresa' with worker pool size [2].
+2023-09-10 02:05:41.16 spid61      Parallel redo is shutdown for database 'empresa' with worker pool size [2].
+2023-09-10 02:25:04.60 spid51      XE session 'telemetry_xevents' stopping.
+2023-09-10 02:25:04.62 spid51      XE session 'telemetry_xevents' started.
+2023-09-10 03:25:20.79 spid51      XE session 'telemetry_xevents' stopping.
+2023-09-10 03:25:20.85 spid51      XE session 'telemetry_xevents' started.
+2023-09-10 03:53:53.45 Logon       Error: 18456, Severity: 14, State: 8.
+2023-09-10 03:53:53.45 Logon       Login failed for user 'SA'. Reason: Password did not match that for the login provided. [CLIENT: 172.30.0.2]
+2023-09-10 03:56:39.97 spid58      [6]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
+2023-09-10 03:56:39.99 spid58      Starting up database 'empresa'.
+2023-09-10 03:56:39.99 spid58      RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [6]
+2023-09-10 03:56:39.99 spid58      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 6.
+2023-09-10 03:56:40.36 spid58      Parallel redo is started for database 'empresa' with worker pool size [2].
+2023-09-10 03:56:40.64 spid58      Parallel redo is shutdown for database 'empresa' with worker pool size [2].
+2023-09-10 04:25:31.05 spid51      XE session 'telemetry_xevents' stopping.
+2023-09-10 04:25:31.08 spid51      XE session 'telemetry_xevents' started.
