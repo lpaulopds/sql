@@ -92,3 +92,5 @@
 2023-09-10 20:25:18.85 spid70      Parallel redo is started for database 'deb_teste' with worker pool size [2].
 2023-09-10 20:25:19.01 spid70      Parallel redo is shutdown for database 'deb_teste' with worker pool size [2].
 2023-09-10 20:30:48.06 spid70      Using 'dbghelp.dll' version '4.0.5'
+2023-09-10 20:45:18.10 spid66      XE session 'telemetry_xevents' stopping.
+2023-09-10 20:45:18.14 spid66      XE session 'telemetry_xevents' started.
