@@ -92,3 +92,5 @@
 2023-09-10 01:03:49.02 spid57      Parallel redo is shutdown for database 'deb_teste' with worker pool size [2].
 2023-09-10 01:06:38.26 spid51      XE session 'telemetry_xevents' stopping.
 2023-09-10 01:06:38.51 spid51      XE session 'telemetry_xevents' started.
+2023-09-10 01:08:44.96 spid51      Attempting to load library 'xplog70.dll' into memory. This is an informational message only. No user action is required.
+2023-09-10 01:08:45.05 spid51      Using 'xplog70.dll' version '2022.160.4065' to execute extended stored procedure 'xp_msver'. This is an informational message only; no user action is required.
