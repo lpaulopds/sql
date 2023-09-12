@@ -77,3 +77,20 @@
 2023-09-12 05:25:26.64 spid27s     Attribute synchronization manager initialized
 2023-09-12 05:30:29.11 spid65      XE session 'telemetry_xevents' stopping.
 2023-09-12 05:30:29.17 spid65      XE session 'telemetry_xevents' started.
+2023-09-12 05:32:33.15 spid65      Attempting to load library 'xplog70.dll' into memory. This is an informational message only. No user action is required.
+2023-09-12 05:32:33.27 spid65      Using 'xplog70.dll' version '2022.160.4065' to execute extended stored procedure 'xp_msver'. This is an informational message only; no user action is required.
+2023-09-12 05:32:40.97 spid65      [5]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
+2023-09-12 05:32:40.98 spid65      Starting up database 'deb_teste'.
+2023-09-12 05:32:40.98 spid65      RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [5]
+2023-09-12 05:32:40.99 spid65      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 5.
+2023-09-12 05:32:41.28 spid65      Parallel redo is started for database 'deb_teste' with worker pool size [2].
+2023-09-12 05:32:41.48 spid65      Parallel redo is shutdown for database 'deb_teste' with worker pool size [2].
+2023-09-12 05:32:41.81 spid65      [6]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
+2023-09-12 05:32:41.82 spid65      Starting up database 'empresa'.
+2023-09-12 05:32:41.83 spid65      RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [6]
+2023-09-12 05:32:41.83 spid65      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 6.
+2023-09-12 05:32:42.08 spid65      Parallel redo is started for database 'empresa' with worker pool size [2].
+2023-09-12 05:32:42.22 spid65      Parallel redo is shutdown for database 'empresa' with worker pool size [2].
+2023-09-12 05:36:26.98 spid65      Using 'dbghelp.dll' version '4.0.5'
+2023-09-12 05:48:26.19 spid51      XE session 'telemetry_xevents' stopping.
+2023-09-12 05:48:26.27 spid51      XE session 'telemetry_xevents' started.
