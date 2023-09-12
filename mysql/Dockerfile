@@ -1,4 +1,3 @@
 FROM mysql:8.1.0
-WORKDIR /home/lpaulopds/queries-sql
+WORKDIR /home/lpaulopds/sql
 ENV MYSQL_ROOT_PASSWORD 12345678
-EXPOSE 3231
