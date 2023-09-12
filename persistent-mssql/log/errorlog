@@ -95,3 +95,14 @@
 2023-09-11 21:56:41.81 spid60      Using 'dbghelp.dll' version '4.0.5'
 2023-09-11 22:10:16.17 spid59      XE session 'telemetry_xevents' stopping.
 2023-09-11 22:10:16.19 spid59      XE session 'telemetry_xevents' started.
+2023-09-11 22:44:43.87 spid45s     [DevOpsSnapshotTelemetryTask] Evaluating the background task.
+2023-09-11 23:10:31.84 spid57      XE session 'telemetry_xevents' stopping.
+2023-09-11 23:10:31.90 spid57      XE session 'telemetry_xevents' started.
+2023-09-12 00:10:42.81 spid52      XE session 'telemetry_xevents' stopping.
+2023-09-12 00:10:42.87 spid52      XE session 'telemetry_xevents' started.
+2023-09-12 01:10:52.99 spid51      XE session 'telemetry_xevents' stopping.
+2023-09-12 01:10:53.01 spid51      XE session 'telemetry_xevents' started.
+2023-09-12 02:11:05.04 spid51      XE session 'telemetry_xevents' stopping.
+2023-09-12 02:11:05.06 spid51      XE session 'telemetry_xevents' started.
+2023-09-12 03:14:49.23 spid52      XE session 'telemetry_xevents' stopping.
+2023-09-12 03:14:49.25 spid52      XE session 'telemetry_xevents' started.
