@@ -57,7 +57,7 @@ sudo chown -R mssql:user persistent-mssql
 >Ps.: O container MSSQL pode não funcionar por causa  
 >das permissões de usuários. Verifique o diretório  
 >de persistência do MSSQL, caso precise, altere o dono
->e o grupo para: mssql:user.
+>e o grupo para 'mssql:user'.
 ----------------------
   
 >[!NOTE]
