@@ -1,2 +1,0 @@
-/* FUNÇÃO CHARINDEX */
-
