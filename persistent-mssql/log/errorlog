@@ -105,3 +105,21 @@
 2023-09-13 20:22:33.88 spid27s     [DevOpsSnapshotTelemetryTask] Evaluating the background task.
 2023-09-13 20:47:38.55 spid63      XE session 'telemetry_xevents' stopping.
 2023-09-13 20:47:38.60 spid63      XE session 'telemetry_xevents' started.
+2023-09-13 21:47:53.68 spid56      XE session 'telemetry_xevents' stopping.
+2023-09-13 21:47:53.76 spid56      XE session 'telemetry_xevents' started.
+2023-09-13 22:48:10.62 spid56      XE session 'telemetry_xevents' stopping.
+2023-09-13 22:48:10.72 spid56      XE session 'telemetry_xevents' started.
+2023-09-13 23:48:21.74 spid56      XE session 'telemetry_xevents' stopping.
+2023-09-13 23:48:21.77 spid56      XE session 'telemetry_xevents' started.
+2023-09-14 00:48:31.42 spid58      XE session 'telemetry_xevents' stopping.
+2023-09-14 00:48:31.44 spid58      XE session 'telemetry_xevents' started.
+2023-09-14 01:48:47.22 spid58      XE session 'telemetry_xevents' stopping.
+2023-09-14 01:48:47.29 spid58      XE session 'telemetry_xevents' started.
+2023-09-14 02:12:07.35 Logon       Error: 18456, Severity: 14, State: 8.
+2023-09-14 02:12:07.35 Logon       Login failed for user 'SA'. Reason: Password did not match that for the login provided. [CLIENT: 172.18.0.2]
+2023-09-14 02:13:03.60 spid51      [6]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
+2023-09-14 02:13:03.61 spid51      Starting up database 'empresa'.
+2023-09-14 02:13:03.62 spid51      RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [6]
+2023-09-14 02:13:03.62 spid51      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 6.
+2023-09-14 02:13:03.97 spid51      Parallel redo is started for database 'empresa' with worker pool size [2].
+2023-09-14 02:13:04.27 spid51      Parallel redo is shutdown for database 'empresa' with worker pool size [2].
