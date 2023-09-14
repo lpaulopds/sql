@@ -72,3 +72,17 @@ RUI                            1/January/1953
 JOAO                           3/May/1987     
 MARIA                          5/February/1997*/
 
+/* CORREÇÃO [SECTION 26 AULA 105] */
+SELECT NOME,
+CAST(DAY(NASCIMENTO) AS VARCHAR) + '/' +
+CAST(MONTH(NASCIMENTO) AS VARCHAR) + '/' +
+CAST(YEAR(NASCIMENTO) AS VARCHAR) AS "NASCIMENTO"
+FROM ALUNO
+GO/*
+NOME                           NASCIMENTO                    
+------------------------------ ------------------------------
+ANDRE                          23/4/1981                     
+ANA                            21/3/1943                     
+RUI                            1/1/1953                      
+JOAO                           3/5/1987                      
+MARIA                          5/2/1997*/
