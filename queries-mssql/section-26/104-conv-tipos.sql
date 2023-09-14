@@ -59,8 +59,16 @@ GO/*
 ERROR*/
 
 SELECT NOME,
-DAY(NASCIMENTO) + '/' +
-MONTH(NASCIMENTO) + '/' +
-YEAR(NASCIMENTO)
+DATENAME(DAY, NASCIMENTO) + '/' +
+DATENAME(MONTH, NASCIMENTO) + '/' +
+DATENAME(YEAR, NASCIMENTO)
 FROM ALUNO
-GO
+GO/*
+NOME                                          
+------------------------------ ---------------
+ANDRE                          23/April/1981  
+ANA                            21/March/1943  
+RUI                            1/January/1953 
+JOAO                           3/May/1987     
+MARIA                          5/February/1997*/
+
