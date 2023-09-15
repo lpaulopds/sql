@@ -11,7 +11,7 @@ services:
       - ./apache/etc/apache2.conf:/etc/apache2/apache2.conf
       - ./apache/etc/security.conf:/etc/apache2/conf-available/security.conf
       - ./apache/vhost/000-default.conf:/etc/apache2/sites-available/000-default.conf
-    container_name: cont-php
+    container_name: c-php
   mysql:
     build:
       context: "./mysql"
@@ -21,7 +21,7 @@ services:
       - ./mysql/my.cnf:/etc/my.cnf
       - ./mysql/config:/etc/mysql/conf.d
       - ./persistent-mysql:/var/lib/mysql
-    container_name: cont-mysql
+    container_name: c-mysql
   mssql:
     build:
       context: "./mssql"
@@ -33,4 +33,4 @@ services:
       - ./persistent-mssql/secrets:/var/opt/mssql/secrets
       - ./persistent-mssql/backup:/var/opt/mssql/backup
       - ./mssql/CONTAS.txt:/home/lpaulopds/sql/CONTAS.txt
-    container_name: cont-mssql
+    container_name: c-mssql
