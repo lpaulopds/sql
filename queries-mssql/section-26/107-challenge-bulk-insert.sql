@@ -65,3 +65,60 @@ WHERE TIPO = "C"
 GO/*
 (507 rows affected)
 */
+
+/* CORREÇÃO */
+SELECT CONTA, VALOR,
+    CHARINDEX('D',TIPO) AS "DEBITO",
+    CHARINDEX('C',TIPO) AS "CREDITO"
+        FROM LANCAMENTO_CONTABIL
+GO/*
+CONTA       VALOR       DEBITO      CREDITO    
+----------- ----------- ----------- -----------
+          2        4111           1           0
+          2     6456145           1           0
+          2       46545           1           0
+          2    47986465           1           0
+          2      478945           1           0
+          2        9568           1           0
+          2        5784           1           0
+          1      478651           0           1
+          1        4111           0           1
+          1        4111           0           1
+          1        4111           0           1
+          4        4111           0           1
+          4        4111           0           1
+          4    45646556           0           1
+          4       46545           0           1
+          4    47986465           0           1*/
+
+/* ENCONTRANDO MULTIPLICADOR */
+SELECT CONTA, VALOR,
+    CHARINDEX('D',TIPO) AS "DEBITO",
+    CHARINDEX('C',TIPO) AS "CREDITO",
+    CHARINDEX('C',TIPO) * 2 - 1 AS MULTIPLICADOR
+        FROM LANCAMENTO_CONTABIL
+GO/*
+CONTA       VALOR       DEBITO      CREDITO     MULTIPLICADOR
+----------- ----------- ----------- ----------- -------------
+          1        9584           1           0            -1
+          1       46545           1           0            -1
+          1        4654           1           0            -1
+          1    45646556           1           0            -1
+          1       46545           1           0            -1
+          1        9554           1           0            -1
+          1          48           0           1             1
+          1      478946           0           1             1
+          1        7156           0           1             1
+          1        4111           0           1             1
+          1     6456145           0           1             1
+          1       46545           0           1             1*/
+
+/*
+    C -> 1 * 2 - 1 =  1 [QUANDO FOR CRÉDITO O SALDO CONTINUA]
+    D -> 0 * 2 - 1 = -1 [QUNADO FOR DÉBITO O SALDO É NEGATIVO]
+*/
+SELECT CONTA,
+SUM(VALOR * (CHARINDEX('C',TIPO) * 2 - 1)) AS SALDO
+    FROM LANCAMENTO_CONTABIL
+    GROUP BY CONTA
+GO
