@@ -85,3 +85,17 @@
 2023-09-15 18:46:58.23 spid26s     Attribute synchronization manager initialized
 2023-09-15 18:51:58.20 spid66      XE session 'telemetry_xevents' stopping.
 2023-09-15 18:51:58.24 spid66      XE session 'telemetry_xevents' started.
+2023-09-15 18:54:05.45 spid66      Attempting to load library 'xplog70.dll' into memory. This is an informational message only. No user action is required.
+2023-09-15 18:54:05.50 spid66      Using 'xplog70.dll' version '2022.160.4065' to execute extended stored procedure 'xp_msver'. This is an informational message only; no user action is required.
+2023-09-15 18:54:12.76 spid66      [5]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
+2023-09-15 18:54:12.77 spid66      Starting up database 'deb_teste'.
+2023-09-15 18:54:12.77 spid66      RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [5]
+2023-09-15 18:54:12.78 spid66      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 5.
+2023-09-15 18:54:12.96 spid66      Parallel redo is started for database 'deb_teste' with worker pool size [2].
+2023-09-15 18:54:13.05 spid66      Parallel redo is shutdown for database 'deb_teste' with worker pool size [2].
+2023-09-15 18:54:13.25 spid66      [6]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
+2023-09-15 18:54:13.26 spid66      Starting up database 'empresa'.
+2023-09-15 18:54:13.26 spid66      RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [6]
+2023-09-15 18:54:13.26 spid66      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 6.
+2023-09-15 18:54:13.51 spid66      Parallel redo is started for database 'empresa' with worker pool size [2].
+2023-09-15 18:54:13.68 spid66      Parallel redo is shutdown for database 'empresa' with worker pool size [2].
