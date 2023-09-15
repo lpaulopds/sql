@@ -121,3 +121,5 @@
 2023-09-15 19:57:50.49 spid27s     [DevOpsSnapshotTelemetryTask] Evaluating the background task.
 2023-09-15 20:20:13.58 spid54      XE session 'telemetry_xevents' stopping.
 2023-09-15 20:20:13.68 spid54      XE session 'telemetry_xevents' started.
+2023-09-15 21:20:29.47 spid54      XE session 'telemetry_xevents' stopping.
+2023-09-15 21:20:29.53 spid54      XE session 'telemetry_xevents' started.
