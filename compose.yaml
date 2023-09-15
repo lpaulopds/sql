@@ -32,4 +32,5 @@ services:
       - ./persistent-mssql/log:/var/opt/mssql/log
       - ./persistent-mssql/secrets:/var/opt/mssql/secrets
       - ./persistent-mssql/backup:/var/opt/mssql/backup
+      - ./mssql/CONTAS.txt:/home/lpaulopds/sql/CONTAS.txt
     container_name: cont-mssql
