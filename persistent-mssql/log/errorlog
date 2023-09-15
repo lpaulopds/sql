@@ -75,3 +75,5 @@
 2023-09-15 18:57:51.57 spid19s     Recovery is complete. This is an informational message only. No user action is required.
 2023-09-15 18:57:54.33 spid30s     Attribute synchronization initialized
 2023-09-15 18:57:54.33 spid30s     Attribute synchronization manager initialized
+2023-09-15 19:02:54.98 spid66      XE session 'telemetry_xevents' stopping.
+2023-09-15 19:02:55.03 spid66      XE session 'telemetry_xevents' started.
