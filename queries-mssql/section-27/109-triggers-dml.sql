@@ -139,10 +139,12 @@ WHERE IDPRODUTO = 2
 GO
 
 SELECT * FROM HISTORICO
-GO/*
+GO
+/*
 IDOPERACAO    PRODUTO                      CATEGORIA       PRECOANTIGO    PRECONOVO      DATA                       USUARIO      MENSAGEM                                      
 -----------   --------------------------   -------------   ------------   ------------   -----------------------    ----------   ----------------------------------------------
           1   LIVRO ORACLE                 LIVROS          250.00         301.00         2023-09-16 05:12:06.813    sa           VALOR INSERIDO PELA TRIGGER TRG_ATUALIZA_PRECO
           2   LICENÇA POWERCENTER          SOFTWARES       250.00         302.00         2023-09-16 05:12:31.347    sa           VALOR INSERIDO PELA TRIGGER TRG_ATUALIZA_PRECO
           3   NOTEBOOK 17                  COMPUTADOR      250.00         303.00         2023-09-16 05:12:46.610    sa           VALOR INSERIDO PELA TRIGGER TRG_ATUALIZA_PRECO
-          4   LIVRO BUSINESS INTELIGENCE   LIVROS          250.00         304.00         2023-09-16 05:12:58.307    sa           VALOR INSERIDO PELA TRIGGER TRG_ATUALIZA_PRECO*/
+          4   LIVRO BUSINESS INTELIGENCE   LIVROS          250.00         304.00         2023-09-16 05:12:58.307    sa           VALOR INSERIDO PELA TRIGGER TRG_ATUALIZA_PRECO
+*/
