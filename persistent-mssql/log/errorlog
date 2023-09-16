@@ -127,3 +127,11 @@
 2023-09-15 22:20:43.24 spid54      XE session 'telemetry_xevents' started.
 2023-09-16 01:35:28.37 spid52      XE session 'telemetry_xevents' stopping.
 2023-09-16 01:35:28.40 spid52      XE session 'telemetry_xevents' started.
+2023-09-16 02:35:48.18 spid52      XE session 'telemetry_xevents' stopping.
+2023-09-16 02:35:48.34 spid52      XE session 'telemetry_xevents' started.
+2023-09-16 03:36:01.77 spid52      XE session 'telemetry_xevents' stopping.
+2023-09-16 03:36:01.84 spid52      XE session 'telemetry_xevents' started.
+2023-09-16 04:17:08.83 Logon       Error: 18456, Severity: 14, State: 8.
+2023-09-16 04:17:08.83 Logon       Login failed for user 'SA'. Reason: Password did not match that for the login provided. [CLIENT: 172.20.0.2]
+2023-09-16 04:36:49.55 spid52      XE session 'telemetry_xevents' stopping.
+2023-09-16 04:36:49.57 spid52      XE session 'telemetry_xevents' started.
