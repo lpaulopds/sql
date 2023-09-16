@@ -104,3 +104,5 @@
 2023-09-16 19:03:20.76 spid52      Parallel redo is started for database 'empresa' with worker pool size [2].
 2023-09-16 19:03:21.10 spid52      Parallel redo is shutdown for database 'empresa' with worker pool size [2].
 2023-09-16 19:07:20.46 spid52      Using 'dbghelp.dll' version '4.0.5'
+2023-09-16 19:19:17.80 spid62      XE session 'telemetry_xevents' stopping.
+2023-09-16 19:19:17.82 spid62      XE session 'telemetry_xevents' started.
