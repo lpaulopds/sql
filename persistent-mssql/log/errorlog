@@ -135,3 +135,5 @@
 2023-09-16 04:17:08.83 Logon       Login failed for user 'SA'. Reason: Password did not match that for the login provided. [CLIENT: 172.20.0.2]
 2023-09-16 04:36:49.55 spid52      XE session 'telemetry_xevents' stopping.
 2023-09-16 04:36:49.57 spid52      XE session 'telemetry_xevents' started.
+2023-09-16 05:37:00.89 spid52      XE session 'telemetry_xevents' stopping.
+2023-09-16 05:37:00.92 spid52      XE session 'telemetry_xevents' started.
