@@ -110,3 +110,14 @@
 2023-09-18 14:25:54.57 spid73      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 6.
 2023-09-18 14:25:54.86 spid73      Parallel redo is started for database 'empresa' with worker pool size [2].
 2023-09-18 14:25:55.00 spid73      Parallel redo is shutdown for database 'empresa' with worker pool size [2].
+2023-09-18 14:46:28.24 spid33s     [DevOpsSnapshotTelemetryTask] Evaluating the background task.
+2023-09-18 15:23:53.49 spid70      XE session 'telemetry_xevents' stopping.
+2023-09-18 15:23:53.51 spid70      XE session 'telemetry_xevents' started.
+2023-09-18 16:24:02.36 spid60      XE session 'telemetry_xevents' stopping.
+2023-09-18 16:24:02.38 spid60      XE session 'telemetry_xevents' started.
+2023-09-18 17:24:18.98 spid60      XE session 'telemetry_xevents' stopping.
+2023-09-18 17:24:19.01 spid60      XE session 'telemetry_xevents' started.
+2023-09-18 18:24:31.92 spid60      XE session 'telemetry_xevents' stopping.
+2023-09-18 18:24:31.96 spid60      XE session 'telemetry_xevents' started.
+2023-09-18 19:25:17.05 spid58      XE session 'telemetry_xevents' stopping.
+2023-09-18 19:25:17.07 spid58      XE session 'telemetry_xevents' started.
