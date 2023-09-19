@@ -95,3 +95,12 @@
 2023-09-19 17:55:04.17 spid53      Using 'dbghelp.dll' version '4.0.5'
 2023-09-19 18:07:07.64 spid55      XE session 'telemetry_xevents' stopping.
 2023-09-19 18:07:07.67 spid55      XE session 'telemetry_xevents' started.
+2023-09-19 18:31:31.47 spid33s     [DevOpsSnapshotTelemetryTask] Evaluating the background task.
+2023-09-19 19:07:48.68 spid55      XE session 'telemetry_xevents' stopping.
+2023-09-19 19:07:48.72 spid55      XE session 'telemetry_xevents' started.
+2023-09-19 19:22:18.91 spid65      [6]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
+2023-09-19 19:22:18.92 spid65      Starting up database 'empresa'.
+2023-09-19 19:22:18.93 spid65      RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [6]
+2023-09-19 19:22:18.94 spid65      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 6.
+2023-09-19 19:22:19.11 spid65      Parallel redo is started for database 'empresa' with worker pool size [2].
+2023-09-19 19:22:19.21 spid65      Parallel redo is shutdown for database 'empresa' with worker pool size [2].
