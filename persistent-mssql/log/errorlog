@@ -123,3 +123,35 @@
 2023-09-18 19:25:17.07 spid58      XE session 'telemetry_xevents' started.
 2023-09-18 20:25:30.86 spid58      XE session 'telemetry_xevents' stopping.
 2023-09-18 20:25:30.89 spid58      XE session 'telemetry_xevents' started.
+2023-09-18 21:25:45.60 spid56      XE session 'telemetry_xevents' stopping.
+2023-09-18 21:25:45.63 spid56      XE session 'telemetry_xevents' started.
+2023-09-18 22:25:56.44 spid56      XE session 'telemetry_xevents' stopping.
+2023-09-18 22:25:56.46 spid56      XE session 'telemetry_xevents' started.
+2023-09-18 23:26:06.51 spid56      XE session 'telemetry_xevents' stopping.
+2023-09-18 23:26:06.54 spid56      XE session 'telemetry_xevents' started.
+2023-09-19 00:26:19.76 spid56      XE session 'telemetry_xevents' stopping.
+2023-09-19 00:26:19.79 spid56      XE session 'telemetry_xevents' started.
+2023-09-19 01:26:30.73 spid56      XE session 'telemetry_xevents' stopping.
+2023-09-19 01:26:30.75 spid56      XE session 'telemetry_xevents' started.
+2023-09-19 02:12:39.20 spid54      [6]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
+2023-09-19 02:12:39.20 spid54      Starting up database 'empresa'.
+2023-09-19 02:12:39.21 spid54      RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [6]
+2023-09-19 02:12:39.21 spid54      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 6.
+2023-09-19 02:12:39.52 spid54      Parallel redo is started for database 'empresa' with worker pool size [2].
+2023-09-19 02:12:39.73 spid54      Parallel redo is shutdown for database 'empresa' with worker pool size [2].
+2023-09-19 02:26:41.02 spid56      XE session 'telemetry_xevents' stopping.
+2023-09-19 02:26:41.04 spid56      XE session 'telemetry_xevents' started.
+2023-09-19 03:26:50.31 spid56      XE session 'telemetry_xevents' stopping.
+2023-09-19 03:26:50.35 spid56      XE session 'telemetry_xevents' started.
+2023-09-19 03:28:12.93 spid54      [6]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
+2023-09-19 03:28:12.94 spid54      Starting up database 'empresa'.
+2023-09-19 03:28:12.94 spid54      RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [6]
+2023-09-19 03:28:12.95 spid54      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 6.
+2023-09-19 03:28:13.16 spid54      Parallel redo is started for database 'empresa' with worker pool size [2].
+2023-09-19 03:28:13.38 spid54      Parallel redo is shutdown for database 'empresa' with worker pool size [2].
+2023-09-19 03:28:17.77 spid54      [6]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
+2023-09-19 03:28:17.77 spid54      Starting up database 'empresa'.
+2023-09-19 03:28:17.78 spid54      RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [6]
+2023-09-19 03:28:17.79 spid54      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 6.
+2023-09-19 03:28:17.92 spid54      Parallel redo is started for database 'empresa' with worker pool size [2].
+2023-09-19 03:28:17.96 spid54      Parallel redo is shutdown for database 'empresa' with worker pool size [2].
