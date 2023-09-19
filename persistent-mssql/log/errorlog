@@ -106,3 +106,7 @@
 2023-09-19 19:22:19.21 spid65      Parallel redo is shutdown for database 'empresa' with worker pool size [2].
 2023-09-19 20:08:02.51 spid55      XE session 'telemetry_xevents' stopping.
 2023-09-19 20:08:02.53 spid55      XE session 'telemetry_xevents' started.
+2023-09-19 22:05:20.39 spid63      XE session 'telemetry_xevents' stopping.
+2023-09-19 22:05:20.41 spid63      XE session 'telemetry_xevents' started.
+2023-09-19 22:15:28.21 spid63      XE session 'telemetry_xevents' stopping.
+2023-09-19 22:15:28.27 spid63      XE session 'telemetry_xevents' started.
