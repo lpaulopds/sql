@@ -1,130 +1,139 @@
-2023-09-15 16:01:24.53 Server      Microsoft SQL Server 2022 (RTM-CU7) (KB5028743) - 16.0.4065.3 (X64) 
+2023-09-15 18:57:46.29 Server      Microsoft SQL Server 2022 (RTM-CU7) (KB5028743) - 16.0.4065.3 (X64) 
 	Jul 25 2023 18:03:43 
 	Copyright (C) 2022 Microsoft Corporation
 	Express Edition (64-bit) on Linux (Ubuntu 20.04.6 LTS) <X64>
-2023-09-15 16:01:24.53 Server      UTC adjustment: 0:00
-2023-09-15 16:01:24.54 Server      (c) Microsoft Corporation.
-2023-09-15 16:01:24.54 Server      All rights reserved.
-2023-09-15 16:01:24.54 Server      Server process ID is 428.
-2023-09-15 16:01:24.54 Server      Logging SQL Server messages in file '/var/opt/mssql/log/errorlog'.
-2023-09-15 16:01:24.55 Server      Registry startup parameters: 
+2023-09-15 18:57:46.30 Server      UTC adjustment: 0:00
+2023-09-15 18:57:46.30 Server      (c) Microsoft Corporation.
+2023-09-15 18:57:46.30 Server      All rights reserved.
+2023-09-15 18:57:46.30 Server      Server process ID is 416.
+2023-09-15 18:57:46.30 Server      Logging SQL Server messages in file '/var/opt/mssql/log/errorlog'.
+2023-09-15 18:57:46.31 Server      Registry startup parameters: 
 	 -d /var/opt/mssql/data/master.mdf
 	 -l /var/opt/mssql/data/mastlog.ldf
 	 -e /var/opt/mssql/log/errorlog
-2023-09-15 16:01:24.58 Server      SQL Server detected 1 sockets with 2 cores per socket and 4 logical processors per socket, 4 total logical processors; using 4 logical processors based on SQL Server licensing. This is an informational message; no user action is required.
-2023-09-15 16:01:24.59 Server      SQL Server is starting at normal priority base (=7). This is an informational message only. No user action is required.
-2023-09-15 16:01:24.59 Server      Detected 3101 MB of RAM. This is an informational message; no user action is required.
-2023-09-15 16:01:24.60 Server      Using conventional memory in the memory manager.
-2023-09-15 16:01:24.60 Server      Detected pause instruction latency: 38 cycles.
-2023-09-15 16:01:24.60 Server      Page exclusion bitmap is enabled.
-2023-09-15 16:01:24.65 Server      Buffer pool extension is not supported on Linux platform.
-2023-09-15 16:01:24.67 Server      Buffer Pool: Allocating 524288 bytes for 340825 hashPages.
-2023-09-15 16:01:25.01 Server      Buffer pool extension is already disabled. No action is necessary.
-2023-09-15 16:01:26.02 Server      Installing Client TLS certificates to the store.
-2023-09-15 16:01:26.10 Server      Error searching first file in /var/opt/mssql/security/ca-certificates: 3(The system cannot find the path specified.)
-2023-09-15 16:01:26.11 Server      CPU vectorization level(s) detected:  SSE SSE2 SSE3 SSSE3 SSE41 SSE42 AVX AVX2 POPCNT BMI1 BMI2
-2023-09-15 16:01:26.99 Server      Successfully initialized the TLS configuration. Allowed TLS protocol versions are ['1.0 1.1 1.2']. Allowed TLS ciphers are ['ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA:ECDHE-ECDSA-AES128-SHA:AES256-GCM-SHA384:AES128-GCM-SHA256:AES256-SHA256:AES128-SHA256:AES256-SHA:AES128-SHA:!DHE-RSA-AES256-GCM-SHA384:!DHE-RSA-AES128-GCM-SHA256:!DHE-RSA-AES256-SHA:!DHE-RSA-AES128-SHA'].
-2023-09-15 16:01:27.07 Server      Query Store settings initialized with enabled = 1, 
-2023-09-15 16:01:27.09 Server      The maximum number of dedicated administrator connections for this instance is '1'
-2023-09-15 16:01:27.11 Server      Node configuration: node 0: CPU mask: 0x000000000000000f:0 Active CPU mask: 0x000000000000000f:0. This message provides a description of the NUMA configuration for this computer. This is an informational message only. No user action is required.
-2023-09-15 16:01:27.19 Server      Using dynamic lock allocation.  Initial allocation of 2500 Lock blocks and 5000 Lock Owner blocks per node.  This is an informational message only.  No user action is required.
-2023-09-15 16:01:27.34 Server      In-Memory OLTP initialized on lowend machine.
-2023-09-15 16:01:27.43 Server      CLR version v4.0.30319 loaded.
-2023-09-15 16:01:27.68 Server      [INFO] Created Extended Events session 'hkenginexesession'
-2023-09-15 16:01:27.69 Server      Database Instant File Initialization: enabled. For security and performance considerations see the topic 'Database Instant File Initialization' in SQL Server Books Online. This is an informational message only. No user action is required.
-2023-09-15 16:01:27.72 Server      Total Log Writer threads: 2. This is an informational message; no user action is required.
-2023-09-15 16:01:27.74 Server      clflushopt is selected for pmem flush operation.
-2023-09-15 16:01:27.76 Server      Software Usage Metrics is disabled.
-2023-09-15 16:01:27.79 spid18s     [1]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
-2023-09-15 16:01:27.81 spid18s     Starting up database 'master'.
-2023-09-15 16:01:28.37 Server      Common language runtime (CLR) functionality initialized.
-2023-09-15 16:01:28.39 spid18s     46 transactions rolled forward in database 'master' (1:0). This is an informational message only. No user action is required.
-2023-09-15 16:01:30.53 spid18s     0 transactions rolled back in database 'master' (1:0). This is an informational message only. No user action is required.
-2023-09-15 16:01:30.55 spid18s     Recovery is writing a checkpoint in database 'master' (1). This is an informational message only. No user action is required.
-2023-09-15 16:01:30.60 spid18s     Recovery completed for database master (database ID 1) in 3 second(s) (analysis 65 ms, redo 260 ms, undo 666 ms [system undo 0 ms, regular undo 0 ms].) ADR-enabled=0, Is primary=1, OL-Enabled=0. This is an informational message only. No user action is required.
-2023-09-15 16:01:30.66 Server      External governance manager initialized
-2023-09-15 16:01:31.09 spid18s     Service Master Key could not be decrypted using one of its encryptions. See sys.key_encryptions for details.
-2023-09-15 16:01:31.10 spid18s     An error occurred during Service Master Key initialization. SQLErrorCode=33095, State=14, LastOsError=2.
-2023-09-15 16:01:31.24 spid29s     Attribute synchronization initialized
-2023-09-15 16:01:31.25 spid29s     Attribute synchronization manager initialized
-2023-09-15 16:01:31.23 spid18s     SQL Server Audit is starting the audits. This is an informational message. No user action is required.
-2023-09-15 16:01:31.29 spid18s     SQL Server Audit has started the audits. This is an informational message. No user action is required.
-2023-09-15 16:01:31.39 spid18s     XE session 'system_health' started.
-2023-09-15 16:01:31.57 spid18s     XE session 'telemetry_xevents' started.
-2023-09-15 16:01:31.65 spid18s     SQL Trace ID 1 was started by login "sa".
-2023-09-15 16:01:31.75 spid18s     Server name is 'b984b9111f23'. This is an informational message only. No user action is required.
-2023-09-15 16:01:31.81 spid48s     [4]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
-2023-09-15 16:01:31.81 spid51s     Always On: The availability replica manager is starting. This is an informational message only. No user action is required.
-2023-09-15 16:01:31.81 spid50s     [6]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
-2023-09-15 16:01:31.82 spid48s     Starting up database 'msdb'.
-2023-09-15 16:01:31.83 spid21s     [32767]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
-2023-09-15 16:01:31.83 spid50s     Starting up database 'empresa'.
-2023-09-15 16:01:31.84 spid51s     Always On: The availability replica manager is waiting for the instance of SQL Server to allow client connections. This is an informational message only. No user action is required.
-2023-09-15 16:01:31.85 spid50s     RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [6]
-2023-09-15 16:01:31.86 spid50s     RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 6.
-2023-09-15 16:01:31.86 spid21s     Starting up database 'mssqlsystemresource'.
-2023-09-15 16:01:32.03 spid21s     The resource database build version is 16.00.4065. This is an informational message only. No user action is required.
-2023-09-15 16:01:32.27 spid50s     Parallel redo is started for database 'empresa' with worker pool size [2].
-2023-09-15 16:01:32.40 spid50s     4 transactions rolled forward in database 'empresa' (6:0). This is an informational message only. No user action is required.
-2023-09-15 16:01:32.44 spid46s     A self-generated certificate was successfully loaded for encryption.
-2023-09-15 16:01:32.46 spid46s     Server is listening on [ 'any' <ipv6> 1433] accept sockets 1.
-2023-09-15 16:01:32.48 spid46s     Server is listening on [ 'any' <ipv4> 1433] accept sockets 1.
-2023-09-15 16:01:32.51 spid46s     Dedicated administrator connection support was not started because it is disabled on this edition of SQL Server. If you want to use a dedicated administrator connection, restart SQL Server using the trace flag 7806. This is an informational message only. No user action is required.
-2023-09-15 16:01:32.55 spid46s     Server is listening on [ ::1 <ipv6> 1431] accept sockets 1.
-2023-09-15 16:01:32.56 spid46s     Server is listening on [ 127.0.0.1 <ipv4> 1431] accept sockets 1.
-2023-09-15 16:01:32.57 spid46s     SQL Server is now ready for client connections. This is an informational message; no user action is required.
-2023-09-15 16:01:33.08 spid50s     0 transactions rolled back in database 'empresa' (6:0). This is an informational message only. No user action is required.
-2023-09-15 16:01:33.13 spid50s     Parallel redo is shutdown for database 'empresa' with worker pool size [2].
-2023-09-15 16:01:33.10 spid21s     [3]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
-2023-09-15 16:01:33.15 spid21s     Starting up database 'model'.
-2023-09-15 16:01:33.89 spid21s     Clearing tempdb database.
-2023-09-15 16:01:36.41 spid21s     [2]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
-2023-09-15 16:01:36.44 spid21s     Starting up database 'tempdb'.
-2023-09-15 16:01:36.99 spid48s     The Service Broker endpoint is in disabled or stopped state.
-2023-09-15 16:01:37.00 spid48s     The Database Mirroring endpoint is in disabled or stopped state.
-2023-09-15 16:01:37.30 spid48s     Service Broker manager has started.
-2023-09-15 16:01:37.31 spid53s     [6]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
-2023-09-15 16:01:37.32 spid53s     Starting up database 'empresa'.
-2023-09-15 16:01:37.33 spid53s     RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [6]
-2023-09-15 16:01:37.33 spid53s     RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 6.
-2023-09-15 16:01:37.34 spid18s     Recovery is complete. This is an informational message only. No user action is required.
-2023-09-15 16:01:38.54 spid53s     Parallel redo is started for database 'empresa' with worker pool size [2].
-2023-09-15 16:01:39.24 spid53s     Parallel redo is shutdown for database 'empresa' with worker pool size [2].
-2023-09-15 16:01:56.19 spid54      [6]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
-2023-09-15 16:01:56.22 spid54      Starting up database 'empresa'.
-2023-09-15 16:01:56.23 spid54      RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [6]
-2023-09-15 16:01:56.25 spid54      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 6.
-2023-09-15 16:01:56.79 spid54      Parallel redo is started for database 'empresa' with worker pool size [2].
-2023-09-15 16:01:57.11 spid54      Parallel redo is shutdown for database 'empresa' with worker pool size [2].
-2023-09-15 16:06:50.56 spid57      XE session 'telemetry_xevents' stopping.
-2023-09-15 16:06:50.64 spid57      XE session 'telemetry_xevents' started.
-2023-09-15 16:09:20.36 spid57      Attempting to load library 'xplog70.dll' into memory. This is an informational message only. No user action is required.
-2023-09-15 16:09:20.56 spid57      Using 'xplog70.dll' version '2022.160.4065' to execute extended stored procedure 'xp_msver'. This is an informational message only; no user action is required.
-2023-09-15 16:09:38.65 spid57      [5]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
-2023-09-15 16:09:38.69 spid57      Starting up database 'deb_teste'.
-2023-09-15 16:09:38.70 spid57      RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [5]
-2023-09-15 16:09:38.72 spid57      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 5.
-2023-09-15 16:09:39.09 spid57      Parallel redo is started for database 'deb_teste' with worker pool size [2].
-2023-09-15 16:09:39.24 spid57      Parallel redo is shutdown for database 'deb_teste' with worker pool size [2].
-2023-09-15 16:14:36.04 spid54      [6]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
-2023-09-15 16:14:36.05 spid54      Starting up database 'empresa'.
-2023-09-15 16:14:36.06 spid54      RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [6]
-2023-09-15 16:14:36.06 spid54      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 6.
-2023-09-15 16:14:36.34 spid54      Parallel redo is started for database 'empresa' with worker pool size [2].
-2023-09-15 16:14:36.56 spid54      Parallel redo is shutdown for database 'empresa' with worker pool size [2].
-2023-09-15 16:16:37.08 spid57      Using 'dbghelp.dll' version '4.0.5'
-2023-09-15 16:34:09.47 spid57      XE session 'telemetry_xevents' stopping.
-2023-09-15 16:34:09.51 spid57      XE session 'telemetry_xevents' started.
-2023-09-15 16:39:52.83 Logon       Error: 18456, Severity: 14, State: 5.
-2023-09-15 16:39:52.83 Logon       Login failed for user 'SAW'. Reason: Could not find a login matching the name provided. [CLIENT: 172.18.0.4]
-2023-09-15 16:40:10.07 spid54      [6]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
-2023-09-15 16:40:10.08 spid54      Starting up database 'empresa'.
-2023-09-15 16:40:10.09 spid54      RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [6]
-2023-09-15 16:40:10.09 spid54      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 6.
-2023-09-15 16:40:10.38 spid54      Parallel redo is started for database 'empresa' with worker pool size [2].
-2023-09-15 16:40:10.58 spid54      Parallel redo is shutdown for database 'empresa' with worker pool size [2].
-2023-09-15 16:42:12.15 spid56s     [DevOpsSnapshotTelemetryTask] Evaluating the background task.
-2023-09-15 17:34:28.39 spid57      XE session 'telemetry_xevents' stopping.
-2023-09-15 17:34:28.45 spid57      XE session 'telemetry_xevents' started.
-2023-09-15 18:34:43.35 spid57      XE session 'telemetry_xevents' stopping.
-2023-09-15 18:34:43.38 spid57      XE session 'telemetry_xevents' started.
+2023-09-15 18:57:46.32 Server      SQL Server detected 1 sockets with 2 cores per socket and 4 logical processors per socket, 4 total logical processors; using 4 logical processors based on SQL Server licensing. This is an informational message; no user action is required.
+2023-09-15 18:57:46.33 Server      SQL Server is starting at normal priority base (=7). This is an informational message only. No user action is required.
+2023-09-15 18:57:46.33 Server      Detected 3101 MB of RAM. This is an informational message; no user action is required.
+2023-09-15 18:57:46.34 Server      Using conventional memory in the memory manager.
+2023-09-15 18:57:46.34 Server      Detected pause instruction latency: 32 cycles.
+2023-09-15 18:57:46.34 Server      Page exclusion bitmap is enabled.
+2023-09-15 18:57:46.37 Server      Buffer pool extension is not supported on Linux platform.
+2023-09-15 18:57:46.37 Server      Buffer Pool: Allocating 524288 bytes for 339340 hashPages.
+2023-09-15 18:57:46.61 Server      Buffer pool extension is already disabled. No action is necessary.
+2023-09-15 18:57:47.48 Server      Installing Client TLS certificates to the store.
+2023-09-15 18:57:47.50 Server      Error searching first file in /var/opt/mssql/security/ca-certificates: 3(The system cannot find the path specified.)
+2023-09-15 18:57:47.51 Server      CPU vectorization level(s) detected:  SSE SSE2 SSE3 SSSE3 SSE41 SSE42 AVX AVX2 POPCNT BMI1 BMI2
+2023-09-15 18:57:47.65 Server      Successfully initialized the TLS configuration. Allowed TLS protocol versions are ['1.0 1.1 1.2']. Allowed TLS ciphers are ['ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA:ECDHE-ECDSA-AES128-SHA:AES256-GCM-SHA384:AES128-GCM-SHA256:AES256-SHA256:AES128-SHA256:AES256-SHA:AES128-SHA:!DHE-RSA-AES256-GCM-SHA384:!DHE-RSA-AES128-GCM-SHA256:!DHE-RSA-AES256-SHA:!DHE-RSA-AES128-SHA'].
+2023-09-15 18:57:47.70 Server      Query Store settings initialized with enabled = 1, 
+2023-09-15 18:57:47.72 Server      The maximum number of dedicated administrator connections for this instance is '1'
+2023-09-15 18:57:47.75 Server      Node configuration: node 0: CPU mask: 0x000000000000000f:0 Active CPU mask: 0x000000000000000f:0. This message provides a description of the NUMA configuration for this computer. This is an informational message only. No user action is required.
+2023-09-15 18:57:47.79 Server      Using dynamic lock allocation.  Initial allocation of 2500 Lock blocks and 5000 Lock Owner blocks per node.  This is an informational message only.  No user action is required.
+2023-09-15 18:57:47.84 Server      In-Memory OLTP initialized on lowend machine.
+2023-09-15 18:57:47.85 Server      CLR version v4.0.30319 loaded.
+2023-09-15 18:57:47.98 Server      [INFO] Created Extended Events session 'hkenginexesession'
+2023-09-15 18:57:47.99 Server      Database Instant File Initialization: enabled. For security and performance considerations see the topic 'Database Instant File Initialization' in SQL Server Books Online. This is an informational message only. No user action is required.
+2023-09-15 18:57:48.03 Server      Total Log Writer threads: 2. This is an informational message; no user action is required.
+2023-09-15 18:57:48.06 Server      clflushopt is selected for pmem flush operation.
+2023-09-15 18:57:48.06 Server      Software Usage Metrics is disabled.
+2023-09-15 18:57:48.10 spid19s     [1]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
+2023-09-15 18:57:48.12 spid19s     Starting up database 'master'.
+2023-09-15 18:57:48.54 Server      Common language runtime (CLR) functionality initialized.
+2023-09-15 18:57:48.62 spid19s     14 transactions rolled forward in database 'master' (1:0). This is an informational message only. No user action is required.
+2023-09-15 18:57:48.90 spid19s     0 transactions rolled back in database 'master' (1:0). This is an informational message only. No user action is required.
+2023-09-15 18:57:48.91 spid19s     Recovery is writing a checkpoint in database 'master' (1). This is an informational message only. No user action is required.
+2023-09-15 18:57:49.23 spid19s     Service Master Key could not be decrypted using one of its encryptions. See sys.key_encryptions for details.
+2023-09-15 18:57:49.23 spid19s     An error occurred during Service Master Key initialization. SQLErrorCode=33095, State=14, LastOsError=2.
+2023-09-15 18:57:49.32 spid19s     SQL Server Audit is starting the audits. This is an informational message. No user action is required.
+2023-09-15 18:57:49.33 spid19s     SQL Server Audit has started the audits. This is an informational message. No user action is required.
+2023-09-15 18:57:49.38 spid19s     XE session 'system_health' started.
+2023-09-15 18:57:49.55 spid19s     XE session 'telemetry_xevents' started.
+2023-09-15 18:57:49.59 spid19s     SQL Trace ID 1 was started by login "sa".
+2023-09-15 18:57:49.70 spid19s     Server name is 'b984b9111f23'. This is an informational message only. No user action is required.
+2023-09-15 18:57:49.76 spid19s     [4]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
+2023-09-15 18:57:49.77 spid37s     Always On: The availability replica manager is starting. This is an informational message only. No user action is required.
+2023-09-15 18:57:49.77 spid21s     [32767]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
+2023-09-15 18:57:49.78 spid37s     Always On: The availability replica manager is waiting for the instance of SQL Server to allow client connections. This is an informational message only. No user action is required.
+2023-09-15 18:57:49.79 spid21s     Starting up database 'mssqlsystemresource'.
+2023-09-15 18:57:49.80 spid19s     Starting up database 'msdb'.
+2023-09-15 18:57:49.80 spid21s     The resource database build version is 16.00.4065. This is an informational message only. No user action is required.
+2023-09-15 18:57:49.89 spid34s     A self-generated certificate was successfully loaded for encryption.
+2023-09-15 18:57:49.89 spid34s     Server is listening on [ 'any' <ipv6> 1433] accept sockets 1.
+2023-09-15 18:57:49.90 spid34s     Server is listening on [ 'any' <ipv4> 1433] accept sockets 1.
+2023-09-15 18:57:49.90 spid34s     Dedicated administrator connection support was not started because it is disabled on this edition of SQL Server. If you want to use a dedicated administrator connection, restart SQL Server using the trace flag 7806. This is an informational message only. No user action is required.
+2023-09-15 18:57:49.93 spid21s     [3]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
+2023-09-15 18:57:49.94 spid21s     Starting up database 'model'.
+2023-09-15 18:57:49.93 spid34s     Server is listening on [ ::1 <ipv6> 1431] accept sockets 1.
+2023-09-15 18:57:49.95 spid34s     Server is listening on [ 127.0.0.1 <ipv4> 1431] accept sockets 1.
+2023-09-15 18:57:49.95 spid34s     SQL Server is now ready for client connections. This is an informational message; no user action is required.
+2023-09-15 18:57:50.04 Server      External governance manager initialized
+2023-09-15 18:57:50.77 spid21s     Clearing tempdb database.
+2023-09-15 18:57:51.23 spid21s     [2]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
+2023-09-15 18:57:51.24 spid21s     Starting up database 'tempdb'.
+2023-09-15 18:57:51.50 spid39s     The Service Broker endpoint is in disabled or stopped state.
+2023-09-15 18:57:51.51 spid39s     The Database Mirroring endpoint is in disabled or stopped state.
+2023-09-15 18:57:51.56 spid39s     Service Broker manager has started.
+2023-09-15 18:57:51.57 spid19s     Recovery is complete. This is an informational message only. No user action is required.
+2023-09-15 18:57:54.33 spid30s     Attribute synchronization initialized
+2023-09-15 18:57:54.33 spid30s     Attribute synchronization manager initialized
+2023-09-15 19:02:54.98 spid66      XE session 'telemetry_xevents' stopping.
+2023-09-15 19:02:55.03 spid66      XE session 'telemetry_xevents' started.
+2023-09-15 19:04:55.95 spid66      Attempting to load library 'xplog70.dll' into memory. This is an informational message only. No user action is required.
+2023-09-15 19:04:56.01 spid66      Using 'xplog70.dll' version '2022.160.4065' to execute extended stored procedure 'xp_msver'. This is an informational message only; no user action is required.
+2023-09-15 19:05:03.63 spid66      [5]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
+2023-09-15 19:05:03.63 spid66      Starting up database 'deb_teste'.
+2023-09-15 19:05:03.63 spid66      RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [5]
+2023-09-15 19:05:03.64 spid66      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 5.
+2023-09-15 19:05:03.83 spid66      Parallel redo is started for database 'deb_teste' with worker pool size [2].
+2023-09-15 19:05:03.93 spid66      Parallel redo is shutdown for database 'deb_teste' with worker pool size [2].
+2023-09-15 19:05:04.08 spid66      [6]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
+2023-09-15 19:05:04.08 spid66      Starting up database 'empresa'.
+2023-09-15 19:05:04.09 spid66      RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [6]
+2023-09-15 19:05:04.09 spid66      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 6.
+2023-09-15 19:05:04.34 spid66      Parallel redo is started for database 'empresa' with worker pool size [2].
+2023-09-15 19:05:04.55 spid66      Parallel redo is shutdown for database 'empresa' with worker pool size [2].
+2023-09-15 19:08:44.72 spid66      Using 'dbghelp.dll' version '4.0.5'
+2023-09-15 19:13:26.58 spid69      [6]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
+2023-09-15 19:13:26.59 spid69      Starting up database 'empresa'.
+2023-09-15 19:13:26.59 spid69      RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [6]
+2023-09-15 19:13:26.60 spid69      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 6.
+2023-09-15 19:13:26.86 spid69      Parallel redo is started for database 'empresa' with worker pool size [2].
+2023-09-15 19:13:27.01 spid69      Parallel redo is shutdown for database 'empresa' with worker pool size [2].
+2023-09-15 19:19:59.77 spid68      XE session 'telemetry_xevents' stopping.
+2023-09-15 19:19:59.79 spid68      XE session 'telemetry_xevents' started.
+2023-09-15 19:43:34.85 spid62      [6]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
+2023-09-15 19:43:34.87 spid62      Starting up database 'empresa'.
+2023-09-15 19:43:34.87 spid62      RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [6]
+2023-09-15 19:43:34.88 spid62      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 6.
+2023-09-15 19:43:35.20 spid62      Parallel redo is started for database 'empresa' with worker pool size [2].
+2023-09-15 19:43:35.45 spid62      Parallel redo is shutdown for database 'empresa' with worker pool size [2].
+2023-09-15 19:49:29.49 spid51      [6]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
+2023-09-15 19:49:29.50 spid51      Starting up database 'empresa'.
+2023-09-15 19:49:29.51 spid51      RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [6]
+2023-09-15 19:49:29.51 spid51      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 6.
+2023-09-15 19:49:29.76 spid51      Parallel redo is started for database 'empresa' with worker pool size [2].
+2023-09-15 19:49:29.95 spid51      Parallel redo is shutdown for database 'empresa' with worker pool size [2].
+2023-09-15 19:49:52.00 spid51      [6]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
+2023-09-15 19:49:52.00 spid51      Starting up database 'empresa'.
+2023-09-15 19:49:52.01 spid51      RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [6]
+2023-09-15 19:49:52.02 spid51      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 6.
+2023-09-15 19:49:52.29 spid51      Parallel redo is started for database 'empresa' with worker pool size [2].
+2023-09-15 19:49:52.40 spid51      Parallel redo is shutdown for database 'empresa' with worker pool size [2].
+2023-09-15 19:57:50.49 spid27s     [DevOpsSnapshotTelemetryTask] Evaluating the background task.
+2023-09-15 20:20:13.58 spid54      XE session 'telemetry_xevents' stopping.
+2023-09-15 20:20:13.68 spid54      XE session 'telemetry_xevents' started.
+2023-09-15 21:20:29.47 spid54      XE session 'telemetry_xevents' stopping.
+2023-09-15 21:20:29.53 spid54      XE session 'telemetry_xevents' started.
+2023-09-15 22:20:43.16 spid54      XE session 'telemetry_xevents' stopping.
+2023-09-15 22:20:43.24 spid54      XE session 'telemetry_xevents' started.
+2023-09-16 01:35:28.37 spid52      XE session 'telemetry_xevents' stopping.
+2023-09-16 01:35:28.40 spid52      XE session 'telemetry_xevents' started.
+2023-09-16 02:35:48.18 spid52      XE session 'telemetry_xevents' stopping.
+2023-09-16 02:35:48.34 spid52      XE session 'telemetry_xevents' started.
+2023-09-16 03:36:01.77 spid52      XE session 'telemetry_xevents' stopping.
+2023-09-16 03:36:01.84 spid52      XE session 'telemetry_xevents' started.
+2023-09-16 04:17:08.83 Logon       Error: 18456, Severity: 14, State: 8.
+2023-09-16 04:17:08.83 Logon       Login failed for user 'SA'. Reason: Password did not match that for the login provided. [CLIENT: 172.20.0.2]
+2023-09-16 04:36:49.55 spid52      XE session 'telemetry_xevents' stopping.
+2023-09-16 04:36:49.57 spid52      XE session 'telemetry_xevents' started.
+2023-09-16 05:37:00.89 spid52      XE session 'telemetry_xevents' stopping.
+2023-09-16 05:37:00.92 spid52      XE session 'telemetry_xevents' started.
