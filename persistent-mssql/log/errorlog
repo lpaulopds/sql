@@ -197,3 +197,4 @@
 2023-09-20 21:46:28.79 spid64      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 6.
 2023-09-20 21:46:28.99 spid64      Parallel redo is started for database 'empresa' with worker pool size [2].
 2023-09-20 21:46:29.08 spid64      Parallel redo is shutdown for database 'empresa' with worker pool size [2].
+2023-09-20 21:49:37.63 spid64      Using 'dbghelp.dll' version '4.0.5'
