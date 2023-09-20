@@ -22,7 +22,7 @@ sudo docker ps
 ```
 2. Entrar no container MySQL  
 ```bash
-sudo docker container exec -it CONTAINERID bash
+sudo docker container exec -it c-mysql bash
 ```
 3. Já no bash dentro do container MySQL, conecte no banco:  
 ```bash
@@ -36,7 +36,7 @@ sudo docker ps
 ```
 2. Entrar no container MSSQL  
 ```bash
-sudo docker container exec -it CONTAINERID bash
+sudo docker container exec -it c-mssql bash
 ```  
 3. Já no bash dentro do container MSSQL, conecte no banco:  
 ```bash
