@@ -8,24 +8,26 @@ de Banco de Dados e SQL, sem mistérios! Esse repositório irá ser
   
 >[!NOTE]
 >As queries explicadas nas aulas estão nos diretórios: 'queries-*'.  
-    
+  
 ### **Comandos para acessar as bases de dados e tabelas criadas durante o curso.**
 >MySQL | SQL Server | Postgres  
   
-Execute o comando abaixo na raiz do projeto para subir  
-os containers do PHP, MySQL e MSSQL:
+#### **Execute o comando abaixo na raiz do projeto para subir os containers:**
 ```bash
 sudo docker compose up -d
 ```  
+  
 #### **Para entrar no container MySQL e executar as queries:**  
 1. Veja os ids ou nomes dos containers:  
 ```bash
 sudo docker ps
 ```  
+  
 2. Entrar no container MySQL  
 ```bash
 sudo docker container exec -it c-mysql bash
 ```  
+  
 3. Dentro do container MySQL, conecte no banco:  
 ```bash
 mysql -u root -p
@@ -35,11 +37,13 @@ mysql -u root -p
 1. Veja os ids ou nomes dos containers   
 ```bash
 sudo docker ps
-```
+```  
+  
 2. Entrar no container MSSQL  
 ```bash
 sudo docker container exec -it c-mssql bash
-```
+```  
+  
 3. Dentro do container MSSQL, conecte no banco:  
 ```bash
 /opt/mssql-tools/bin/sqlcmd -S localhost -U SA
