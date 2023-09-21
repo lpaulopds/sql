@@ -56,10 +56,11 @@ sudo docker container exec -it c-mssql bash
 ```bash
 sudo useradd -u 1001 mssql
 ```  
+  
 ```bash
 sudo chown -R mssql:user persistent-mssql
 ```  
-  
+    
 >Ps.: O container MSSQL pode não funcionar por causa  
 >das permissões de usuários. Verifique o diretório  
 >de persistência do MSSQL, caso precise, altere o dono
@@ -72,15 +73,17 @@ sudo chown -R mssql:user persistent-mssql
 ```bash
 sudo docker ps
 ```  
+  
 2. Entrar no container Postgres  
 ```bash
 sudo docker container exec -it c-postgres bash
 ```  
+  
 3. Dentro do container MSSQL, conecte no banco:  
 ```bash
 psql -h localhost -U postgres
 ```  
-  
+    
   
 >[!NOTE]
 >Senha do usuário root do MySQL está no arquivo: 'compose.yaml'.  
