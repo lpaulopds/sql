@@ -97,14 +97,11 @@ sudo chown -R mssql:user persistent-mssql
 >Software: StarUML  
   
 Modelagem oficina  
-  
 ![Modelagem oficina](/images/oficina.png "Modelagem oficina")  
   
 Modelagem autorelacionamento  
-  
 ![Modelagem autorelacionamento](/images/autorelacionamento.png "Modelagem autorelacionamento")  
   
 Modelagem Formas Normais  
-  
 ![Modelagem Formas Normais](/images/fns.png "Modelagem Formas Normais")  
   
