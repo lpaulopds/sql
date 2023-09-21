@@ -10,38 +10,53 @@ de Banco de Dados e SQL, sem mistérios! Esse repositório irá ser
 >As queries explicadas nas aulas estão nos diretórios: 'queries-*'.  
   
 ### **Comandos para acessar as bases de dados e tabelas criadas durante o curso.**
+>MySQL | SQL Server | Postgres
 Execute o comando abaixo na raiz do projeto para subir  
 os containers do PHP, MySQL e MSSQL:
 ```bash
 sudo docker compose up -d
 ```
 #### **Para entrar no container MySQL e executar as queries:**  
-1. Veja os ids dos containers   
+1. Veja os ids ou nomes dos containers:  
 ```bash
 sudo docker ps
 ```
 2. Entrar no container MySQL  
 ```bash
-sudo docker container exec -it CONTAINERID bash
+sudo docker container exec -it c-mysql bash
 ```
-3. Já no bash dentro do container MySQL, conecte no banco:  
+3. Dentro do container MySQL, conecte no banco:  
 ```bash
 mysql -u root -p
-```  
+```
   
 #### **Para entrar no container MSSQL e executar queries:**  
-1. Veja os ids dos containers   
+1. Veja os ids ou nomes dos containers   
 ```bash
 sudo docker ps
 ```
 2. Entrar no container MSSQL  
 ```bash
-sudo docker container exec -it CONTAINERID bash
-```  
-3. Já no bash dentro do container MSSQL, conecte no banco:  
+sudo docker container exec -it c-mssql bash
+```
+3. Dentro do container MSSQL, conecte no banco:  
 ```bash
 /opt/mssql-tools/bin/sqlcmd -S localhost -U SA
-```  
+```
+  
+#### **Para entrar no container Postgres e executar queries:**  
+1. Veja os ids ou nomes dos containers   
+```bash
+sudo docker ps
+```
+2. Entrar no container MSSQL  
+```bash
+sudo docker container exec -it c-postgres bash
+```
+3. Dentro do container MSSQL, conecte no banco:  
+```bash
+psql -h localhost -U postgres
+```
   
 >[!Warning]
 >É preciso ter um usuário MSSQL no host do container  
