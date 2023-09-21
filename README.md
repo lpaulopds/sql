@@ -1,4 +1,4 @@
-## **Queries do curso completo de Banco de Dados e SQL, sem mistérios**
+## **Queries do curso completo de Banco de Dados e SQL, sem mistérios.**
 >LINUX | DOCKER | PHP | MYSQL | MSSQL | POSTGRESQL  
   
 Repositório criado para documentar as queries do curso completo  
@@ -64,7 +64,7 @@ sudo chown -R mssql:user persistent-mssql
 >Ps.: O container MSSQL pode não funcionar por causa  
 >das permissões de usuários. Verifique o diretório  
 >de persistência do MSSQL, caso precise, altere o dono
->e o grupo para 'mssql:user'.
+>e o grupo para 'mssql:user'
 ----------------------  
   
   
@@ -86,9 +86,9 @@ psql -h localhost -U postgres
     
   
 >[!NOTE]
->Senha do usuário root do MySQL no arquivo: 'mysql/Dockerfile'.  
->Senha do usuário SA do MSSQL no arquivo: 'mssql/Dockerfile'.  
->Senha do usuário postgres do Postgres no arquivo: 'postgres/Dockerfile'.  
+>Senha do usuário root do MySQL no arquivo: 'mysql/Dockerfile'  
+>Senha do usuário SA do MSSQL no arquivo: 'mssql/Dockerfile'  
+>Senha do usuário postgres do Postgres no arquivo: 'postgres/Dockerfile'  
   
 ### **Mais informações**
 #### **Docker**
