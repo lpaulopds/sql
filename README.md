@@ -1,5 +1,5 @@
-## **Queries do curso completo de Banco de Dados e SQL, sem mistérios.**
->LINUX | DOCKER | PHP | MYSQL | MSSQL  
+## **Queries do curso completo de Banco de Dados e SQL, sem mistérios**
+>LINUX | DOCKER | PHP | MYSQL | MSSQL | POSTGRESQL  
   
 Repositório criado para documentar as queries do curso completo  
 de Banco de Dados e SQL, sem mistérios! Esse repositório irá ser  
@@ -9,16 +9,16 @@ de Banco de Dados e SQL, sem mistérios! Esse repositório irá ser
 >[!NOTE]
 >As queries explicadas nas aulas estão nos diretórios: 'queries-*'.  
   
-### **Comandos para acessar as bases de dados e tabelas criadas durante o curso.**
+### **Comandos para acessar as bases de dados e tabelas criadas durante o curso**
 >MySQL | SQL Server | Postgres  
   
-#### **Execute o comando abaixo na raiz do projeto para subir os containers:**
+#### **Execute o comando abaixo na raiz do projeto para subir os containers**
 ```bash
 sudo docker compose up -d
 ```  
   
-#### **Para entrar no container MySQL e executar as queries:**  
-1. Veja os ids ou nomes dos containers:  
+#### **Para entrar no container MySQL e executar as queries**  
+1. Veja os ids ou nomes dos containers  
 ```bash
 sudo docker ps
 ```  
@@ -28,12 +28,12 @@ sudo docker ps
 sudo docker container exec -it c-mysql bash
 ```  
   
-3. Dentro do container, conecte no banco:  
+3. Dentro do container, conecte no banco  
 ```bash
 mysql -u root -p
 ```  
   
-#### **Para entrar no container MSSQL e executar as queries:**  
+#### **Para entrar no container MSSQL e executar as queries**  
 1. Veja os ids ou nomes dos containers   
 ```bash
 sudo docker ps
@@ -44,7 +44,7 @@ sudo docker ps
 sudo docker container exec -it c-mssql bash
 ```  
   
-3. Dentro do container, conecte no banco:  
+3. Dentro do container, conecte no banco  
 ```bash
 /opt/mssql-tools/bin/sqlcmd -S localhost -U SA
 ```  
@@ -52,7 +52,7 @@ sudo docker container exec -it c-mssql bash
 >[!Warning]
 >É preciso ter um usuário MSSQL no host do container  
 >para poder administrar a persistência do banco de dados.  
->Caso não tenha, execute os comandos abaixo:
+>Caso não tenha, execute os comandos abaixo
 ```bash
 sudo useradd -u 1001 mssql
 ```  
@@ -68,7 +68,7 @@ sudo chown -R mssql:user persistent-mssql
 ----------------------  
   
   
-#### **Para entrar no container Postgres e executar as queries:**  
+#### **Para entrar no container Postgres e executar as queries**  
 1. Veja os ids ou nomes dos containers   
 ```bash
 sudo docker ps
@@ -79,7 +79,7 @@ sudo docker ps
 sudo docker container exec -it c-postgres bash
 ```  
   
-3. Dentro do container, conecte no banco:  
+3. Dentro do container, conecte no banco  
 ```bash
 psql -h localhost -U postgres
 ```  
