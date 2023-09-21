@@ -88,7 +88,7 @@ psql -h localhost -U postgres
 >[!NOTE]
 >Senha do usuário root do MySQL está no arquivo: 'compose.yaml'.  
 >Senha do usuário SA do MSSQL está no arquivo: 'mssql/Dockerfile'.  
->Senha do usuário postgres dos Postgres no arquivo: 'postgres/Dockerfile'.  
+>Senha do usuário postgres do Postgres no arquivo: 'postgres/Dockerfile'.  
   
 ### **Mais informações**
 #### **Docker**
@@ -98,7 +98,6 @@ psql -h localhost -U postgres
 * Caminho arquivo php.ini: 'apache/etc/'
 * Arquivos de configurações do apache nos diretórios: 'apache/etc' e 'apache/vhost'
 #### **MySQL**
-* Volume do container MySQL no diretório: 'persistent'  
 * Arquivo de configuração do MySQL: 'mysql/my.cnf'  
 #### **MSSQL**
 * Iniciando com containers SQL Server  
