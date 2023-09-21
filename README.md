@@ -8,7 +8,7 @@ de Banco de Dados e SQL, sem mistérios! Esse repositório irá ser
   
 >[!NOTE]
 >As queries explicadas nas aulas estão nos diretórios: 'queries-*'.  
-  
+    
 ### **Comandos para acessar as bases de dados e tabelas criadas durante o curso.**
 >MySQL | SQL Server | Postgres  
   
@@ -16,22 +16,22 @@ Execute o comando abaixo na raiz do projeto para subir
 os containers do PHP, MySQL e MSSQL:
 ```bash
 sudo docker compose up -d
-```
+```  
 #### **Para entrar no container MySQL e executar as queries:**  
 1. Veja os ids ou nomes dos containers:  
 ```bash
 sudo docker ps
-```
+```  
 2. Entrar no container MySQL  
 ```bash
 sudo docker container exec -it c-mysql bash
-```
+```  
 3. Dentro do container MySQL, conecte no banco:  
 ```bash
 mysql -u root -p
-```
+```  
   
-#### **Para entrar no container MSSQL e executar queries:**  
+#### **Para entrar no container MSSQL e executar as queries:**  
 1. Veja os ids ou nomes dos containers   
 ```bash
 sudo docker ps
@@ -43,21 +43,7 @@ sudo docker container exec -it c-mssql bash
 3. Dentro do container MSSQL, conecte no banco:  
 ```bash
 /opt/mssql-tools/bin/sqlcmd -S localhost -U SA
-```
-  
-#### **Para entrar no container Postgres e executar queries:**  
-1. Veja os ids ou nomes dos containers   
-```bash
-sudo docker ps
-```
-2. Entrar no container MSSQL  
-```bash
-sudo docker container exec -it c-postgres bash
-```
-3. Dentro do container MSSQL, conecte no banco:  
-```bash
-psql -h localhost -U postgres
-```
+```  
   
 >[!Warning]
 >É preciso ter um usuário MSSQL no host do container  
@@ -65,16 +51,32 @@ psql -h localhost -U postgres
 >Caso não tenha, execute os comandos abaixo:
 ```bash
 sudo useradd -u 1001 mssql
-```
+```  
 ```bash
 sudo chown -R mssql:user persistent-mssql
-```
+```  
   
 >Ps.: O container MSSQL pode não funcionar por causa  
 >das permissões de usuários. Verifique o diretório  
 >de persistência do MSSQL, caso precise, altere o dono
 >e o grupo para 'mssql:user'.
-----------------------
+----------------------  
+  
+  
+#### **Para entrar no container Postgres e executar as queries:**  
+1. Veja os ids ou nomes dos containers   
+```bash
+sudo docker ps
+```  
+2. Entrar no container Postgres  
+```bash
+sudo docker container exec -it c-postgres bash
+```  
+3. Dentro do container MSSQL, conecte no banco:  
+```bash
+psql -h localhost -U postgres
+```  
+  
   
 >[!NOTE]
 >Senha do usuário root do MySQL está no arquivo: 'compose.yaml'.  
@@ -98,11 +100,14 @@ sudo chown -R mssql:user persistent-mssql
 >Software: StarUML  
   
 Modelagem oficina  
+  
 ![Modelagem oficina](/images/oficina.png "Modelagem oficina")  
   
 Modelagem autorelacionamento  
+  
 ![Modelagem autorelacionamento](/images/autorelacionamento.png "Modelagem autorelacionamento")  
   
 Modelagem Formas Normais  
+  
 ![Modelagem Formas Normais](/images/fns.png "Modelagem Formas Normais")  
   
