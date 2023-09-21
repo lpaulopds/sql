@@ -11,6 +11,7 @@ de Banco de Dados e SQL, sem mistérios! Esse repositório irá ser
   
 ### **Comandos para acessar as bases de dados e tabelas criadas durante o curso.**
 >MySQL | SQL Server | Postgres  
+  
 Execute o comando abaixo na raiz do projeto para subir  
 os containers do PHP, MySQL e MSSQL:
 ```bash
