@@ -75,3 +75,23 @@
 2023-09-21 22:29:59.32 spid18s     Recovery is complete. This is an informational message only. No user action is required.
 2023-09-21 22:30:02.19 spid27s     Attribute synchronization initialized
 2023-09-21 22:30:02.20 spid27s     Attribute synchronization manager initialized
+2023-09-21 22:35:02.31 spid53      XE session 'telemetry_xevents' stopping.
+2023-09-21 22:35:02.33 spid53      XE session 'telemetry_xevents' started.
+2023-09-21 22:37:06.09 spid53      Attempting to load library 'xplog70.dll' into memory. This is an informational message only. No user action is required.
+2023-09-21 22:37:06.14 spid53      Using 'xplog70.dll' version '2022.160.4065' to execute extended stored procedure 'xp_msver'. This is an informational message only; no user action is required.
+2023-09-21 22:37:19.20 spid53      [5]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
+2023-09-21 22:37:19.20 spid53      Starting up database 'deb_teste'.
+2023-09-21 22:37:19.21 spid53      RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [5]
+2023-09-21 22:37:19.21 spid53      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 5.
+2023-09-21 22:37:19.39 spid53      Parallel redo is started for database 'deb_teste' with worker pool size [2].
+2023-09-21 22:37:19.54 spid53      Parallel redo is shutdown for database 'deb_teste' with worker pool size [2].
+2023-09-21 22:37:19.74 spid53      [6]. Feature Status: PVS: 0. CTR: 0. ConcurrentPFSUpdate: 1. ConcurrentGAMUpdate: 1. ConcurrentSGAMUpdate: 1, CleanupUnderUserTransaction: 0. TranLevelPVS: 0
+2023-09-21 22:37:19.74 spid53      Starting up database 'empresa'.
+2023-09-21 22:37:19.75 spid53      RemoveStaleDbEntries: Cleanup of stale DB entries called for database ID: [6]
+2023-09-21 22:37:19.75 spid53      RemoveStaleDbEntries: Cleanup of stale DB entries skipped because master db is not memory optimized. DbId: 6.
+2023-09-21 22:37:19.92 spid53      Parallel redo is started for database 'empresa' with worker pool size [2].
+2023-09-21 22:37:20.06 spid53      Parallel redo is shutdown for database 'empresa' with worker pool size [2].
+2023-09-21 22:40:35.32 spid53      Using 'dbghelp.dll' version '4.0.5'
+2023-09-21 22:59:37.69 spid25s     [DevOpsSnapshotTelemetryTask] Evaluating the background task.
+2023-09-22 01:20:53.91 spid72      XE session 'telemetry_xevents' stopping.
+2023-09-22 01:20:53.94 spid72      XE session 'telemetry_xevents' started.
