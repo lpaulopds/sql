@@ -41,4 +41,5 @@ services:
       - "5432:5432"
     volumes:
       - ./persistent-postgres/data:/var/lib/postgresql/data
+      - ./postgres/postgresql.conf:/var/lib/postgresql/data/postgresql.conf
     container_name: c-postgres

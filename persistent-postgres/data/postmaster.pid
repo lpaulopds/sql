@@ -1,6 +1,10 @@
 1
 /var/lib/postgresql/data
+<<<<<<< HEAD
 1695335373
+=======
+1695492184
+>>>>>>> secondary
 5432
 /var/run/postgresql
 *

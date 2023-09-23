@@ -10,7 +10,7 @@ de Banco de Dados e SQL, sem mistérios! Esse repositório irá ser
 >As queries explicadas nas aulas estão nos diretórios: 'queries-*'.  
   
 ### **Comandos para acessar as bases de dados e tabelas criadas durante o curso**
->MySQL | SQL Server | Postgres  
+>MySQL | SQL Server | PostgresSQL  
   
 #### **Execute o comando abaixo na raiz do projeto para subir os containers**
 ```bash
@@ -68,13 +68,13 @@ sudo chown -R mssql:user persistent-mssql
 ----------------------  
   
   
-#### **Para entrar no container Postgres e executar as queries**  
+#### **Para entrar no container PostgresSQL e executar as queries**  
 1. Veja os ids ou nomes dos containers   
 ```bash
 sudo docker ps
 ```  
   
-2. Entrar no container Postgres  
+2. Entrar no container PostgresSQL  
 ```bash
 sudo docker container exec -it c-postgres bash
 ```  
