@@ -13,10 +13,12 @@ RUN apt-get update && \
     apt-get install -y curl && \
     apt-get install -y postgresql-all && \
     apt-get install -y locales && \
+    apt-get install -y apt-transport-https && \
     apt-get install -y --reinstall libpq-dev
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-RUN docker-php-ext-configure pgsql --with-pgsql=/usr/local/pgsql
+RUN docker-php-ext-configure pgsql --with-pgsql=/usr/local/pgsql 
+
 RUN docker-php-ext-install pdo pdo_mysql pdo_pgsql pgsql
 RUN a2enmod rewrite && \
     a2enmod headers && \
