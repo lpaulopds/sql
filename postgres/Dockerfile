@@ -1,6 +1,7 @@
 FROM postgres
 ENV POSTGRES_USER postgres
 ENV POSTGRES_PASSWORD postgres
+ENV LC_ALL POSIX
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y git && \
