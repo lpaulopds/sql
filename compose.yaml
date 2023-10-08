@@ -6,34 +6,34 @@ services:
       - "8080:80"
     volumes:
       - ./:/var/www
-      - ./php/php.ini:/usr/local/etc/php/php.ini
+      # - ./php/php.ini:/usr/local/etc/php/php.ini
       - ./apache/var/log:/var/log
       - ./apache/etc/apache2.conf:/etc/apache2/apache2.conf
       - ./apache/etc/security.conf:/etc/apache2/conf-available/security.conf
       - ./apache/vhost/000-default.conf:/etc/apache2/sites-available/000-default.conf
     container_name: c-php
-  mysql:
-    build:
-      context: "./mysql"
-    ports:
-      - "3231:3306"
-    volumes:
-      - ./mysql/my.cnf:/etc/my.cnf
-      - ./mysql/config:/etc/mysql/conf.d
-      - ./persistent-mysql:/var/lib/mysql
-    container_name: c-mysql
-  mssql:
-    build:
-      context: "./mssql"
-    ports:
-      - "1433:1433"
-    volumes:
-      - ./persistent-mssql/data:/var/opt/mssql/data
-      - ./persistent-mssql/log:/var/opt/mssql/log
-      - ./persistent-mssql/secrets:/var/opt/mssql/secrets
-      - ./persistent-mssql/backup:/var/opt/mssql/backup
-      - ./mssql/CONTAS.txt:/home/lpaulopds/sql/CONTAS.txt
-    container_name: c-mssql
+  # mysql:
+  #   build:
+  #     context: "./mysql"
+  #   ports:
+  #     - "3231:3306"
+  #   volumes:
+  #     - ./mysql/my.cnf:/etc/my.cnf
+  #     - ./mysql/config:/etc/mysql/conf.d
+  #     - ./persistent-mysql:/var/lib/mysql
+  #   container_name: c-mysql
+  # mssql:
+  #   build:
+  #     context: "./mssql"
+  #   ports:
+  #     - "1433:1433"
+  #   volumes:
+  #     - ./persistent-mssql/data:/var/opt/mssql/data
+  #     - ./persistent-mssql/log:/var/opt/mssql/log
+  #     - ./persistent-mssql/secrets:/var/opt/mssql/secrets
+  #     - ./persistent-mssql/backup:/var/opt/mssql/backup
+  #     - ./mssql/CONTAS.txt:/home/lpaulopds/sql/CONTAS.txt
+  #   container_name: c-mssql
   postgres:
     build:
       context: "./postgres"
@@ -41,5 +41,5 @@ services:
       - "5432:5432"
     volumes:
       - ./persistent-postgres/data:/var/lib/postgresql/data
-      - ./postgres/postgresql.conf:/var/lib/postgresql/data/postgresql.conf
+      # - ./postgres/postgresql.conf:/var/lib/postgresql/data/postgresql.conf
     container_name: c-postgres

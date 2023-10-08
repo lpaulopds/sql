@@ -1,6 +1,6 @@
 <?php 
 
-// $con_string = "host=postgres port=5432 dbname=loja user=postgres password=postgres";
+// $con_string = "host=postgres port=5432 user=postgres password=postgres";
 // $bdcon = pg_connect($con_string);
 // if(!$bdcon)
 // {
@@ -27,12 +27,12 @@
 //     echo "Table created successfully\n";
 // }
 // pg_close($bdcon);
-// phpinfo();
-// die;
+phpinfo();
+die;
 require 'postgres/config.php';
 try
 {
-    $dsn = "psql:host=$host;port=$port;dbname=$db;";
+    $dsn = "psql:host=$host;port=$port;";
     $pdo = new PDO($dsn,$user,$password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
     if ($pdo) {
         echo "Connected with database.";
@@ -41,8 +41,8 @@ try
 catch(PDOException $e) {
     die($e->getMessage());
 }
-finally {
-    if ($pdo) {
-        $pdo = null;
-    }
-}
+// finally {
+//     if ($pdo) {
+//         $pdo = null;
+//     }
+// }
