@@ -5,11 +5,11 @@
 // if(!$bdcon)
 // {
 //     echo "Error : Unable to open database\n";
-//     echo pg_last_error($bdcon);
 // }
 // else {
 //     echo "Opened database successfully\n";
 // }
+// die;
 
 // $sql =<<<EOF
 //     CREATE TABLE COMPANY
@@ -27,12 +27,17 @@
 //     echo "Table created successfully\n";
 // }
 // pg_close($bdcon);
-phpinfo();
-die;
+
+// echo "<pre>";
+// print_r($_SERVER);
+// echo "</pre>";
+// phpinfo();
+// die;
+
 require 'postgres/config.php';
 try
 {
-    $dsn = "psql:host=$host;port=$port;";
+    $dsn = "pgsql:host=$host;port=$port;";
     $pdo = new PDO($dsn,$user,$password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
     if ($pdo) {
         echo "Connected with database.";
@@ -41,8 +46,8 @@ try
 catch(PDOException $e) {
     die($e->getMessage());
 }
-// finally {
-//     if ($pdo) {
-//         $pdo = null;
-//     }
-// }
+finally {
+    if ($pdo) {
+        $pdo = null;
+    }
+}

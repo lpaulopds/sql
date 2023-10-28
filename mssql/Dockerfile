@@ -1,15 +1,30 @@
 FROM mcr.microsoft.com/mssql/server:2022-latest
 
+##
+### Diretório de trabalho
+##
 WORKDIR /home/lpaulopds/sql
 
+##
+### Copia arquivos para o container
+##
 COPY . /home/lpaulopds/sql
 
+##
+### Define variáveis de ambiente
+##
 ENV SA_PASSWORD password123!
 ENV ACCEPT_EULA Y
 ENV MSSQL_PID Express
 
+##
+### Altera ponto de entrada
+##
 CMD /bin/bash ./entrypoint.sh
 
+##
+### Atualiza sistema e instala programas
+##
 # RUN apt-get update && \
 #         apt-get upgrade -y && \
 #         apt-get install -y git && \

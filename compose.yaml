@@ -12,16 +12,16 @@ services:
       - ./apache/etc/security.conf:/etc/apache2/conf-available/security.conf
       - ./apache/vhost/000-default.conf:/etc/apache2/sites-available/000-default.conf
     container_name: c-php
-  # mysql:
-  #   build:
-  #     context: "./mysql"
-  #   ports:
-  #     - "3231:3306"
-  #   volumes:
-  #     - ./mysql/my.cnf:/etc/my.cnf
-  #     - ./mysql/config:/etc/mysql/conf.d
-  #     - ./persistent-mysql:/var/lib/mysql
-  #   container_name: c-mysql
+  mysql:
+    build:
+      context: "./mysql"
+    ports:
+      - "3231:3306"
+    volumes:
+      - ./mysql/my.cnf:/etc/my.cnf
+      - ./mysql/config:/etc/mysql/conf.d
+      - ./persistent-mysql:/var/lib/mysql
+    container_name: c-mysql
   # mssql:
   #   build:
   #     context: "./mssql"
