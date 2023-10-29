@@ -1,5 +1,5 @@
 <?php
-$host = 'localhost';
+$host = 'postgres';
 $port = 5432;
 $db = 'loja';
 $user = 'postgres';
