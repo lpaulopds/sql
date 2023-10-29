@@ -81,7 +81,7 @@ sudo docker container exec -it c-postgres bash
   
 3. Dentro do container, conecte no banco  
 ```bash
-psql -h localhost -U postgres
+psql -h postgres -U postgres
 ```  
     
   
