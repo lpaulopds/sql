@@ -38,7 +38,7 @@ RUN a2enmod rewrite && \
 RUN service apache2 restart
 
 ##  ------------------------------------
-### Códigos para reutilização e exclusão
+### Códigos para reutilização e excluir
 ##  ------------------------------------
 
 # RUN rm -f /etc/apt/preferences.d/no-debian-php
