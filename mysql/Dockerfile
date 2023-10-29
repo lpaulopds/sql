@@ -18,7 +18,7 @@ ENV MYSQL_ROOT_PASSWORD 12345678
 ##
 ### Atualiza sistema e instala programas
 ##
-# RUN apt-get update && \
+RUN apt-get update
 #         apt-get upgrade -y && \
 #         apt-get install -y git && \
 #         apt-get install -y nano && \
