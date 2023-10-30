@@ -34,20 +34,45 @@
 // phpinfo();
 // die;
 
-require 'postgres/config.php';
-try
+// require 'postgres/config.php';
+// try
+// {
+//     $dsn = "pgsql:host=$host;port=$port;";
+//     $pdo = new PDO($dsn,$user,$password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+//     if ($pdo) {
+//         echo "Connected with database.";
+//     }
+// }
+// catch(PDOException $e) {
+//     die($e->getMessage());
+// }
+// // finally {
+// //     if ($pdo) {
+// //         $pdo = null;
+// //     }
+// // }
+
+// $sql =<<<EOF
+//     CREATE DATABASE LOJA;
+// EOF;
+
+// $ret = pg_connect($pdo, $sql);
+// if(!$ret) {
+//     echo pg_last_error($pdo);
+// } else {
+//     echo "Table created successfully\n";
+// }
+// pg_close($pdo);
+
+require __DIR__ . '/vendor/autoload.php';
+
+use \App\Connect\Connection as Connection;
+
+try 
 {
-    $dsn = "pgsql:host=$host;port=$port;";
-    $pdo = new PDO($dsn,$user,$password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
-    if ($pdo) {
-        echo "Connected with database.";
-    }
+    Connection::get()->connect();
+    print "Connected";
 }
-catch(PDOException $e) {
-    die($e->getMessage());
-}
-finally {
-    if ($pdo) {
-        $pdo = null;
-    }
+catch (\PDOException $e) {
+    print $e->getMessage();
 }
