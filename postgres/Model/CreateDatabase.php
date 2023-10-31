@@ -34,7 +34,6 @@ class CreateDatabase
         $sqlQuery = [
             // 'DROP DATABASE loja;',
             'CREATE DATABASE loja;'
-            // '\l'
         ];
 
         // execute each sql statement to create new database
