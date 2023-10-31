@@ -121,3 +121,6 @@ Modelagem Formas Normais
   
 ![Modelagem Formas Normais](/images/fns.png "Modelagem Formas Normais")  
   
+### **Referências**  
+  
+[PostgreSQL](https://www.postgresqltutorial.com/postgresql-php/)
