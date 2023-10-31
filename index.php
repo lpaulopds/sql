@@ -67,11 +67,26 @@
 require __DIR__ . '/vendor/autoload.php';
 
 use \App\Connect\Connection as Connection;
+use \App\Model\CreateDatabase as CreateDatabase;
 
 try 
 {
-    Connection::get()->connect();
+    $pdo = Connection::get()->connect();
     print "Connected";
+}
+catch (\PDOException $e) {
+    print $e->getMessage();
+}
+
+try
+{
+    $databaseCreator = new CreateDatabase($pdo);
+
+    $database = $databaseCreator->createDB();
+
+    foreach ($database as $db) {
+        print $db . '<br>';
+    }
 }
 catch (\PDOException $e) {
     print $e->getMessage();
