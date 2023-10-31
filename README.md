@@ -123,4 +123,4 @@ Modelagem Formas Normais
   
 ### **Referências**  
   
-[PostgreSQL](https://www.postgresqltutorial.com/postgresql-php/)
+[postgresqltutorial.com/postgresql-php](https://www.postgresqltutorial.com/postgresql-php/)
