@@ -14,9 +14,3 @@ COPY . /home/lpaulopds/sql
 ### Define variáveis de ambiente
 ##
 ENV MYSQL_ROOT_PASSWORD 12345678
-
-##
-### Atualiza sistema e instala programas
-##
-# RUN apt-get update && \
-#     apt-get upgrade -y
