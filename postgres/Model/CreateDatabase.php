@@ -32,7 +32,7 @@ class CreateDatabase
          *      $ CREATE DATABASE loja;
          */
         $sqlQuery = [
-            'DROP DATABASE loja;',
+            // 'DROP DATABASE loja;',
             'CREATE DATABASE loja;'
         ];
 
