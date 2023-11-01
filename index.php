@@ -48,6 +48,13 @@ try
     print '<pre>';
     print_r($descTables);
     print '</pre>';
+
+    // sleep(3);
+    $tempo = time() - $_SERVER["REQUEST_TIME_FLOAT"];
+    printf("%0.16f segs", $tempo/1000000);
+
+    print "<br>";
+    print time() - $_SERVER["REQUEST_TIME_FLOAT"] / 1000000;
 }
 catch (\PDOException $e) {
     print $e->getMessage();
