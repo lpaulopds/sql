@@ -59,3 +59,8 @@ try
 catch (\PDOException $e) {
     print $e->getMessage();
 }
+
+print "<br><br>";
+foreach (file('queries-postgres/00-criacao-da-database.sql') as $ln) {
+    print $ln . "<br>";
+}
