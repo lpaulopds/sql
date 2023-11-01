@@ -3,7 +3,3 @@
 vendor/
 persistent-postgres/data/base/5/pg_internal.init
 persistent-postgres/data/global/pg_internal.init
-persistent-postgres/data/base/16405/
-persistent-postgres/data/base/16405/*
-persistent-postgres/data/base/16405/PG_VERSION
-persistent-postgres/data/base/16405/pg_filenode.map
