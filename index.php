@@ -48,19 +48,42 @@ try
     print '<pre>';
     print_r($descTables);
     print '</pre>';
-
-    // sleep(3);
-    $tempo = time() - $_SERVER["REQUEST_TIME_FLOAT"];
-    printf("%0.16f segs", $tempo/1000000);
-
-    print "<br>";
-    print time() - $_SERVER["REQUEST_TIME_FLOAT"] / 1000000;
 }
 catch (\PDOException $e) {
     print $e->getMessage();
 }
 
-print "<br><br>";
-foreach (file('queries-postgres/00-criacao-da-database.sql') as $ln) {
-    print $ln . "<br>";
+use \App\Model\InsertionsIntoTables as InsertionsIntoTables;
+
+
+$file = fopen('postgres/deps.txt', 'r');
+
+while (!feof($file)) {
+    $result[] = explode(",", fgets($file));
 }
+
+fclose($file);
+
+
+foreach ($result as $ln)
+{
+    print '<pre>';
+    print_r($ln);
+    print '</pre>';    
+}
+
+
+try
+{
+    $insertDemo = new InsertionsIntoTables($pdo);
+    $list = $insertDemo->InsertIntoTable([
+            ['departamento' => 'MSFT', 'divisao' => 'Microsoft Corporation']
+    ]);
+}
+catch (\PDOException $e) {
+    echo $e->getMessage();
+} 
+
+// sleep(3);
+$tempo = time() - $_SERVER["REQUEST_TIME_FLOAT"];
+printf("%0.16f segs", $tempo/1000000);
