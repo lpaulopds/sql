@@ -37,52 +37,45 @@ catch (\PDOException $e) {
 
 
 use \App\Model\CreateTables as CreateTables;
-
 try
 {
     $tablesCreator = new CreateTables($pdo);
     $tables = $tablesCreator->createTables();
-    $tables ? print 'Created Tables' : print 'Error in query create table';
+    $tables ? print 'Created Tables<br>' : print 'Error in query create table';
 
     $descTables = $tablesCreator->getTables();
-    print '<pre>';
+    // print '<pre>';
     print_r($descTables);
-    print '</pre>';
+    print '<br>';
 }
 catch (\PDOException $e) {
     print $e->getMessage();
 }
 
+
 use \App\Model\InsertionsIntoTables as InsertionsIntoTables;
-
-
-$file = fopen('postgres/deps.txt', 'r');
-
-while (!feof($file)) {
-    $result[] = explode(",", fgets($file));
-}
-
-fclose($file);
-
-
-foreach ($result as $ln)
-{
-    print '<pre>';
-    print_r($ln);
-    print '</pre>';    
-}
-
-
 try
 {
+    $file = fopen('postgres/deps.txt', 'r');
+    while (!feof($file)) {
+        $results[] = explode(",", fgets($file));
+    }    
+    fclose($file);
+
     $insertDemo = new InsertionsIntoTables($pdo);
-    $list = $insertDemo->InsertIntoTable([
-            ['departamento' => 'MSFT', 'divisao' => 'Microsoft Corporation']
-    ]);
+    foreach ($results as $result)
+    {
+        $list = $insertDemo->InsertIntoTable([
+            ['departamento' => $result[0], 'divisao' => $result[1]]
+        ]);
+        print_r($result);
+        print "<br>";
+    }
 }
 catch (\PDOException $e) {
     echo $e->getMessage();
 } 
+
 
 // sleep(3);
 $tempo = time() - $_SERVER["REQUEST_TIME_FLOAT"];
