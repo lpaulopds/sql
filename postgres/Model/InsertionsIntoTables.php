@@ -20,7 +20,6 @@ class InsertionsIntoTables
         {
             $stmt->bindValue(':departamento', $list['departamento']);
             $stmt->bindValue(':divisao', $list['divisao']);
-
             $stmt->execute();
         }
 
