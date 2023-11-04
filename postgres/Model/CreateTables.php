@@ -20,9 +20,11 @@ class CreateTables
 
     /**
      * create tables
+     * @return $this
      */
     public function createTables()
     {
+        // array with queries
         $sqlList = [
             'DROP TABLE departamentos;',
                 'CREATE TABLE departamentos
@@ -65,9 +67,11 @@ class CreateTables
 
     /**
      * return tables in database
+     * @return array
      */
     public function getTables()
     {
+        // prepare statement
         $stmt = $this->pdo->query("SELECT table_name
                                         FROM information_schema.tables
                                         WHERE table_schema= 'public'
@@ -75,11 +79,15 @@ class CreateTables
                                         ORDER BY table_name
         ");
 
+        // array type variable
         $tableList = [];
+
+        // while in tables names
         while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
             $tableList[] = $row['table_name'];            
         }
 
+        // return array
         return $tableList;
     }
 }

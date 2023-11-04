@@ -2,21 +2,41 @@
 
 namespace App\Model;
 
+/**
+ * Insert data in PostgreSQL tables.
+ */
 class InsertionsIntoTables
 {
+    /**
+     * PDO object
+     * @var \PDO
+     */
     private $pdo;
 
+    /**
+     * init the object with a \PDO object
+     * @param type $pdo
+     */
     public function __construct($pdo) {
         $this->pdo = $pdo;
     }
 
+    /**
+     * Insert multiples Deps into table departamentos
+     * @param $data array
+     * @return array
+     */
     public function InsertIntoTableDeps($data)
     {
+        // prepare statement for insert
         $sql = 'INSERT INTO departamentos(departamento, divisao)
                     VALUES (:departamento, :divisao)';
         $stmt = $this->pdo->prepare($sql);
 
+        // array type variable
         $dtList = [];
+
+        // binds values
         foreach ($data as $list)
         {
             $stmt->bindValue(':departamento', $list['departamento']);
@@ -24,16 +44,26 @@ class InsertionsIntoTables
             $stmt->execute();
         }
 
+        // return array
         return $dtList;
     }
 
+    /**
+     * Insert multiples Locations into table localização
+     * @param $data array
+     * @return array
+     */
     public function InsertIntoTableLoca($data)
     {
+        // prepare statement for insert
         $sql = 'INSERT INTO localizacao(idRegiao, localizacao, pais)
                     VALUES (:idRegiao, :localizacao, :pais)';
         $stmt = $this->pdo->prepare($sql);
 
+        // array type variable
         $dtList = [];
+    
+        // binds values
         foreach ($data as $list)
         {
             $stmt->bindValue(':idRegiao', $list['idRegiao']);
@@ -42,16 +72,26 @@ class InsertionsIntoTables
             $stmt->execute();
         }
 
+        // return array
         return $dtList;
     }
 
+    /**
+     * Insert multiples funcionários into table funcionarios
+     * @param $data array
+     * @return array
+     */
     public function InsertIntoTablesFunc($data)
     {
+        // prepare statement for insert
         $sql = 'INSERT INTO funcionarios(idFuncionario, nome, email, sexo, departamento, admissao, salario, cargo, idRegiao)
                     VALUES (:idFuncionario, :nome, :email, :sexo, :departamento, :admissao, :salario, :cargo, :idRegiao)';
         $stmt = $this->pdo->prepare($sql);
 
+        // array type variable
         $dtList = [];
+    
+        // binds values
         foreach ($data as $list)
         {
             $stmt->bindValue(':idFuncionario', $list['idFuncionario']);
@@ -66,6 +106,7 @@ class InsertionsIntoTables
             $stmt->execute();
         }
 
+        // return array
         return $dtList;
     }
 }

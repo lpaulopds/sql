@@ -3,7 +3,7 @@
 namespace App\Model;
 
 /**
- * Create table in PostgreSQL from PHP demo
+ * Create database in PostgreSQL from PHP demo
  */
 class CreateDatabase
 {
@@ -14,7 +14,7 @@ class CreateDatabase
     private $pdo;
 
     /**
-     * init the object with a \PDO object
+     * Init the object with a \PDO object
      * @param type $pdo
      */
     public function __construct($pdo) {
@@ -22,14 +22,13 @@ class CreateDatabase
     }
 
     /**
-     * create database 
+     * Create database 
+     * @return $this
      */
     public function createDB()
     {
         /**
-         * queries PostgreSQL
-         *      $ DROP DATABASE loja;
-         *      $ CREATE DATABASE loja;
+         * prepare query
          */
         $sqlQuery = [
             // 'DROP DATABASE loja;',
