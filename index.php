@@ -19,7 +19,6 @@ catch (\PDOException $e) {
 
 
 // use \App\Model\CreateDatabase as CreateDatabase;
-
 // try
 // {
 //     $databaseCreator = new CreateDatabase($pdo);
@@ -44,7 +43,6 @@ try
     $tables ? print 'Created Tables<br>' : print 'Error in query create table';
 
     $descTables = $tablesCreator->getTables();
-    // print '<pre>';
     print_r($descTables);
     print '<br>';
 }
@@ -54,28 +52,87 @@ catch (\PDOException $e) {
 
 
 use \App\Model\InsertionsIntoTables as InsertionsIntoTables;
+$insertDemo = new InsertionsIntoTables($pdo);
+
 try
 {
-    $file = fopen('postgres/deps.txt', 'r');
-    while (!feof($file)) {
-        $results[] = explode(",", fgets($file));
+    $fileDeps = fopen('postgres/deps.txt', 'r');
+    while (!feof($fileDeps)) {
+        $resultsDeps[] = explode(",", fgets($fileDeps));
     }    
-    fclose($file);
+    fclose($fileDeps);
 
-    $insertDemo = new InsertionsIntoTables($pdo);
-    foreach ($results as $result)
+    foreach ($resultsDeps as $dataDeps)
     {
-        $list = $insertDemo->InsertIntoTable([
-            ['departamento' => $result[0], 'divisao' => $result[1]]
+        $listDeps = $insertDemo->InsertIntoTableDeps([
+            [
+                'departamento' => $dataDeps[0],
+                'divisao' => $dataDeps[1]
+            ]
         ]);
-        print_r($result);
+        print_r($dataDeps);
+        print "<br>";
+    }
+}
+catch (\PDOException $e) {
+    print $e->getMessage();
+}
+
+try
+{
+    $fileLoca = fopen('postgres/loca.txt', 'r');
+    while (!feof($fileLoca)) {
+        $resultsLoca[] = explode(",", fgets($fileLoca));
+    }
+    fclose($fileLoca);
+
+    foreach ($resultsLoca as $dataLoca)
+    {
+        $listLoca = $insertDemo->InsertIntoTableLoca([
+            [
+                'idRegiao' => $dataLoca[0],
+                'localizacao' => $dataLoca[1],
+                'pais' => $dataLoca[2]
+            ]
+        ]);
+        print_r($dataLoca);
         print "<br>";
     }
 }
 catch (\PDOException $e) {
     echo $e->getMessage();
-} 
+}
 
+try
+{
+    $fileFunc = fopen('postgres/func.txt', 'r');
+    while (!feof($fileFunc)) {
+        $resultsFunc[] = explode(",", fgets($fileFunc));
+    }
+    fclose($fileFunc);
+
+    foreach ($resultsFunc as $dataFunc)
+    {
+        $listFunc = $insertDemo->InsertIntoTablesFunc([
+            [
+                'idFuncionario' => $dataFunc[0],
+                'nome' => $dataFunc[1],
+                'email' => $dataFunc[2],
+                'sexo' => $dataFunc[3],
+                'departamento' => $dataFunc[4],
+                'admissao' => $dataFunc[5],
+                'salario' => $dataFunc[6],
+                'cargo' => $dataFunc[7],
+                'idRegiao' => $dataFunc[8]
+            ]
+        ]);
+        print_r($dataFunc);
+        print "<br>";
+    }
+}
+catch (\PDOException $e) {
+    print $e->getMessage();
+}
 
 // sleep(3);
 $tempo = time() - $_SERVER["REQUEST_TIME_FLOAT"];
