@@ -24,7 +24,8 @@ catch (\PDOException $e) {
 //     $databaseCreator = new CreateDatabase($pdo);
 //     $database = $databaseCreator->createDB();
 
-//     $database ? print 'Created Database' : print 'Error in query create database';
+//     $database ? print 'Created Database' :
+//          print 'Error in query create database';
 
 //     foreach ($database as $db) {
 //         print $db . '<br>';
@@ -40,7 +41,8 @@ try
 {
     $tablesCreator = new CreateTables($pdo);
     $tables = $tablesCreator->createTables();
-    $tables ? print 'Created Tables<br>' : print 'Error in query create table';
+    $tables ? print 'Created Tables<br>' :
+        print 'Error in query create table';
 
     $descTables = $tablesCreator->getTables();
     print_r($descTables);
@@ -113,7 +115,7 @@ try
 
     foreach ($resultsFunc as $dataFunc)
     {
-        $listFunc = $insertDemo->InsertIntoTablesFunc([
+        $listFunc = $insertDemo->InsertIntoTableFunc([
             [
                 'idFuncionario' => $dataFunc[0],
                 'nome' => $dataFunc[1],
@@ -127,6 +129,31 @@ try
             ]
         ]);
         print_r($dataFunc);
+        print "<br>";
+    }
+}
+catch (\PDOException $e) {
+    print $e->getMessage();
+}
+
+try
+{
+    $fileMach = fopen('postgres/mach.txt', 'r');
+    while (!feof($fileMach)) {
+        $resultsMach[] = explode(",", fgets($fileMach));
+    }
+    fclose($fileMach);
+
+    foreach ($resultsMach as $dataMach)
+    {
+        $listFunc = $insertDemo->InsertIntoTableMaqs([
+            [
+                'maquina' => $dataMach[0],
+                'dia' => $dataMach[1],
+                'qtd' => $dataMach[2]
+            ]
+        ]);
+        print_r($dataMach);
         print "<br>";
     }
 }
