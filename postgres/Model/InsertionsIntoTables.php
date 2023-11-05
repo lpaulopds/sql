@@ -81,11 +81,13 @@ class InsertionsIntoTables
      * @param $data array
      * @return array
      */
-    public function InsertIntoTablesFunc($data)
+    public function InsertIntoTableFunc($data)
     {
         // prepare statement for insert
-        $sql = 'INSERT INTO funcionarios(idFuncionario, nome, email, sexo, departamento, admissao, salario, cargo, idRegiao)
-                    VALUES (:idFuncionario, :nome, :email, :sexo, :departamento, :admissao, :salario, :cargo, :idRegiao)';
+        $sql = 'INSERT INTO funcionarios(idFuncionario, nome, email, sexo,
+                    departamento, admissao, salario, cargo, idRegiao)
+                    VALUES (:idFuncionario, :nome, :email, :sexo,
+                    :departamento, :admissao, :salario, :cargo, :idRegiao)';
         $stmt = $this->pdo->prepare($sql);
 
         // array type variable
@@ -103,6 +105,34 @@ class InsertionsIntoTables
             $stmt->bindValue(':salario', $list['salario']);
             $stmt->bindValue(':cargo', $list['cargo']);
             $stmt->bindValue(':idRegiao', $list['idRegiao']);
+            $stmt->execute();
+        }
+
+        // return array
+        return $dtList;
+    }
+
+    /**
+     * Insert multiples logs into table funcionarios
+     * @param $data array
+     * @return array
+     */
+    public function InsertIntoTableMaqs($data)
+    {
+        // prepare statement for insert
+        $sql = 'INSERT INTO maquinas(maquina, dia, qtd)
+                    VALUES (:maquina,:dia,:qtd)';
+        $stmt = $this->pdo->prepare($sql);
+
+        // array type variable
+        $dtList = [];
+
+        // bind values
+        foreach ($data as $list)
+        {
+            $stmt->bindValue(':maquina', $list['maquina']);
+            $stmt->bindValue(':dia', $list['dia']);
+            $stmt->bindValue(':qtd', $list['qtd']);
             $stmt->execute();
         }
 
