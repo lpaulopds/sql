@@ -33,6 +33,8 @@ sudo docker container exec -it c-mysql bash
 mysql -u root -p
 ```  
   
+----------------------  
+  
 #### **Para entrar no container MSSQL e executar as queries**  
 1. Veja os ids ou nomes dos containers   
 ```bash
@@ -48,6 +50,8 @@ sudo docker container exec -it c-mssql bash
 ```bash
 /opt/mssql-tools/bin/sqlcmd -S localhost -U SA
 ```  
+  
+----------------------  
   
 >[!Warning]
 >É preciso ter um usuário MSSQL no host do container  
@@ -83,12 +87,12 @@ sudo docker container exec -it c-postgres bash
 ```bash
 psql -h postgres -U postgres
 ```  
-    
+  
+----------------------  
   
 >[!NOTE]
->Senha do usuário root do MySQL no arquivo: 'mysql/Dockerfile'  
->Senha do usuário SA do MSSQL no arquivo: 'mssql/Dockerfile'  
->Senha do usuário postgres do Postgres no arquivo: 'postgres/Dockerfile'  
+>Os usuários e senhas de conexão com banco de dados  
+>estão nos arquivos Dockerfile de cada container.  
   
 ### **Mais informações**
 #### **Docker**
@@ -99,12 +103,10 @@ psql -h postgres -U postgres
 * Arquivos de configurações do apache nos diretórios: 'apache/etc' e 'apache/vhost'
 #### **MySQL**
 * Arquivo de configuração do MySQL: 'mysql/my.cnf'  
-#### **MSSQL**
-* Iniciando com containers SQL Server  
-* O download do SQL Server pode demorar  
 #### **Postgres**
-* Iniciando com containers Postgres  
+* Arquivo de configuração do PostgreSQL: 'postgres/postgres.conf'  
   
+----------------------  
   
 ### **Diagramas Modelagem de Dados**  
 >Software: StarUML  
