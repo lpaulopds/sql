@@ -54,6 +54,13 @@ class CreateTables
                     cargo varchar(100),
                     idRegiao int,
                     primary key (idFuncionario)
+                );',
+            'DROP TABLE maquinas;',
+                'CREATE TABLE maquinas
+                (
+                    maquina VARCHAR(10),
+                    dia INT,
+                    qtd NUMERIC(10,2)
                 );'
         ];
 
