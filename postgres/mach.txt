@@ -28,3 +28,9 @@ Maquina 03,7,10.00
 Maquina 03,8,15.00
 Maquina 03,9,15.00
 Maquina 03,10,15.00
+Maquina 01,11,15.9
+Maquina 02,11,15.4
+Maquina 03,11,15.7
+Maquina 01,12,15
+Maquina 02,12,15
+Maquina 03,12,15
