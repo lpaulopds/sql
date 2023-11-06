@@ -72,6 +72,45 @@ class CreateTables
         return $this;
     }
 
+    public function createTablesLocadora()
+    {
+        // array with queries
+        $sqlList = [
+            'CREATE TABLE GENERO
+            (
+                IDGENERO INT PRIMARY KEY,
+                NOME VARCHAR(30)
+            );',
+            'CREATE TABLE FILME
+            (
+                IDFILME INT PRIMARY KEY,
+                NOME VARCHAR(50),
+                ANO INT,
+                ID_GENERO INT,
+                FOREIGN KEY(ID_GENERO)
+                REFERENCES GENERO(IDGENERO)
+            );',
+            'CREATE TABLE LOCACAO
+            (
+                IDLOCACAO INT PRIMARY KEY,
+                DATA DATE,
+                MIDIA INT,
+                DIAS INT,
+                ID_FILME INT,
+                FOREIGN KEY(ID_FILME)
+                REFERENCES FILME(IDFILME)
+            
+            );'
+        ];
+
+        // execute each sql statement to create new tables
+        foreach ($sqlList as $sql) {
+            $this->pdo->exec($sql);
+        }
+
+        return $this;
+    }
+
     /**
      * return tables in database
      * @return array
