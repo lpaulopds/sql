@@ -7,6 +7,7 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
+// // CONEXÃO COM BANCO DE DADOS
 use \App\Connect\Connection as Connection;
 try
 {
@@ -17,8 +18,9 @@ catch (\PDOException $e) {
     print $e->getMessage();
 }
 
-
+// // CLASSE DE CRIAÇÃO DO BANCO DE DADOS
 // use \App\Model\CreateDatabase as CreateDatabase;
+// // CRIA BANCO DE DADOS loja
 // try
 // {
 //     $databaseCreator = new CreateDatabase($pdo);
@@ -35,27 +37,43 @@ catch (\PDOException $e) {
 //     print $e->getMessage();
 // }
 
-
+// // CLASSE DE CRIAÇÃO
 use \App\Model\CreateTables as CreateTables;
+$tablesCreator = new CreateTables($pdo);
+
+// // CRIA TABELAS DEPARTAMENTO
 try
 {
-    $tablesCreator = new CreateTables($pdo);
     $tables = $tablesCreator->createTables();
-    $tables ? print 'Created Tables<br>' :
+    $tables ? print 'Created Tables departamento <br>' :
         print 'Error in query create table';
-
-    $descTables = $tablesCreator->getTables();
-    print_r($descTables);
-    print '<br>';
 }
 catch (\PDOException $e) {
     print $e->getMessage();
 }
 
+// // CRIA TABELAS LOCADORA
+try
+{
+    $tablesLocadora = $tablesCreator->createTablesLocadora();
+    $tablesLocadora ? print 'Created Tables Locadora.<br>' :
+        print 'Error in query create table';
+}
+catch (\PDOException $e) {
+    print $e->getMessage();
+}
 
+// // MOSTRA NOME DAS TABELAS DO BANCO DE DADOS
+$descTables = $tablesCreator->getTables();
+print_r($descTables);
+print '<br>';
+
+
+// // CLASSE DE INSERÇÃO
 use \App\Model\InsertionsIntoTables as InsertionsIntoTables;
 $insertDemo = new InsertionsIntoTables($pdo);
 
+// // INSERE DADOS NA TABELA departamentos
 try
 {
     $fileDeps = fopen('postgres/deps.txt', 'r');
@@ -80,6 +98,7 @@ catch (\PDOException $e) {
     print $e->getMessage();
 }
 
+// // INSERE DADOS NA TABELA localizacao
 try
 {
     $fileLoca = fopen('postgres/loca.txt', 'r');
@@ -105,6 +124,7 @@ catch (\PDOException $e) {
     echo $e->getMessage();
 }
 
+// // INSERE DADOS NA TABELA FUNCIONÁRIOS
 try
 {
     $fileFunc = fopen('postgres/func.txt', 'r');
@@ -136,6 +156,7 @@ catch (\PDOException $e) {
     print $e->getMessage();
 }
 
+// // INSERE DADOS NA TABELA maquinas
 try
 {
     $fileMach = fopen('postgres/mach.txt', 'r');
@@ -146,7 +167,7 @@ try
 
     foreach ($resultsMach as $dataMach)
     {
-        $listFunc = $insertDemo->InsertIntoTableMaqs([
+        $listMach = $insertDemo->InsertIntoTableMaqs([
             [
                 'maquina' => $dataMach[0],
                 'dia' => $dataMach[1],
@@ -161,6 +182,59 @@ catch (\PDOException $e) {
     print $e->getMessage();
 }
 
+// // INSERE DADOS NA TABELA GENERO
+try
+{
+    $fileGene = fopen('postgres/gene.txt', 'r');
+    while (!feof($fileGene)) {
+        $resultsGene[] = explode(",", fgets($fileGene));
+    }
+    fclose($fileGene);
+
+    foreach ($resultsGene as $dataGene)
+    {
+        $listGene = $insertDemo->InsertIntoTableGene([
+            [
+                'IDGENERO' => $dataGene[0],
+                'NOME' => $dataGene[1]
+            ]
+        ]);
+        print_r($dataGene);
+        print "<br>";
+    }
+}
+catch (\PDOException $e) {
+    print $e->getMessage();
+}
+
+// // INSERE DADOS NA TABELA FILME
+try
+{
+    $fileFilm = fopen('postgres/film.txt', 'r');
+    while (!feof($fileFilm)) {
+        $resultsFilm[] = explode(",", fgets($fileFilm));
+    }
+    fclose($fileFilm);
+
+    foreach ($resultsFilm as $dataFilm)
+    {
+        $listFilm = $insertDemo->InsertIntoTableFilm([
+            [
+                'IDFILME' => $dataFilm[0],
+                'NOME' => $dataFilm[1],
+                'ANO' => $dataFilm[2],
+                'ID_GENERO' => $dataFilm[3]
+            ]
+        ]);
+        print_r($dataFilm);
+        print "<br>";
+    }
+}
+catch (\PDOException $e) {
+    print $e->getMessage();
+}
+
+// // TEMPO DE EXECUÇÃO
 // sleep(3);
 $tempo = time() - $_SERVER["REQUEST_TIME_FLOAT"];
 printf("%0.16f segs", $tempo/1000000);
