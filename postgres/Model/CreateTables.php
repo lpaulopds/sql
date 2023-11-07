@@ -1,7 +1,6 @@
 <?php declare(strict_types=1);
 
 namespace App\Model;
-
 class CreateTables
 {
     /**
@@ -19,7 +18,7 @@ class CreateTables
     }
 
     /**
-     * create tables
+     * create tables departamento
      * @return $this
      */
     public function createTables()
@@ -72,15 +71,21 @@ class CreateTables
         return $this;
     }
 
+    /**
+     * Create tables locadora
+     * @return $this
+     */
     public function createTablesLocadora()
     {
         // array with queries
-        $sqlList = [
+        $sqlListLocadora = [
+            'DROP TABLE GENERO CASCADE;',
             'CREATE TABLE GENERO
             (
                 IDGENERO INT PRIMARY KEY,
                 NOME VARCHAR(30)
             );',
+            'DROP TABLE FILME CASCADE;',
             'CREATE TABLE FILME
             (
                 IDFILME INT PRIMARY KEY,
@@ -90,6 +95,7 @@ class CreateTables
                 FOREIGN KEY(ID_GENERO)
                 REFERENCES GENERO(IDGENERO)
             );',
+            'DROP TABLE LOCACAO CASCADE;',
             'CREATE TABLE LOCACAO
             (
                 IDLOCACAO INT PRIMARY KEY,
@@ -99,12 +105,11 @@ class CreateTables
                 ID_FILME INT,
                 FOREIGN KEY(ID_FILME)
                 REFERENCES FILME(IDFILME)
-            
             );'
         ];
 
         // execute each sql statement to create new tables
-        foreach ($sqlList as $sql) {
+        foreach ($sqlListLocadora as $sql) {
             $this->pdo->exec($sql);
         }
 
@@ -130,7 +135,8 @@ class CreateTables
 
         // while in tables names
         while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
-            $tableList[] = $row['table_name'];            
+            $tableList[] = $row['table_name'];          
+            // $tableList[] = $row;
         }
 
         // return array
