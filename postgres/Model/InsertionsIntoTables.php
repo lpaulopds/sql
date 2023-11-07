@@ -139,4 +139,87 @@ class InsertionsIntoTables
         // return array
         return $dtList;
     }
+
+    /**
+     * Insert multiples genero into table GENERO
+     * @param $data array
+     * @return array
+     */
+    public function InsertIntoTableGene($data)
+    {
+        $sql = 'INSERT INTO GENERO(IDGENERO, NOME)
+                    VALUES (:IDGENERO, :NOME)';
+        $stmt = $this->pdo->prepare($sql);
+
+        // array type variable
+        $dtList = [];
+
+        // bind values
+        foreach ($data as $list)
+        {
+            $stmt->bindValue(':IDGENERO', $list['IDGENERO']);
+            $stmt->bindValue(':NOME', $list['NOME']);
+            $stmt->execute();
+        }
+
+        // return array
+        return $dtList;
+    }
+
+    /**
+     * Insert multiples filme into table FILME
+     * @param $data array
+     * @return array
+     */
+    public function InsertIntoTableFilm($data)
+    {
+        $sql = 'INSERT INTO FILME(IDFILME, NOME, ANO, ID_GENERO)
+                    VALUES (:IDFILME, :NOME, :ANO, :ID_GENERO)';
+        $stmt = $this->pdo->prepare($sql);
+
+        // array type variable
+        $dtList = [];
+
+        // bind values
+        foreach ($data as $list)
+        {
+            $stmt->bindValue(':IDFILME', $list['IDFILME']);
+            $stmt->bindValue(':NOME', $list['NOME']);
+            $stmt->bindValue(':ANO', $list['ANO']);
+            $stmt->bindValue(':ID_GENERO', $list['ID_GENERO']);
+            $stmt->execute();
+        }
+
+        // return array
+        return $dtList;
+    }
+
+    /**
+     * Insert multiples locacao into table LOCACAO
+     * @param $data array
+     * @return array
+     */
+    public function InsertIntoTableLocacao($data)
+    {
+        $sql = 'INSERT INTO GENERO(IDLOCACAO, DATA, MIDIA, DIAS, ID_FILME)
+                    VALUES (:IDLOCACAO, :DATA, :MIDIA, :DIAS, :ID_FILME)';
+        $stmt = $this->pdo->prepare($sql);
+
+        // array type variable
+        $dtList = [];
+
+        // bind values
+        foreach ($data as $list)
+        {
+            $stmt->bindValue(':IDLOCACAO', $list['IDLOCACAO']);
+            $stmt->bindValue(':DATA', $list['DATA']);
+            $stmt->bindValue(':MIDIA', $list['MIDIA']);
+            $stmt->bindValue(':DIAS', $list['DIAS']);
+            $stmt->bindValue(':ID_FILME', $list['ID_FILME']);
+            $stmt->execute();
+        }
+
+        // return array
+        return $dtList;
+    }
 }
