@@ -1,0 +1,7 @@
+1,Nordeste,Brasil
+2,Sudeste,Brasil
+3,Sul,Brasil
+4,Norte,Brasil
+5,BritishColumbia,Canada
+6,Quebec,Canada
+7,NovaScotia,Canada
