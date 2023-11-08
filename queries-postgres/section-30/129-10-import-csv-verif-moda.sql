@@ -13,7 +13,7 @@ CREATE TABLE MAQUINAS(
     index.php
 */
 COPY MAQUINAS
-FROM 'C:\Users\luizp\Downloads\LogMaquinas.csv'
+FROM '/tmp/LogMaquinas.csv'
 DELIMITER ','
 CSV HEADER;
 
