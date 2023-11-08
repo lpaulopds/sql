@@ -37,7 +37,7 @@ catch (\PDOException $e) {
 //     print $e->getMessage();
 // }
 
-// // CLASSE DE CRIAÇÃO
+// // CLASSE PARA CRIAÇÃO DE TABELAS
 use \App\Model\CreateTables as CreateTables;
 $tablesCreator = new CreateTables($pdo);
 
@@ -76,7 +76,7 @@ $insertDemo = new InsertionsIntoTables($pdo);
 // // INSERE DADOS NA TABELA departamentos
 try
 {
-    $fileDeps = fopen('postgres/deps.txt', 'r');
+    $fileDeps = fopen('postgres/departamentos.txt', 'r');
     while (!feof($fileDeps)) {
         $resultsDeps[] = explode(",", fgets($fileDeps));
     }    
@@ -101,7 +101,7 @@ catch (\PDOException $e) {
 // // INSERE DADOS NA TABELA localizacao
 try
 {
-    $fileLoca = fopen('postgres/loca.txt', 'r');
+    $fileLoca = fopen('postgres/localizacao.txt', 'r');
     while (!feof($fileLoca)) {
         $resultsLoca[] = explode(",", fgets($fileLoca));
     }
@@ -124,10 +124,10 @@ catch (\PDOException $e) {
     echo $e->getMessage();
 }
 
-// // INSERE DADOS NA TABELA FUNCIONÁRIOS
+// // INSERE DADOS NA TABELA funcionarios
 try
 {
-    $fileFunc = fopen('postgres/func.txt', 'r');
+    $fileFunc = fopen('postgres/funcionarios.txt', 'r');
     while (!feof($fileFunc)) {
         $resultsFunc[] = explode(",", fgets($fileFunc));
     }
@@ -159,7 +159,7 @@ catch (\PDOException $e) {
 // // INSERE DADOS NA TABELA maquinas
 try
 {
-    $fileMach = fopen('postgres/mach.txt', 'r');
+    $fileMach = fopen('postgres/maquinas.txt', 'r');
     while (!feof($fileMach)) {
         $resultsMach[] = explode(",", fgets($fileMach));
     }
@@ -185,7 +185,7 @@ catch (\PDOException $e) {
 // // INSERE DADOS NA TABELA GENERO
 try
 {
-    $fileGene = fopen('postgres/gene.txt', 'r');
+    $fileGene = fopen('postgres/genero.txt', 'r');
     while (!feof($fileGene)) {
         $resultsGene[] = explode(",", fgets($fileGene));
     }
@@ -210,7 +210,7 @@ catch (\PDOException $e) {
 // // INSERE DADOS NA TABELA FILME
 try
 {
-    $fileFilm = fopen('postgres/film.txt', 'r');
+    $fileFilm = fopen('postgres/filme.txt', 'r');
     while (!feof($fileFilm)) {
         $resultsFilm[] = explode(",", fgets($fileFilm));
     }
@@ -234,7 +234,36 @@ catch (\PDOException $e) {
     print $e->getMessage();
 }
 
+// // INSERE DADOS NA TABELA locacao
+try
+{
+    $fileLocacao = fopen('postgres/locacao.txt', 'r');
+    while (!feof($fileLocacao)) {
+        $resultsLocacao[] = explode(",", fgets($fileLocacao));
+    }
+    fclose($fileLocacao);
+
+    foreach ($resultsLocacao as $dataLocacao)
+    {
+        $listLocacao = $insertDemo->InsertIntoTableLocacao([
+            [
+                'IDLOCACAO' => $dataLocacao[0],
+                'DATA' => $dataLocacao[1],
+                'MIDIA' => $dataLocacao[2],
+                'DIAS' => $dataLocacao[3],
+                'ID_FILME' => $dataLocacao[4]
+            ]
+        ]);
+        print_r($dataLocacao);
+        print "<br>";
+    }
+}
+catch (\PDOException $e) {
+    print $e->getMessage();
+}
+
 // // TEMPO DE EXECUÇÃO
 // sleep(3);
 $tempo = time() - $_SERVER["REQUEST_TIME_FLOAT"];
 printf("%0.16f segs", $tempo/1000000);
+print "<br><br><br>";
