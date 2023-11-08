@@ -34,7 +34,7 @@ class InsertionsIntoTables
         $stmt = $this->pdo->prepare($sql);
 
         // array type variable
-        $dtList = [];
+        $dtListDeps = [];
 
         // binds values
         foreach ($data as $list)
@@ -45,7 +45,7 @@ class InsertionsIntoTables
         }
 
         // return array
-        return $dtList;
+        return $dtListDeps;
     }
 
     /**
@@ -61,7 +61,7 @@ class InsertionsIntoTables
         $stmt = $this->pdo->prepare($sql);
 
         // array type variable
-        $dtList = [];
+        $dtListLoca = [];
     
         // binds values
         foreach ($data as $list)
@@ -73,7 +73,7 @@ class InsertionsIntoTables
         }
 
         // return array
-        return $dtList;
+        return $dtListLoca;
     }
 
     /**
@@ -91,7 +91,7 @@ class InsertionsIntoTables
         $stmt = $this->pdo->prepare($sql);
 
         // array type variable
-        $dtList = [];
+        $dtListFunc = [];
     
         // binds values
         foreach ($data as $list)
@@ -109,7 +109,7 @@ class InsertionsIntoTables
         }
 
         // return array
-        return $dtList;
+        return $dtListFunc;
     }
 
     /**
@@ -125,7 +125,7 @@ class InsertionsIntoTables
         $stmt = $this->pdo->prepare($sql);
 
         // array type variable
-        $dtList = [];
+        $dtListMaqs = [];
 
         // bind values
         foreach ($data as $list)
@@ -137,7 +137,7 @@ class InsertionsIntoTables
         }
 
         // return array
-        return $dtList;
+        return $dtListMaqs;
     }
 
     /**
@@ -152,7 +152,7 @@ class InsertionsIntoTables
         $stmt = $this->pdo->prepare($sql);
 
         // array type variable
-        $dtList = [];
+        $dtListGene = [];
 
         // bind values
         foreach ($data as $list)
@@ -163,7 +163,7 @@ class InsertionsIntoTables
         }
 
         // return array
-        return $dtList;
+        return $dtListGene;
     }
 
     /**
@@ -178,7 +178,7 @@ class InsertionsIntoTables
         $stmt = $this->pdo->prepare($sql);
 
         // array type variable
-        $dtList = [];
+        $dtListFilm = [];
 
         // bind values
         foreach ($data as $list)
@@ -191,7 +191,7 @@ class InsertionsIntoTables
         }
 
         // return array
-        return $dtList;
+        return $dtListFilm;
     }
 
     /**
@@ -201,12 +201,12 @@ class InsertionsIntoTables
      */
     public function InsertIntoTableLocacao($data)
     {
-        $sql = 'INSERT INTO GENERO(IDLOCACAO, DATA, MIDIA, DIAS, ID_FILME)
+        $sql = 'INSERT INTO LOCACAO(IDLOCACAO, DATA, MIDIA, DIAS, ID_FILME)
                     VALUES (:IDLOCACAO, :DATA, :MIDIA, :DIAS, :ID_FILME)';
         $stmt = $this->pdo->prepare($sql);
 
         // array type variable
-        $dtList = [];
+        $dtListLocacao = [];
 
         // bind values
         foreach ($data as $list)
@@ -220,6 +220,6 @@ class InsertionsIntoTables
         }
 
         // return array
-        return $dtList;
+        return $dtListLocacao;
     }
 }
