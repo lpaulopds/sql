@@ -1,1 +1,1 @@
-/home/lpaulopds/querie-sql/run-initialization.sh & /opt/mssql/bin/sqlservr
+/home/orbi/sql/run-initialization.sh & /opt/mssql/bin/sqlservr
