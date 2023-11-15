@@ -6,8 +6,15 @@ de Banco de Dados e SQL, sem mistérios! Esse repositório irá ser
 útil para garantir o aprendizado e consultas no futuro.  
   
   
+----------------------  
+  
+  
 >[!NOTE]
 >As queries explicadas nas aulas estão nos diretórios: 'queries-*'.  
+  
+  
+----------------------  
+  
   
 ### **Comandos para acessar as bases de dados e tabelas criadas durante o curso**
 >MySQL | SQL Server | PostgresSQL  
@@ -91,6 +98,10 @@ psql -h postgres -U postgres
 >[!NOTE]
 >Os usuários e senhas de conexão com banco de dados  
 >estão nos arquivos Dockerfile de cada container.  
+  
+  
+----------------------  
+  
   
 ### **Mais informações**
 #### **Docker**
