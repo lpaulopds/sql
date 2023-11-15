@@ -19,7 +19,15 @@ RUN apt-get update && \
     apt-get install -y unzip && \
     apt-get install -y locales && \
     apt-get install -y openssl && \
-    apt-get install -y nano
+    apt-get install -y nano && \
+    ## oci
+    # apt-get install -y php-pear && \
+    apt-get install -y libaio1 && \
+    apt-get install -y libaio-dev && \
+    apt-get install -y libfreetype6-dev && \
+    apt-get install -y libjpeg62-turbo-dev && \
+    apt-get install -y libpng-dev && \
+    apt-get install -y wget
 
 ##
 ### Atualiza sistema e instala composer
