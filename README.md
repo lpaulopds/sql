@@ -29,17 +29,12 @@ sudo docker compose up -d
   
   
 #### **Para entrar no container MySQL e executar as queries**  
-1. Veja os ids ou nomes dos containers  
-```bash
-sudo docker ps
-```  
-  
-2. Entrar no container MySQL  
+1. Entrar no container MySQL  
 ```bash
 sudo docker container exec -it c-mysql bash
 ```  
   
-3. Dentro do container, conecte no banco  
+2. Dentro do container, conecte no banco  
 ```bash
 mysql -u root -p
 ```  
@@ -49,17 +44,12 @@ mysql -u root -p
   
   
 #### **Para entrar no container MSSQL e executar as queries**  
-1. Veja os ids ou nomes dos containers   
-```bash
-sudo docker ps
-```  
-  
-2. Entrar no container MSSQL  
+1. Entrar no container MSSQL  
 ```bash
 sudo docker container exec -it c-mssql bash
 ```  
   
-3. Dentro do container, conecte no banco  
+2. Dentro do container, conecte no banco  
 ```bash
 /opt/mssql-tools/bin/sqlcmd -S localhost -U SA
 ```  
@@ -79,18 +69,13 @@ sudo chown -R 10001:0 persistent-mssql
 ----------------------  
   
   
-#### **Para entrar no container PostgresSQL e executar as queries**  
-1. Veja os ids ou nomes dos containers   
-```bash
-sudo docker ps
-```  
-  
-2. Entrar no container PostgresSQL  
+#### **Para entrar no container PostgresSQL e executar as queries**   
+1. Entrar no container PostgresSQL  
 ```bash
 sudo docker container exec -it c-postgres bash
 ```  
   
-3. Dentro do container, conecte no banco  
+2. Dentro do container, conecte no banco  
 ```bash
 psql -h postgres -U postgres
 ```  
