@@ -24,6 +24,10 @@ de Banco de Dados e SQL, sem mistérios! Esse repositório irá ser
 sudo docker compose up -d
 ```  
   
+  
+----------------------  
+  
+  
 #### **Para entrar no container MySQL e executar as queries**  
 1. Veja os ids ou nomes dos containers  
 ```bash
