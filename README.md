@@ -58,22 +58,13 @@ sudo docker container exec -it c-mssql bash
   
   
 >[!Warning]
->É preciso ter um usuário MSSQL no host do container  
->para poder administrar a persistência do banco de dados.  
->Caso não tenha, execute os comandos abaixo
+>Caso você tenha problemas de permissão  
+>no build do container MSSQL, execute o comando abaixo  
 ```bash
-sudo useradd -u 1001 mssql
+sudo chown -R 10001:0 persistent-mssql
 ```  
   
-```bash
-sudo chown -R mssql:user persistent-mssql
-```  
-  
->Ps.: O container MSSQL pode não funcionar por causa  
->das permissões de usuários. Verifique o diretório  
->de persistência do MSSQL, caso precise, altere o dono
->e o grupo para 'mssql:user'
-  
+
 ----------------------  
   
   
