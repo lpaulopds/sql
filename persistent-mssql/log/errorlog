@@ -76,3 +76,5 @@
 2023-11-16 18:16:16.49 spid19s     Attribute synchronization initialized
 2023-11-16 18:16:16.49 spid19s     Attribute synchronization manager initialized
 2023-11-16 18:17:21.52 spid28s     [DevOpsSnapshotTelemetryTask] Evaluating the background task.
+2023-11-16 18:21:14.85 spid51      XE session 'telemetry_xevents' stopping.
+2023-11-16 18:21:14.88 spid51      XE session 'telemetry_xevents' started.
