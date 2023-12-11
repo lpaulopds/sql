@@ -81,3 +81,4 @@
 2023-12-11 16:39:51.77 spid53      Using 'dbghelp.dll' version '4.0.5'
 2023-12-11 16:57:51.86 spid55      XE session 'telemetry_xevents' stopping.
 2023-12-11 16:57:51.94 spid55      XE session 'telemetry_xevents' started.
+2023-12-11 17:26:18.05 spid49s     [DevOpsSnapshotTelemetryTask] Evaluating the background task.
