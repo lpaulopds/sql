@@ -1,9 +1,9 @@
 <?php 
-echo "<pre>";
-print_r($_SERVER);
-echo "</pre>";
-phpinfo();
-die;
+// echo "<pre>";
+// print_r($_SERVER);
+// echo "</pre>";
+// phpinfo();
+// die;
 
 require __DIR__ . '/vendor/autoload.php';
 
@@ -36,6 +36,7 @@ catch (\PDOException $e) {
 // catch (\PDOException $e) {
 //     print $e->getMessage();
 // }
+// die;
 
 // // CLASSE PARA CRIAÇÃO DE TABELAS
 use \App\Model\CreateTables as CreateTables;
