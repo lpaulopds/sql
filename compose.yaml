@@ -12,16 +12,16 @@ services:
       - ./apache/etc/security.conf:/etc/apache2/conf-available/security.conf
       - ./apache/vhost/000-default.conf:/etc/apache2/sites-available/000-default.conf
     container_name: c-php
-  # mysql:
-  #   build:
-  #     context: "./mysql"
-  #   ports:
-  #     - "3231:3306"
-  #   volumes:
-  #     - ./mysql/my.cnf:/etc/my.cnf
-  #     - ./mysql/config:/etc/mysql/conf.d
-  #     - ./persistent-mysql:/var/lib/mysql
-  #   container_name: c-mysql
+  mysql:
+    build:
+      context: "./mysql"
+    ports:
+      - "3231:3306"
+    volumes:
+      - ./mysql/my.cnf:/etc/my.cnf
+      - ./mysql/config:/etc/mysql/conf.d
+      - ./persistent-mysql:/var/lib/mysql
+    container_name: c-mysql
   mssql:
     build:
       context: "./mssql"
@@ -33,23 +33,23 @@ services:
       - ./persistent-mssql/secrets:/var/opt/mssql/secrets
       - ./persistent-mssql/backup:/var/opt/mssql/backup
     container_name: c-mssql
-  # postgres:
-  #   build:
-  #     context: "./postgres"
-  #   ports:
-  #     - "5432:5432"
-  #   volumes:
-  #     - ./persistent-postgres/data:/var/lib/postgresql/data
-    # - ./postgres/postgresql.conf:/var/lib/postgresql/data/postgresql.conf
-    # container_name: c-postgres
-  # oracle:
-  #   build:
-  #     context: "./oracle"
-  #   shm_size: '2GB'
-  #   ports:
-  #     - "1521:1521"
-  #     - "5500:5500" 
-  #   privileged: true
-  #   volumes:
-  #     - ./persistent-oracle:/opt/oracle/oradata
-  #   container_name: c-oracle
+  postgres:
+    build:
+      context: "./postgres"
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./persistent-postgres/data:/var/lib/postgresql/data
+      - ./postgres/postgresql.conf:/var/lib/postgresql/data/postgresql.conf
+    container_name: c-postgres
+  oracle:
+    build:
+      context: "./oracle"
+    shm_size: '2GB'
+    ports:
+      - "1521:1521"
+      - "5500:5500" 
+    privileged: true
+    volumes:
+      - ./persistent-oracle:/opt/oracle/oradata
+    container_name: c-oracle
