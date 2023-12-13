@@ -31,7 +31,7 @@ class CreateDatabase
          * prepare query
          */
         $sqlQuery = [
-            // 'DROP DATABASE loja;',
+            'DROP DATABASE loja;',
             'CREATE DATABASE loja;'
         ];
 
