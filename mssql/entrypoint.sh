@@ -1,1 +1,4 @@
-/home/orbi/sql/run-initialization.sh & /opt/mssql/bin/sqlservr
+#!/usr/bin/env bash
+set -m
+/opt/mssql/bin/sqlservr & ./run-initialization.sh
+fg
