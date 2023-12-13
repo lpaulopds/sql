@@ -1,6 +1,7 @@
 <?php declare(strict_types=1);
 
 namespace App\Connect;
+
 /**
  * Represent the Connection
  */
@@ -27,7 +28,8 @@ class Connection
         
         // connect to the postgresql database
         $conStr = sprintf("pgsql:host=%s;dbname=%s;port=%d;user=%s;password=%s",
-            $params['host'],
+        // $conStr = sprintf("pgsql:host=%s;port=%d;user=%s;password=%s",
+        $params['host'],
             $params['dbname'],
             $params['port'],
             $params['user'],
