@@ -77,3 +77,8 @@
 2023-12-13 22:00:37.91 spid20s     [DevOpsSnapshotTelemetryTask] Evaluating the background task.
 2023-12-13 22:04:32.08 spid51      XE session 'telemetry_xevents' stopping.
 2023-12-13 22:04:32.11 spid51      XE session 'telemetry_xevents' started.
+2023-12-13 22:06:34.46 spid51      Attempting to load library 'xplog70.dll' into memory. This is an informational message only. No user action is required.
+2023-12-13 22:06:34.53 spid51      Using 'xplog70.dll' version '2022.160.4095' to execute extended stored procedure 'xp_msver'. This is an informational message only; no user action is required.
+2023-12-13 22:11:15.33 spid51      Using 'dbghelp.dll' version '4.0.5'
+2023-12-13 22:21:36.83 spid66      XE session 'telemetry_xevents' stopping.
+2023-12-13 22:21:36.85 spid66      XE session 'telemetry_xevents' started.
