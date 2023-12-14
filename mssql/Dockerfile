@@ -26,14 +26,3 @@ USER root
 ### Altera ponto de entrada
 ##
 CMD /bin/bash ./entrypoint.sh
-
-##
-### Atualiza sistema e instala programas
-##
-# RUN apt-get update && \
-#         apt-get upgrade -y && \
-#         apt-get install -y git && \
-#         apt-get install -y nano && \
-#         apt-get install -y net-tools && \
-#         apt-get install -y unzip && \
-#         apt-get install -y gzip
