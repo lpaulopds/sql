@@ -7,20 +7,23 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-// // CONEXÃO COM BANCO DE DADOS
+/**
+ * CONEXÃO COM BANCO DE DADOS
+ */
 use \App\Connect\Connection as Connection;
 try
 {
     $pdo = Connection::get()->connect();
-    print "Connected" . "<br>";
+    print "Connected" . "<br> ----- <br>";
 }
 catch (\PDOException $e) {
     print $e->getMessage();
 }
-
-// // CLASSE DE CRIAÇÃO DO BANCO DE DADOS
+/**
+ * CLASSE DE CRIAÇÃO DO BANCO DE DADOS
+ * CRIA BANCO DE DADOS loja
+ */
 // use \App\Model\CreateDatabase as CreateDatabase;
-// // CRIA BANCO DE DADOS loja
 // try
 // {
 //     $databaseCreator = new CreateDatabase($pdo);
@@ -38,46 +41,57 @@ catch (\PDOException $e) {
 // }
 // die;
 
-// // CLASSE PARA CRIAÇÃO DE TABELAS
+/**
+ * CLASSE PARA CRIAÇÃO DE TABELAS
+ */
 use \App\Model\CreateTables as CreateTables;
 $tablesCreator = new CreateTables($pdo);
 
-// // CRIA TABELAS DEPARTAMENTO
+/**
+ * CRIA TABELAS DEPARTAMENTO
+ */
 try
 {
     $tables = $tablesCreator->createTables();
-    $tables ? print 'Created Tables departamento <br>' :
+    $tables ? print 'Created Tables departamento <br> ----- <br>' :
         print 'Error in query create table';
 }
 catch (\PDOException $e) {
     print $e->getMessage();
 }
 
-// // CRIA TABELAS LOCADORA
+/**
+ * CRIA TABELAS LOCADORA
+ */
 try
 {
     $tablesLocadora = $tablesCreator->createTablesLocadora();
-    $tablesLocadora ? print 'Created Tables Locadora.<br>' :
+    $tablesLocadora ? print 'Created Tables Locadora.<br><br> ----- <br>' :
         print 'Error in query create table';
 }
 catch (\PDOException $e) {
     print $e->getMessage();
 }
 
-// // MOSTRA NOME DAS TABELAS DO BANCO DE DADOS
+/**
+ * MOSTRA NOMES DAS TABELAS DO BANCO DE DADOS
+ */
 $descTables = $tablesCreator->getTables();
 print_r($descTables);
-print '<br>';
+print '<br><br> ----- <br>';
 
-
-// // CLASSE DE INSERÇÃO
+/**
+ * CLASSE DE INSERÇÃO
+ */
 use \App\Model\InsertionsIntoTables as InsertionsIntoTables;
 $insertDemo = new InsertionsIntoTables($pdo);
 
-// // INSERE DADOS NA TABELA departamentos
+/**
+ * INSERE DADOS NA TABELA departamentos
+ */
 try
 {
-    $fileDeps = fopen('postgres/departamentos.txt', 'r');
+    $fileDeps = fopen('postgres/data-db/departamentos.txt', 'r');
     while (!feof($fileDeps)) {
         $resultsDeps[] = explode(",", fgets($fileDeps));
     }    
@@ -98,11 +112,14 @@ try
 catch (\PDOException $e) {
     print $e->getMessage();
 }
+print "<br> ----- <br>";
 
-// // INSERE DADOS NA TABELA localizacao
+/**
+ * INSERE DADOS NA TABELA localizacao
+ */
 try
 {
-    $fileLoca = fopen('postgres/localizacao.txt', 'r');
+    $fileLoca = fopen('postgres/data-db/localizacao.txt', 'r');
     while (!feof($fileLoca)) {
         $resultsLoca[] = explode(",", fgets($fileLoca));
     }
@@ -124,11 +141,14 @@ try
 catch (\PDOException $e) {
     echo $e->getMessage();
 }
+print "<br> ----- <br>";
 
-// // INSERE DADOS NA TABELA funcionarios
+/**
+ * INSERE DADOS NA TABELA funcionarios
+ */
 try
 {
-    $fileFunc = fopen('postgres/funcionarios.txt', 'r');
+    $fileFunc = fopen('postgres/data-db/funcionarios.txt', 'r');
     while (!feof($fileFunc)) {
         $resultsFunc[] = explode(",", fgets($fileFunc));
     }
@@ -156,11 +176,14 @@ try
 catch (\PDOException $e) {
     print $e->getMessage();
 }
+print "<br> ----- <br>";
 
-// // INSERE DADOS NA TABELA maquinas
+/**
+ * INSERE DADOS NA TABELA maquinas
+ */
 try
 {
-    $fileMach = fopen('postgres/maquinas.txt', 'r');
+    $fileMach = fopen('postgres/data-db/maquinas.txt', 'r');
     while (!feof($fileMach)) {
         $resultsMach[] = explode(",", fgets($fileMach));
     }
@@ -182,11 +205,14 @@ try
 catch (\PDOException $e) {
     print $e->getMessage();
 }
+print "<br> ----- <br>";
 
-// // INSERE DADOS NA TABELA GENERO
+/**
+ * INSERE DADOS NA TABELA GENERO
+ */
 try
 {
-    $fileGene = fopen('postgres/genero.txt', 'r');
+    $fileGene = fopen('postgres/data-db/genero.txt', 'r');
     while (!feof($fileGene)) {
         $resultsGene[] = explode(",", fgets($fileGene));
     }
@@ -207,11 +233,14 @@ try
 catch (\PDOException $e) {
     print $e->getMessage();
 }
+print "<br> ----- <br>";
 
-// // INSERE DADOS NA TABELA FILME
+/**
+ * INSERE DADOS NA TABELA FILME
+ */
 try
 {
-    $fileFilm = fopen('postgres/filme.txt', 'r');
+    $fileFilm = fopen('postgres/data-db/filme.txt', 'r');
     while (!feof($fileFilm)) {
         $resultsFilm[] = explode(",", fgets($fileFilm));
     }
@@ -234,11 +263,14 @@ try
 catch (\PDOException $e) {
     print $e->getMessage();
 }
+print "<br> ----- <br>";
 
-// // INSERE DADOS NA TABELA locacao
+/**
+ * INSERE DADOS NA TABELA locacao
+ */
 try
 {
-    $fileLocacao = fopen('postgres/locacao.txt', 'r');
+    $fileLocacao = fopen('postgres/data-db/locacao.txt', 'r');
     while (!feof($fileLocacao)) {
         $resultsLocacao[] = explode(",", fgets($fileLocacao));
     }
@@ -262,8 +294,11 @@ try
 catch (\PDOException $e) {
     print $e->getMessage();
 }
+print "<br> ----- <br>";
 
-// // TEMPO DE EXECUÇÃO
+/**
+ * TEMPO DE EXECUÇÃO
+ */
 // sleep(3);
 $tempo = time() - $_SERVER["REQUEST_TIME_FLOAT"];
 printf("%0.16f segs", $tempo/1000000);
