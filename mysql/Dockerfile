@@ -14,9 +14,9 @@ ENV MYSQL_USER root
 ##
 ### Copia arquivos do diretório mysql para o container
 ##
-COPY ./Dockerfile /home/lpaulopds/sql
-COPY ./scripts-conf/ /home/lpaulopds/sql/scripts-conf/ 
-COPY ./rpm-packages/ /home/lpaulopds/sql/rpm-packages/
+COPY ./Dockerfile /home/mysql/sql
+COPY ./scripts-conf/ /home/mysql/sql/scripts-conf/ 
+COPY ./rpm-packages/ /home/mysql/sql/rpm-packages/
 COPY ./scripts-init/entrypoint.sh /docker-entrypoint-initdb.d/
 
 ##
