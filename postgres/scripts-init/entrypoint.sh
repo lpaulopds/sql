@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-ls -la ~/
-
+##
+### Instala apt packages
+##
 # apt-get update && \
 # apt-get upgrade -y && \
 # apt-get install -y git && \
@@ -16,3 +17,8 @@ ls -la ~/
 # apt-get install -y openssl
 # apt-get install -y build-essential && \
 # apt-get install -y locales
+
+##
+### Inicia container definindo usuário seguro
+##
+su -c "exec /usr/lib/postgresql/16/bin/postgres" postgres
