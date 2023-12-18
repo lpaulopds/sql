@@ -33,15 +33,15 @@ services:
   #     - ./persistent-mssql/secrets:/var/opt/mssql/secrets
   #     - ./persistent-mssql/backup:/var/opt/mssql/backup
   #   container_name: c-mssql
-  # postgres:
-  #   build:
-  #     context: "./postgres"
-  #   ports:
-  #     - "5432:5432"
-  #   volumes:
-  #     - ./persistent-postgres/data:/var/lib/postgresql/data
-      # - ./postgres/scripts-conf/postgresql.conf:/var/lib/postgresql/data/postgresql.conf
-    # container_name: c-postgres
+  postgres:
+    build:
+      context: "./postgres"
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./persistent-postgres/data:/var/lib/postgresql/data
+      - ./postgres/scripts-conf/postgresql.conf:/var/lib/postgresql/data/postgresql.conf
+    container_name: c-postgres
   # oracle:
   #   build:
   #     context: "./oracle"
