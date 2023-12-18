@@ -16,10 +16,9 @@ ENV MYSQL_USER root
 ##
 COPY ./Dockerfile /home/mysql/sql
 COPY ./scripts-conf/ /home/mysql/sql/scripts-conf/ 
-COPY ./rpm-packages/ /home/mysql/sql/rpm-packages/
 COPY ./scripts-init/entrypoint.sh /docker-entrypoint-initdb.d/
 
 ##
-### Executa padrão entrypoint
+### Executa entrypoint file
 ##
 CMD /bin/bash /docker-entrypoint-initdb.d/entrypoint.sh
