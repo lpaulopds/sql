@@ -3,7 +3,7 @@
 ##
 ### Instala apt packages
 ##
-# apt-get update && \
+# apt-get update 
 # apt-get upgrade -y && \
 # apt-get install -y git && \
 # apt-get install -y nano && \
@@ -22,3 +22,4 @@
 ### Inicia container definindo usuário seguro
 ##
 su -c "exec /usr/lib/postgresql/16/bin/postgres" postgres
+# exec /usr/lib/postgresql/16/bin/postgres
