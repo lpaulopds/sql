@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
 ##
+### Permissão padrão
+##
+chmod  0750 /var/lib/postgresql/data/
+
+##
 ### Instala apt packages
 ##
 # apt-get update 
