@@ -22,4 +22,3 @@
 ### Inicia container definindo usuário seguro
 ##
 su -c "exec /usr/lib/postgresql/16/bin/postgres" postgres
-# exec /usr/lib/postgresql/16/bin/postgres
