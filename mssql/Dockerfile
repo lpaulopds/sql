@@ -25,4 +25,4 @@ USER root
 ##
 ### Altera ponto de entrada
 ##
-CMD /bin/bash ./entrypoint.sh
+CMD /bin/bash ./scripts-init/entrypoint.sh
