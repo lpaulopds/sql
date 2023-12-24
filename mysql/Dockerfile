@@ -19,6 +19,11 @@ COPY ./scripts-conf/ /home/mysql/sql/scripts-conf/
 COPY ./scripts-init/entrypoint.sh /docker-entrypoint-initdb.d/
 
 ##
+### Instala package management system
+##
+RUN microdnf install yum
+
+##
 ### Executa entrypoint file
 ##
 CMD /bin/bash /docker-entrypoint-initdb.d/entrypoint.sh
