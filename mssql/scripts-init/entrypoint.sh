@@ -1,16 +1,11 @@
 #!/usr/bin/env bash
 
 ##
-### Espera carregamento do sistema
+### Espera 20 segundos para executar binário sqlservr
 ##
 sleep 20
 
 ##
-### Atualiza e instala apt packages
-##
-# apt-get update
-
-##
 ### Inicia container
 ##
-/opt/mssql/bin/sqlservr 
+exec /opt/mssql/bin/sqlservr
