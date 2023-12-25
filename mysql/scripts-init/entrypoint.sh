@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 
 ##
-### Instala packages
+### Permissão padrão
 ##
-# dnf install -y nano
-# dnf install -y man-db.x86_64
+chmod 1770 /var/run/mysqld/
 
 ##
 ### Inicia container
 ##
-chmod 1770 /var/run/mysqld/
 exec /usr/sbin/mysqld
