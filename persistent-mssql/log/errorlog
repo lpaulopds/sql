@@ -79,3 +79,5 @@
 2023-12-25 19:31:55.23 spid66      Attempting to load library 'xplog70.dll' into memory. This is an informational message only. No user action is required.
 2023-12-25 19:31:55.28 spid66      Using 'xplog70.dll' version '2022.160.4095' to execute extended stored procedure 'xp_msver'. This is an informational message only; no user action is required.
 2023-12-25 19:35:04.47 spid66      Using 'dbghelp.dll' version '4.0.5'
+2023-12-25 19:46:31.15 spid70      XE session 'telemetry_xevents' stopping.
+2023-12-25 19:46:31.18 spid70      XE session 'telemetry_xevents' started.
