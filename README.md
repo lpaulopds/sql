@@ -6,9 +6,6 @@ de Banco de Dados e SQL, sem mistérios! Esse repositório irá ser
 útil para garantir o aprendizado e consultas no futuro.  
   
   
-----------------------  
-  
-  
 >[!NOTE]
 >As queries explicadas nas aulas estão nos diretórios: 'queries-*'.  
   
@@ -55,9 +52,6 @@ sudo docker container exec -it c-mssql bash
 ```  
   
   
-----------------------  
-  
-  
 >[!Warning]
 >Caso você tenha problemas de permissão  
 >no build do container MSSQL, execute o comando abaixo  
@@ -79,6 +73,13 @@ sudo docker container exec -it c-postgres bash
 ```bash
 psql -h postgres -U postgres
 ```  
+  
+  
+>[!Warning]
+>No primeiro Build do container, executar sem o padrão  
+>entry point, para isso, comente a linha  
+>do Dockerfile que contém o comando 'CMD'. Dessa maneira  
+>todos os arquivos do database serão criados corretamente.  
   
   
 ----------------------  
