@@ -6,3 +6,5 @@
 vendor/
 persistent-postgres/data/base/5/pg_internal.init
 persistent-postgres/data/global/pg_internal.init
+.vscode
+.github
