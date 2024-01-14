@@ -93,22 +93,6 @@ psql -h postgres -U postgres
 ----------------------  
   
   
-### **Mais informações**
-#### **Docker**
-* Arquivos de configurações das imagens do container docker: 'php/Dockerfile' e 'compose.yaml'
-#### **PHP/APACHE**
-* Logs do apache2 no diretório: 'apache/var/log/apache2'
-* Caminho arquivo php.ini: 'apache/etc/'
-* Arquivos de configurações do apache nos diretórios: 'apache/etc' e 'apache/vhost'
-#### **MySQL**
-* Arquivo de configuração do MySQL: 'mysql/my.cnf'  
-#### **Postgres**
-* Arquivo de configuração do PostgreSQL: 'postgres/postgres.conf'  
-  
-  
-----------------------  
-  
-  
 ### **Diagramas Modelagem de Dados**  
 >Software: StarUML  
   
