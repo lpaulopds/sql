@@ -76,3 +76,7 @@
 2024-01-14 22:56:43.80 spid29s     Attribute synchronization initialized
 2024-01-14 22:56:43.81 spid29s     Attribute synchronization manager initialized
 2024-01-14 22:57:48.82 spid52s     [DevOpsSnapshotTelemetryTask] Evaluating the background task.
+2024-01-14 23:01:43.21 spid51      XE session 'telemetry_xevents' stopping.
+2024-01-14 23:01:43.23 spid51      XE session 'telemetry_xevents' started.
+2024-01-14 23:03:46.85 spid51      Attempting to load library 'xplog70.dll' into memory. This is an informational message only. No user action is required.
+2024-01-14 23:03:46.90 spid51      Using 'xplog70.dll' version '2022.160.4105' to execute extended stored procedure 'xp_msver'. This is an informational message only; no user action is required.
