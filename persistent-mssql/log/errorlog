@@ -75,3 +75,11 @@
 2024-01-14 21:00:26.80 Server      External governance manager initialized
 2024-01-14 21:00:30.12 spid20s     Attribute synchronization initialized
 2024-01-14 21:00:30.12 spid20s     Attribute synchronization manager initialized
+2024-01-14 21:05:33.29 spid51      XE session 'telemetry_xevents' stopping.
+2024-01-14 21:05:33.32 spid51      XE session 'telemetry_xevents' started.
+2024-01-14 21:07:42.64 spid51      Attempting to load library 'xplog70.dll' into memory. This is an informational message only. No user action is required.
+2024-01-14 21:07:42.69 spid51      Using 'xplog70.dll' version '2022.160.4105' to execute extended stored procedure 'xp_msver'. This is an informational message only; no user action is required.
+2024-01-14 21:12:27.90 spid51      Using 'dbghelp.dll' version '4.0.5'
+2024-01-14 21:27:44.55 spid68      XE session 'telemetry_xevents' stopping.
+2024-01-14 21:27:44.58 spid68      XE session 'telemetry_xevents' started.
+2024-01-14 21:44:34.13 spid46s     [DevOpsSnapshotTelemetryTask] Evaluating the background task.
