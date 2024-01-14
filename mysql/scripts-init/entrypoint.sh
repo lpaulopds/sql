@@ -3,7 +3,7 @@
 ##
 ### Permissão padrão
 ##
-chmod 1770 /var/run/mysqld/
+chown -R mysql:mysql /var/lib/mysql
 
 ##
 ### Inicia container
