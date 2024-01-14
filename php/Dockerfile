@@ -30,6 +30,11 @@ WORKDIR /var/www
     # apt-get install -y systemctl && \
     # apt-get install -y wget
 
+COPY ./php.ini /usr/local/etc/php/php.ini
+COPY ./apache/etc/apache2.conf /etc/apache2/apache2.conf
+COPY ./apache/etc/security.conf /etc/apache2/conf-available/security.conf
+COPY ./apache/vhost/000-default.conf /etc/apache2/sites-available/000-default.conf
+
 ##
 ### Atualiza sistema e instala composer
 ##

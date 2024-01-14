@@ -15,20 +15,17 @@ WORKDIR /home/mysql/sql
 ##
 ### Copia arquivos do diretório mysql para o container
 ##
-COPY ./Dockerfile /home/mysql/sql
-COPY ./scripts-conf/ /home/mysql/sql/scripts-conf/ 
+# COPY ./Dockerfile /home/mysql/sql
+# COPY ./scripts-conf/ /home/mysql/sql/scripts-conf/ 
 COPY ./scripts-init/entrypoint.sh /docker-entrypoint-initdb.d/
 
 ##
-### Instala package management system
-##
-RUN microdnf install yum
-
-##
-### Instala packages
+### Install package management system [yum]
+### Install packages
 ### Mantém cache do container no compose up
 ##
-RUN dnf install -y nano && \
+RUN microdnf install yum && \
+    dnf install -y nano && \
     dnf install -y man-db.x86_64
 
 ##
