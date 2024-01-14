@@ -16,7 +16,7 @@ WORKDIR /home/postgres/sql
 ##
 ### Copia arquivos de inicialização
 ##
-# COPY ./scripts-init/init.sql /docker-entrypoint-initdb.d/
+COPY ./scripts-init/init.sql /docker-entrypoint-initdb.d/
 COPY ./scripts-init/entrypoint.sh /docker-entrypoint-initdb.d/
 
 ##
