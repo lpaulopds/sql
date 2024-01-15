@@ -1,5 +1,10 @@
 <?php declare(strict_types=1);
 
+//
+// // Comente as linhas com a query 'DROP TABLE nometabela'
+// // caso as tabelas não tenham sido criadas.
+//
+
 namespace App\Model;
 
 class CreateTables

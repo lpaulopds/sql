@@ -27,10 +27,10 @@ class Connection
         }
         
         // connect to the postgresql database
-        $conStr = sprintf("pgsql:host=%s;dbname=%s;port=%d;user=%s;password=%s",
-        // $conStr = sprintf("pgsql:host=%s;port=%d;user=%s;password=%s",
+        // $conStr = sprintf("pgsql:host=%s;dbname=%s;port=%d;user=%s;password=%s",
+        $conStr = sprintf("pgsql:host=%s;port=%d;user=%s;password=%s",
         $params['host'],
-            $params['dbname'],
+            // $params['dbname'],
             $params['port'],
             $params['user'],
             $params['passwd']);

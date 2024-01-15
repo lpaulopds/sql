@@ -1,9 +1,9 @@
 <?php
-echo "<pre>";
-print_r($_SERVER);
-echo "</pre>";
-phpinfo();
-die;
+// echo "<pre>";
+// print_r($_SERVER);
+// echo "</pre>";
+// phpinfo();
+// die;
 
 require __DIR__ . '/vendor/autoload.php';
 
@@ -59,6 +59,7 @@ try
 catch (\PDOException $e) {
     print $e->getMessage();
 }
+// die;
 
 /**
  * CRIA TABELAS LOCADORA
