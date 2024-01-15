@@ -22,6 +22,12 @@ sudo docker compose up -d
 ```  
   
   
+#### **Atualize o composer para administrar as dependências e gerar autoload das classes**
+```bash
+composer update
+```  
+  
+  
 ----------------------  
   
   
