@@ -15,6 +15,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 /**
  * CONEXÃO COM BANCO DE DADOS
+ * Scripts para Postgres
  */
 use \App\Connect\Connection as Connection;
 try
