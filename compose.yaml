@@ -51,5 +51,5 @@ services:
       - "5500:5500" 
     privileged: true
     volumes:
-      - ./persistent-oracle:/opt/oracle
+      - ./persistent-oracle:/opt/oracle/oradata
     container_name: c-oracle
