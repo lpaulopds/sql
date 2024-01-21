@@ -21,6 +21,10 @@ WORKDIR /home/oracle/sql
 #
 COPY ./scripts-init/entrypoint.sh /home/oracle/sql/
 
+COPY ./scripts-config/network-admin/listener.ora /home/oracle/sql/listener.ora
+COPY ./scripts-config/network-admin/tnsnames.ora /home/oracle/sql/tnsnames.ora
+COPY ./scripts-config/network-admin/sqlnet.ora /home/oracle/sql/sqlnet.ora
+
 #
 ## Atualiza e instala pacotes
 #
@@ -30,7 +34,8 @@ COPY ./scripts-init/entrypoint.sh /home/oracle/sql/
     # yum install -y libfreetype6-dev && \
     # yum install -y libjpeg62-turbo-dev && \
     # yum install -y libpng-dev && \
-    # yum install -y wget
+    # yum install -y wget && \
+    # yum install -y ldd
 
 #
 ## Atualiza e instala preinstall oracle database 19c
