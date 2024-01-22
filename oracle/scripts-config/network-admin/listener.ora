@@ -22,7 +22,7 @@
 #
  LISTENER =
   (ADDRESS_LIST=
-       (ADDRESS=(PROTOCOL=tcp)(HOST=$ORACLE_HOME)(PORT=1521))
+       (ADDRESS=(PROTOCOL=tcp)(HOST=localhost)(PORT=1521))
        (ADDRESS=(PROTOCOL=ipc)(KEY=EXTPROC1)))
 
 # SID_LIST_<lsnr>
@@ -34,9 +34,9 @@
    (SID_LIST=
        (SID_DESC=
                        #BEQUEATH CONFIG
-          (GLOBAL_DBNAME=XE)
-          (SID_NAME=XE)
-          (ORACLE_HOME=$ORACLE_HOME)
+          (GLOBAL_DBNAME=ORCL)
+          (SID_NAME=ORCL)
+          (ORACLE_HOME=localhost)
                        #PRESPAWN CONFIG
          (PRESPAWN_MAX=20)
          (PRESPAWN_LIST=

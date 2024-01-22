@@ -33,7 +33,7 @@
               (ADDRESS=
                 [ (COMMUNITY=<community_name>) ]
                 (PROTOCOL=tcp)
-                (HOST=$ORACLE_HOME)
+                (HOST=localhost)
                 (PORT=1521)
               )
               [ (ADDRESS=
@@ -51,8 +51,8 @@
               ... # More addresses
             [ ) ] # Optional depending on whether ADDRESS_LIST is used or not
             [ (CONNECT_DATA=
-                (SID=XE)
-                [ (GLOBAL_NAME=XE) ]
+                (SID=ORCL)
+                [ (GLOBAL_NAME=ORCL) ]
               )
             ]
             [ (SOURCE_ROUTE=yes) ]
