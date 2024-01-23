@@ -24,6 +24,7 @@ COPY ./scripts-init/entrypoint.sh /home/oracle/sql/
 COPY ./scripts-config/network-admin/listener.ora /home/oracle/sql/listener.ora
 COPY ./scripts-config/network-admin/tnsnames.ora /home/oracle/sql/tnsnames.ora
 COPY ./scripts-config/network-admin/sqlnet.ora /home/oracle/sql/sqlnet.ora
+COPY ./scripts-config/network-admin/initORCL.ora /home/oracle/sql/initORCL.ora
 
 #
 ## Atualiza e instala pacotes
