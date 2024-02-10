@@ -47,7 +47,7 @@ RUN yum update && \
 #
 ## Copia Oracle database rpm para /tmp do SO
 #
-COPY ./scripts-init/oracle-database-ee-19c-1.0-1.x86_64.rpm /tmp
+COPY ./scripts-config/oracle-database-ee-19c-1.0-1.x86_64.rpm /tmp
 
 #
 ## Atualiza e instala Oracle database 19c RPM
