@@ -22,6 +22,9 @@
 #### Location startup logs
 ## $ORACLE_HOME/diag/rdbms/orcl/ORCL/trace/alert_ORCL.log
 
+#### Configure default database
+## /etc/init.d/oracledb_ORCLCDB-19c configure
+
 
 cp /home/oracle/sql/listener.ora $ORACLE_HOME/network/admin/samples/
 cp /home/oracle/sql/tnsnames.ora $ORACLE_HOME/network/admin/samples/
