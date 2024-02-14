@@ -15,12 +15,17 @@
 ##   $ shutdown abort
 ##   $ startup
 ##   $ show con_name
+##   $ show parameter
 
 ## $ show pdbs
 ## $ lsnrctl status
+## $ SELECT name FROM v$controlfile;
+## $ SELECT instance_name, status FROM v$instance;
 
 #### Location startup logs
 ## $ORACLE_HOME/diag/rdbms/orcl/ORCL/trace/alert_ORCL.log
+## $ cat /opt/oracle/cfgtoollogs/dbca/trace.log_2024-02-13_03-10-54AM | grep "Could not" | more
+## $ ls /opt/oracle/oraInventory/logs
 
 #### Configure default database
 ## /etc/init.d/oracledb_ORCLCDB-19c configure
