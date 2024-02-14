@@ -5,11 +5,15 @@ FROM oraclelinux:9
 ## Define variáveis de ambiente
 #
 ENV ORACLE_SID ORCL
-# ENV ORACLE_PDB ORCLPDB
+ENV ORACLE_PDB ORCL1
 ENV ORACLE_PWD 12345678
 ENV ORACLE_CHARACTERSET AL32UTF8
 ENV ORACLE_DOCKER_INSTALL true
 ENV ORACLE_HOME /opt/oracle/product/19c/dbhome_1
+ENV ORACLE_NETWORK /opt/oracle/product/19c/dbhome_1/network/admin/samples
+
+ENV LD_LIBRARY_PATH /opt/oracle/product/19c/dbhome_1/lib
+# ENV PATH /opt/oracle/product/19c/dbhome_1/bin
 
 #
 ## Diretório de trabalho
@@ -48,6 +52,11 @@ RUN yum update && \
 ## Copia Oracle database rpm para /tmp do SO
 #
 COPY ./scripts-config/oracle-database-ee-19c-1.0-1.x86_64.rpm /tmp
+
+RUN yum update && \
+    yum install -y libaio.x86_64 && \
+    yum install -y bc.x86_64 && \
+    yum install -y net-tools.x86_64
 
 #
 ## Atualiza e instala Oracle database 19c RPM
