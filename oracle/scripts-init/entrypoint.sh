@@ -21,11 +21,15 @@
 ## $ lsnrctl status
 ## $ SELECT name FROM v$controlfile;
 ## $ SELECT instance_name, status FROM v$instance;
+## $ ALTER SYSTEM REGISTER;
 
 #### Location startup logs
 ## $ORACLE_HOME/diag/rdbms/orcl/ORCL/trace/alert_ORCL.log
 ## $ cat /opt/oracle/cfgtoollogs/dbca/trace.log_2024-02-13_03-10-54AM | grep "Could not" | more
 ## $ ls /opt/oracle/oraInventory/logs
+
+#### Logs LISTENER
+## $ cat /opt/oracle/diag/tnslsnr/68d8fe29e777/listener/alert/log.xml
 
 #### Configure default database
 ## /etc/init.d/oracledb_ORCLCDB-19c configure
