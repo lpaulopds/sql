@@ -23,10 +23,12 @@
 ## $ SELECT instance_name, status FROM v$instance;
 ## $ ALTER SYSTEM REGISTER;
 
-#### Location startup logs
+#### Location startup logs and errors
 ## $ORACLE_HOME/diag/rdbms/orcl/ORCL/trace/alert_ORCL.log
 ## $ cat /opt/oracle/cfgtoollogs/dbca/trace.log_2024-02-13_03-10-54AM | grep "Could not" | more
 ## $ ls /opt/oracle/oraInventory/logs
+## [FATAL] Error while executing "/opt/oracle/product/19c/dbhome_1/ord/im/admin/ordlib.sql". Refer to "/opt/oracle/cfgtoollogs/dbca/ORCLCDB/ordlib0.log" for more details. Error in Process: /opt/oracle/product/19c/dbhome_1/perl/bin/perl
+## /opt/oracle/cfgtoollogs/dbca/ORCLCDB/ORCLCDB.log
 
 #### Logs LISTENER
 ## $ cat /opt/oracle/diag/tnslsnr/68d8fe29e777/listener/alert/log.xml
