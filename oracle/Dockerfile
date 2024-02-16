@@ -13,6 +13,7 @@ ENV ORACLE_HOME /opt/oracle/product/19c/dbhome_1
 ENV ORACLE_NETWORK /opt/oracle/product/19c/dbhome_1/network/admin/samples
 
 ENV LD_LIBRARY_PATH /opt/oracle/product/19c/dbhome_1/lib
+ENV PATH /opt/oracle/product/19c/dbhome_1/bin:$PATH
 
 
 #
