@@ -8,11 +8,11 @@ db_block_size=8192
 db_recovery_file_dest='$ORACLE_HOME/dbs'
 db_recovery_file_dest_size=1G
 diagnostic_dest='$ORACLE_HOME'
-dispatchers='(PROTOCOL=TCP) (SERVICE=ORCLXDB)'
+dispatchers='(PROTOCOL=TCP) (SERVICE=ORCL)'
 open_cursors=300
 remote_login_passwordfile='EXCLUSIVE'
 undo_tablespace='UNDOTBS1'
 # You may want to ensure that control files are created on separate physical
 # devices
-control_files = (/opt/oracle/oradata/ora_control1, /opt/oracle/oradata/ora_control2)
+control_files='/opt/oracle/oradata/ORCL/control_files_1.ctl','/opt/oracle/oradata/ORCL/control_files_2.ctl'
 compatible ='11.2.0'

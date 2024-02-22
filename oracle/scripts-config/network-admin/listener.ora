@@ -2,16 +2,5 @@ LISTENER_ORCL =
   (DESCRIPTION_LIST =
     (DESCRIPTION =
       (ADDRESS = (PROTOCOL = TCP)(HOST = $HOSTNAME)(PORT = 1521))
-      (ADDRESS = (PROTOCOL = IPC)(KEY = EXTPROC1521))
-    )
-  )
-
-SID_LIST_LISTENER =
-  (SID_LIST =
-    (SID_DESC =
-      (GLOBAL_DBNAME = ORCL)
-      (SID_NAME = ORCL)
-      (ORACLE_HOME = /opt/oracle/product/19c/dbhome_1)
-      (PROGRAM = extproc)
     )
   )
