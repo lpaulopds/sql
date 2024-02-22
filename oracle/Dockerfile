@@ -11,10 +11,8 @@ ENV ORACLE_CHARACTERSET AL32UTF8
 ENV ORACLE_DOCKER_INSTALL true
 ENV ORACLE_HOME /opt/oracle/product/19c/dbhome_1
 ENV ORACLE_NETWORK /opt/oracle/product/19c/dbhome_1/network/admin/samples
-
 ENV LD_LIBRARY_PATH /opt/oracle/product/19c/dbhome_1/lib
-ENV PATH /opt/oracle/product/19c/dbhome_1/bin:$PATH
-
+ENV PATH $PATH:$ORACLE_HOME/bin
 
 #
 ## Diretório de trabalho
@@ -30,6 +28,7 @@ COPY ./scripts-config/network-admin/listener.ora /home/oracle/sql/listener.ora
 COPY ./scripts-config/network-admin/tnsnames.ora /home/oracle/sql/tnsnames.ora
 COPY ./scripts-config/network-admin/sqlnet.ora /home/oracle/sql/sqlnet.ora
 COPY ./scripts-config/network-admin/initORCL.ora /home/oracle/sql/initORCL.ora
+# COPY ./scripts-config/config-db/oracledb_ORCLCDB-19c /home/oracle/sql/oracledb_ORCLCDB-19c
 
 #
 ## Atualiza e instala pacotes
