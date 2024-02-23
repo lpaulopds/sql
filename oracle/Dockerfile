@@ -28,7 +28,7 @@ COPY ./scripts-config/network-admin/listener.ora /home/oracle/sql/listener.ora
 COPY ./scripts-config/network-admin/tnsnames.ora /home/oracle/sql/tnsnames.ora
 COPY ./scripts-config/network-admin/sqlnet.ora /home/oracle/sql/sqlnet.ora
 COPY ./scripts-config/network-admin/initORCL.ora /home/oracle/sql/initORCL.ora
-# COPY ./scripts-config/config-db/oracledb_ORCLCDB-19c /home/oracle/sql/oracledb_ORCLCDB-19c
+COPY ./scripts-config/config-db/oracledb_ORCLCDB-19c /home/oracle/sql/oracledb_ORCLCDB-19c
 
 #
 ## Atualiza e instala pacotes
