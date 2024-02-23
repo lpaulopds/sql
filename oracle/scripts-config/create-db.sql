@@ -1,8 +1,8 @@
 CREATE DATABASE ORCL
     USER SYS IDENTIFIED BY sys_password
     USER SYSTEM IDENTIFIED BY system_password
-    LOGFILE GROUP 1 ('/opt/oracle/oradata/ORCL/redo01.log') SIZE 100M,
-            GROUP 2 ('/opt/oracle/oradata/ORCL/redo02.log') SIZE 100M
+    LOGFILE GROUP 1 ('/opt/oracle/oradata/redo01.log') SIZE 100M,
+            GROUP 2 ('/opt/oracle/oradata/redo02.log') SIZE 100M
     MAXLOGFILES 5
     MAXLOGMEMBERS 5
     MAXLOGHISTORY 1
@@ -10,14 +10,14 @@ CREATE DATABASE ORCL
 CHARACTER SET AL32UTF8
     NATIONAL CHARACTER SET AL16UTF16
     EXTENT MANAGEMENT LOCAL
-    DATAFILE '/opt/oracle/oradata/ORCL/system01.dbf' SIZE 325M REUSE
-    SYSAUX DATAFILE '/opt/oracle/oradata/ORCL/sysaux01.dbf' SIZE 325M REUSE
+    DATAFILE '/opt/oracle/oradata/system01.dbf' SIZE 325M REUSE
+    SYSAUX DATAFILE '/opt/oracle/oradata/sysaux01.dbf' SIZE 325M REUSE
 DEFAULT TABLESPACE users
-    DATAFILE '/opt/oracle/oradata/ORCL/users01.dbf'
+    DATAFILE '/opt/oracle/oradata/users01.dbf'
 SIZE 500M REUSE AUTOEXTEND ON MAXSIZE UNLIMITED
 DEFAULT TEMPORARY TABLESPACE temp
-    TEMPFILE '/opt/oracle/oradata/ORCL/temp01.dbf'
+    TEMPFILE '/opt/oracle/oradata/temp01.dbf'
 SIZE 20M REUSE
-    UNDO TABLESPACE undotbs
-    DATAFILE '/opt/oracle/oradata/ORCL/undotbs01.dbf'
+    UNDO TABLESPACE UNDOTBS1
+    DATAFILE '/opt/oracle/oradata/UNDOTBS1.dbf'
 SIZE 200M REUSE AUTOEXTEND ON MAXSIZE UNLIMITED;
