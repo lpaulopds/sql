@@ -1,0 +1,55 @@
+- Iniciando com Oracle Database 19c - Oracle Linux 9 OS
+
+- Inicie o container:
+sudo docker container exec -it c-oracle bash
+
+
+- Troque para o usuário oracle:
+su oracle
+
+
+- Utilize o binário do sqlplus para conectar
+  no banco de dados com o usuário sysdba:
+$ORACLE_HOME/bin/sqlplus / as sysdba
+$ORACLE_HOME/bin/sqlplus /nolog
+
+
+- Inicie o banco de dados sem montar os arquivos estruturais:
+STARTUP NOMOUNT PFILE='$ORACLE_HOME/dbs/initORCL.ora'
+SHUTDOWN
+
+
+- Execute a query do arquivo oracle/scripts-config/create-db.sql
+  para criar os arquivos estruturais necessários para o banco de dados
+
+
+- Se precisar altere o usuário e grupo do diretório
+  /opt/oracle/oradata com o comando:
+chown -R oracle:oinstall /opt/oracle/oradata
+
+
+- Querys para ver nome da conexão e parametros:
+show con_name;
+show parameter;
+
+
+- Querys para depuração:
+SELECT name FROM v$controlfile;
+SELECT name FROM v$database;
+SELECT instance_name, status FROM v$instance;
+SHOW parameter control_files;
+SELECT open_mode FROM v$database;
+alter system set control_files='/u01/app/oracle/oradata/MSDB/control01.ctl' scope=spfile;
+
+
+- Alguns locais de logs:
+$ORACLE_HOME/diag/rdbms/orcl/ORCL/trace/alert_ORCL.log
+[com comandos linux] cat /opt/oracle/cfgtoollogs/dbca/trace.log_2024-02-13_03-10-54AM | grep "Could not" | more
+/opt/oracle/oraInventory/logs
+/opt/oracle/diag/tnslsnr/68d8fe29e777/listener/alert/log.xml
+
+
+- Configura um banco de dados padrão,
+  execute com o usuário root:
+/etc/init.d/oracledb_ORCLCDB-19c configure
+
