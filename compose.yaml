@@ -51,5 +51,13 @@ services:
       - "5500:5500" 
     privileged: true
     volumes:
-      - ./persistent-oracle:/opt/oracle/oradata
+      - ./persistent-oracle-db:/opt/oracle/oradata
     container_name: c-oracle
+volumes:
+  persistent-oracle:
+    driver: local
+    driver_opts:
+      type: none
+      device: ./persistent-oracle-db
+      o: bind
+
