@@ -14,5 +14,5 @@ remote_login_passwordfile='EXCLUSIVE'
 undo_tablespace='UNDOTBS1'
 # You may want to ensure that control files are created on separate physical
 # devices
-control_files='/opt/oracle/oradata/ORCL/control_files_1.ctl','/opt/oracle/oradata/ORCL/control_files_2.ctl'
+control_files='/opt/oracle/oradata/control_files_1.ctl','/opt/oracle/oradata/control_files_2.ctl'
 compatible ='11.2.0'
