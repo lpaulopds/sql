@@ -1,17 +1,17 @@
 services:
-  # php:
-  #   build:
-  #     context: "./php"
-  #   ports:
-  #     - "8080:80"
-  #   volumes:
-  #     - ./:/var/www
-  #     - ./php/php.ini:/usr/local/etc/php/php.ini
-  #     - ./php/apache/var/log:/var/log
-  #     - ./php/apache/etc/apache2.conf:/etc/apache2/apache2.conf
-  #     - ./php/apache/etc/security.conf:/etc/apache2/conf-available/security.conf
-  #     - ./php/apache/vhost/000-default.conf:/etc/apache2/sites-available/000-default.conf
-  #   container_name: c-php
+  php:
+    build:
+      context: "./php"
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www
+      - ./php/php.ini:/usr/local/etc/php/php.ini
+      - ./php/apache/var/log/apache2:/var/log/apache2
+      - ./php/apache/etc/apache2.conf:/etc/apache2/apache2.conf
+      - ./php/apache/etc/security.conf:/etc/apache2/conf-available/security.conf
+      - ./php/apache/vhost/000-default.conf:/etc/apache2/sites-available/000-default.conf
+    container_name: c-php
   # mysql:
   #   build:
   #     context: "./mysql"
@@ -20,9 +20,9 @@ services:
   #   volumes:
   #     - ./mysql/scripts-conf/my.cnf:/etc/my.cnf
   #     # - ./mysql/config:/etc/mysql/conf.d
-  #     - ./persistent-mysql:/var/lib/mysql
+  #     - ./mysql-persistence:/var/lib/mysql
   #   container_name: c-mysql
-  # mssql:
+  # # mssql:
   #   build:
   #     context: "./mssql"
   #   ports:
@@ -42,22 +42,21 @@ services:
   #     - ./persistent-postgres/data:/var/lib/postgresql/data
   #     - ./postgres/scripts-conf/postgresql.conf:/var/lib/postgresql/data/postgresql.conf
   #   container_name: c-postgres
-  oracle:
-    build:
-      context: "./oracle"
-    shm_size: '4GB'
-    ports:
-      - "1521:1521"
-      - "5500:5500" 
-    privileged: true
-    volumes:
-      - ./persistent-oracle-db:/opt/oracle/oradata
-    container_name: c-oracle
-volumes:
-  persistent-oracle:
-    driver: local
-    driver_opts:
-      type: none
-      device: ./persistent-oracle-db
-      o: bind
-
+#   oracle:
+#     build:
+#       context: "./oracle"
+#     shm_size: '4GB'
+#     ports:
+#       - "1521:1521"
+#       - "5500:5500" 
+#     privileged: true
+#     volumes:
+#       - ./persistent-oracle-db:/opt/oracle/oradata
+#     container_name: c-oracle
+# volumes:
+#   persistent-oracle:
+#     driver: local
+#     driver_opts:
+#       type: none
+#       device: ./persistent-oracle-db
+#       o: bind
