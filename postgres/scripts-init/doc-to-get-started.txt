@@ -1,0 +1,17 @@
+- Na maioria das vezes será preciso criar os diretórios ausentes
+  dentro do diretório de persistência do postgres postgres-persistence/data/pg_...,
+  segue os diretórios que precisam ser criados:
+pg_notify, pg_replslot, pg_tblspc, pg_wal/archive_status, pg_twophase, pg_snapshots, pg_logical/mappings, pg_commit_ts
+
+
+- Verificar se é preciso ou não o padrão entrypoint no primeiro build
+
+
+- Lembrar de executar composer update
+
+
+- Execute simultaneamente o container do PHP, abra o navegador e acesse:
+localhost:8080
+
+
+- No arquivo index.php existe scripts PHP com querys básicas de CRUD PostgreSQL.
