@@ -5,11 +5,11 @@
 // // GPG_TTY=$(tty) && export GPG_TTY && eval $(ssh-agent -s)
 //
 
-echo "<pre>";
-print_r($_SERVER);
-echo "</pre>";
-phpinfo();
-die;
+// echo "<pre>";
+// print_r($_SERVER);
+// echo "</pre>";
+// phpinfo();
+// die;
 
 require __DIR__ . '/vendor/autoload.php';
 
