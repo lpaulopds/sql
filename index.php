@@ -1,9 +1,7 @@
 <?php
 
-//
 // // GPG key routine for github
 // // GPG_TTY=$(tty) && export GPG_TTY && eval $(ssh-agent -s)
-//
 
 // echo "<pre>";
 // print_r($_SERVER);
@@ -12,6 +10,18 @@
 // die;
 
 require __DIR__ . '/vendor/autoload.php';
+
+use \App\ConnectMySQL\ConnectionMySQL as ConnectionMySQL;
+
+try
+{
+    $pdo = ConnectionMySQL::get()->connect();
+    print "Connected" . "<br> ----- <br>";
+}
+catch (\PDOException $e) {
+    print $e->getMessage();
+}
+die;
 
 /**
  * CONEXÃO COM BANCO DE DADOS
