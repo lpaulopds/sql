@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "postgres/"
+            "App\\": ["postgres/", "mysql/"]
         }
     },
     "require-dev": {
