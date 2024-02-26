@@ -13,14 +13,18 @@ require __DIR__ . '/vendor/autoload.php';
 
 use \App\ConnectMySQL\ConnectionMySQL as ConnectionMySQL;
 
-try
-{
-    $pdo = ConnectionMySQL::get()->connect();
-    print "Connected" . "<br> ----- <br>";
-}
-catch (\PDOException $e) {
-    print $e->getMessage();
-}
+($pdo = ConnectionMySQL::get()->connect()) ?
+    print "Connected" . "<br> ----- <br>" :
+        throw new \Exception("Not connected.");
+
+// try
+// {
+//     $pdo = ConnectionMySQL::get()->connect();
+//     print "Connected" . "<br> ----- <br>";
+// }
+// catch (\PDOException $e) {
+//     print $e->getMessage();
+// }
 die;
 
 /**
