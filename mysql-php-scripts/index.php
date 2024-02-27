@@ -1,5 +1,7 @@
 <?php declare(strict_types=1);
 
+$time_start = microtime(true);
+
 require '../vendor/autoload.php';
 
 use \App\ConnectMySQL\ConnectionMySQL as ConnectionMySQL;
@@ -8,10 +10,6 @@ use \App\ConnectMySQL\ConnectionMySQL as ConnectionMySQL;
     print "Connected MySQL" . "<br> ----- <br>" :
         throw new \Exception("Not connected.");
 
-/**
- * TEMPO DE EXECUÇÃO
- */
-// sleep(3);
-$tempo = time() - $_SERVER["REQUEST_TIME_FLOAT"];
-printf("%0.16f segs", $tempo/1000000);
-print "<br><br><br>";
+$time_end = microtime(true);
+$time = $time_end - $time_start;
+print "Tempo de execução: " . $time . " segundos";
