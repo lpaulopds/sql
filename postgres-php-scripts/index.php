@@ -1,5 +1,7 @@
 <?php declare(strict_types=1);
 
+$time_start = microtime(true);
+
 require '../vendor/autoload.php';
 
 /**
@@ -12,7 +14,7 @@ try
     $pdo = Connection::get()->connect();
     print "Connected paste PSQL" . "<br> ----- <br>";
 }
-catch (\PDOException $e) {
+catch (\Exception $e) {
     print $e->getMessage();
 }
 
@@ -97,7 +99,7 @@ try
 
     foreach ($resultsDeps as $dataDeps)
     {
-        $listDeps = $insertDemo->InsertIntoTableDeps([
+        $insertDemo->InsertIntoTableDeps([
             [
                 'departamento' => $dataDeps[0],
                 'divisao' => $dataDeps[1]
@@ -125,7 +127,7 @@ try
 
     foreach ($resultsLoca as $dataLoca)
     {
-        $listLoca = $insertDemo->InsertIntoTableLoca([
+        $insertDemo->InsertIntoTableLoca([
             [
                 'idRegiao' => $dataLoca[0],
                 'localizacao' => $dataLoca[1],
@@ -154,7 +156,7 @@ try
 
     foreach ($resultsFunc as $dataFunc)
     {
-        $listFunc = $insertDemo->InsertIntoTableFunc([
+        $insertDemo->InsertIntoTableFunc([
             [
                 'idFuncionario' => $dataFunc[0],
                 'nome' => $dataFunc[1],
@@ -189,7 +191,7 @@ try
 
     foreach ($resultsMach as $dataMach)
     {
-        $listMach = $insertDemo->InsertIntoTableMaqs([
+        $insertDemo->InsertIntoTableMaqs([
             [
                 'maquina' => $dataMach[0],
                 'dia' => $dataMach[1],
@@ -218,7 +220,7 @@ try
 
     foreach ($resultsGene as $dataGene)
     {
-        $listGene = $insertDemo->InsertIntoTableGene([
+        $insertDemo->InsertIntoTableGene([
             [
                 'IDGENERO' => $dataGene[0],
                 'NOME' => $dataGene[1]
@@ -246,7 +248,7 @@ try
 
     foreach ($resultsFilm as $dataFilm)
     {
-        $listFilm = $insertDemo->InsertIntoTableFilm([
+        $insertDemo->InsertIntoTableFilm([
             [
                 'IDFILME' => $dataFilm[0],
                 'NOME' => $dataFilm[1],
@@ -276,7 +278,7 @@ try
 
     foreach ($resultsLocacao as $dataLocacao)
     {
-        $listLocacao = $insertDemo->InsertIntoTableLocacao([
+        $insertDemo->InsertIntoTableLocacao([
             [
                 'IDLOCACAO' => $dataLocacao[0],
                 'DATA' => $dataLocacao[1],
@@ -294,11 +296,7 @@ catch (\PDOException $e) {
 }
 print "<br> ----- <br>";
 
-/**
- * TEMPO DE EXECUÇÃO
- */
-// sleep(3);
-$tempo = time() - $_SERVER["REQUEST_TIME_FLOAT"];
-printf("%0.16f segs", $tempo/1000000);
-print "<br><br><br>";
 
+$time_end = microtime(true);
+$time = $time_end - $time_start;
+print "Tempo de execução: " . $time . " segundos";
