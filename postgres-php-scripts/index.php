@@ -22,23 +22,23 @@ catch (\Exception $e) {
  * CLASSE DE CRIAÇÃO DO BANCO DE DADOS
  * CRIA BANCO DE DADOS loja
  */
-// use \App\Model\CreateDatabase as CreateDatabase;
-// try
-// {
-//     $databaseCreator = new CreateDatabase($pdo);
-//     $database = $databaseCreator->createDB();
+use \App\Model\CreateDatabase as CreateDatabase;
+try
+{
+    $databaseCreator = new CreateDatabase($pdo);
+    $database = $databaseCreator->createDB();
 
-//     $database ? print 'Created Database' :
-//          print 'Error in query create database';
+    $database ? print 'Created Database' :
+         print 'Error in query create database';
 
-//     foreach ($database as $db) {
-//         print $db . '<br>';
-//     }
-// }
-// catch (\PDOException $e) {
-//     print $e->getMessage();
-// }
-// die;
+    foreach ($database as $db) {
+        print $db . '<br>';
+    }
+}
+catch (\PDOException $e) {
+    print $e->getMessage();
+}
+die;
 
 /**
  * CLASSE PARA CRIAÇÃO DE TABELAS
@@ -51,7 +51,7 @@ $tablesCreator = new CreateTables($pdo);
  */
 try
 {
-    $tables = $tablesCreator->createTables();
+    $tables = $tablesCreator->createTablesLoja();
     $tables ? print 'Created Tables departamento <br> ----- <br>' :
         print 'Error in query create table';
 }
