@@ -5,9 +5,9 @@
 
 namespace App\Model;
 
-use \App\Model\Interfaces\interfaceCreateTablesDAO;
+use \App\Model\Interfaces\InterfaceCreateTablesDAO;
 
-class CreateTables implements interfaceCreateTablesDAO
+class CreateTables implements InterfaceCreateTablesDAO
 {
     /**
      * PDO object
@@ -31,14 +31,14 @@ class CreateTables implements interfaceCreateTablesDAO
     {
         // array with queries
         $sqlList = [
-            'DROP TABLE departamentos;',
+            'DROP TABLE IF EXISTS departamentos;',
                 'CREATE TABLE departamentos
                 (
                     departamento varchar(100),
                     divisao varchar(100),
                     primary key (departamento)
                 );',
-            'DROP TABLE localizacao;',
+            'DROP TABLE IF EXISTS localizacao;',
                 'CREATE TABLE localizacao
                 (
                     idRegiao int,
@@ -46,7 +46,7 @@ class CreateTables implements interfaceCreateTablesDAO
                     pais varchar(20),
                     primary key (idRegiao)
                 );',
-            'DROP TABLE funcionarios;',
+            'DROP TABLE IF EXISTS funcionarios;',
                 'CREATE TABLE funcionarios 
                 (
                     idFuncionario integer,
@@ -60,7 +60,7 @@ class CreateTables implements interfaceCreateTablesDAO
                     idRegiao int,
                     primary key (idFuncionario)
                 );',
-            'DROP TABLE maquinas;',
+            'DROP TABLE IF EXISTS maquinas;',
                 'CREATE TABLE maquinas
                 (
                     maquina VARCHAR(10),
@@ -85,13 +85,13 @@ class CreateTables implements interfaceCreateTablesDAO
     {
         // array with queries
         $sqlListLocadora = [
-            'DROP TABLE GENERO CASCADE;',
+            'DROP TABLE IF EXISTS GENERO CASCADE;',
             'CREATE TABLE GENERO
             (
                 IDGENERO INT PRIMARY KEY,
                 NOME VARCHAR(30)
             );',
-            'DROP TABLE FILME CASCADE;',
+            'DROP TABLE IF EXISTS FILME CASCADE;',
             'CREATE TABLE FILME
             (
                 IDFILME INT PRIMARY KEY,
@@ -101,7 +101,7 @@ class CreateTables implements interfaceCreateTablesDAO
                 FOREIGN KEY(ID_GENERO)
                 REFERENCES GENERO(IDGENERO)
             );',
-            'DROP TABLE LOCACAO CASCADE;',
+            'DROP TABLE IF EXISTS LOCACAO CASCADE;',
             'CREATE TABLE LOCACAO
             (
                 IDLOCACAO INT PRIMARY KEY,
