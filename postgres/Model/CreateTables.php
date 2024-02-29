@@ -1,13 +1,13 @@
 <?php declare(strict_types=1);
 
-//
 // // Comente as linhas com a query 'DROP TABLE nometabela'
 // // caso as tabelas não tenham sido criadas.
-//
 
 namespace App\Model;
 
-class CreateTables
+use \App\Model\Interfaces\interfaceCreateTablesDAO;
+
+class CreateTables implements interfaceCreateTablesDAO
 {
     /**
      * PDO object
@@ -27,7 +27,7 @@ class CreateTables
      * create tables departamento
      * @return $this
      */
-    public function createTables()
+    public function createTablesLoja()
     {
         // array with queries
         $sqlList = [
