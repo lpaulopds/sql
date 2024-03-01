@@ -39,7 +39,7 @@ services:
       - "5432:5432"
     volumes:
       - ./postgres-persistence/data:/var/lib/postgresql/data
-      # - ./postgres/scripts-conf/postgresql.conf:/var/lib/postgresql/data/postgresql.conf
+      - ./postgres/scripts-conf/postgresql.conf:/var/lib/postgresql/data/postgresql.conf
     container_name: c-postgres
 #   oracle:
 #     build:
