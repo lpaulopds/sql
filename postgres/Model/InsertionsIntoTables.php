@@ -2,10 +2,12 @@
 
 namespace App\Model;
 
+use App\Model\Interfaces\InterfaceInsertionsIntoTablesDAO;
+
 /**
  * Insert data in PostgreSQL tables.
  */
-class InsertionsIntoTables
+class InsertionsIntoTables implements InterfaceInsertionsIntoTablesDAO
 {
     /**
      * PDO object
