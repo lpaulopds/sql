@@ -12,7 +12,9 @@ use \App\Connect\Connection as Connection;
 try
 {
     $pdo = Connection::get()->connect();
-    print "Connected paste PSQL" . "<br> ----- <br>";
+    echo "<pre>";
+    print_r($pdo);
+    echo "</pre>";
 }
 catch (\Exception $e) {
     print $e->getMessage();
@@ -31,7 +33,10 @@ catch (\Exception $e) {
  */
 use \App\Controller\CreateBusinessTables;
 new CreateBusinessTables();
-// die;
+
+use \App\Controller\InsertInTables;
+new InsertInTables();
+die;
 
 /**
  * CLASSE DE INSERÇÃO
