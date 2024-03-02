@@ -23,7 +23,7 @@ class DatabaseCreator
     public function __construct()
     {
         $this->getDatabaseCreator();
-        print 'PostgreSQL database connected';
+        print 'PostgreSQL database created and connected';
     }
 
     /**
@@ -31,18 +31,26 @@ class DatabaseCreator
      */
     private function getDatabaseCreator()
     {
-        $this->setDatabaseCreator();
+        $this->instanceCreateDatabase();
         return $this->databaseCreator->createDB();
     }
 
     /**
-     * @return void
+     * @return \App\Model\CreateDatabase
      */
-    private function setDatabaseCreator()
+    private function instanceCreateDatabase()
+    {
+        $this->databaseCreator = new CreateDatabase($this->setDBConn());
+        return $this->databaseCreator;
+    }
+
+    /**
+     * @return \PDO
+     */
+    private function setDBConn()
     {
         ($this->pdo = Connection::get()->connect()) ??
             throw new \PDOException("Not connected.");
-
-        $this->databaseCreator = new CreateDatabase($this->pdo);
+        return $this->pdo;
     }
 }
