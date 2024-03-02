@@ -18,7 +18,7 @@ class CreateBusinessTables
     private $tablesCreator;
 
     /**
-     * @return void
+     * @return mixed
      */
     public function __construct()
     {
@@ -31,46 +31,31 @@ class CreateBusinessTables
         echo "</pre>";
     }
 
-    /**
-     * @return \App\Model\CreateTables
-     */
-    private function getLojaTableCreator()
+    private function getLojaTableCreator(): \App\Model\CreateTables
     {
         $this->instanceCreateTables();
         return $this->tablesCreator->createTablesLoja();
     }
 
-    /**
-     * @return \App\Model\CreateTables
-     */
-    private function getLocadoraTableCreator()
+    private function getLocadoraTableCreator(): \App\Model\CreateTables
     {
         $this->instanceCreateTables();
         return $this->tablesCreator->createTablesLocadora();
     }
 
-    /**
-     * @return array
-     */
-    private function getShowNameTables()
+    private function getShowNameTables(): array
     {
         $this->instanceCreateTables();
         return $this->tablesCreator->getTables();
     }
 
-    /**
-     * @return \App\Model\CreateTables
-     */
-    private function instanceCreateTables()
+    private function instanceCreateTables(): \App\Model\CreateTables
     {
         $this->tablesCreator = new CreateTables($this->setDBConn());
         return $this->tablesCreator;
     }
 
-    /**
-     * @return \PDO
-     */
-    private function setDBConn()
+    private function setDBConn(): \PDO
     {
         ($this->pdo = Connection::get()->connect()) ??
             throw new \PDOException("Not connected.");
