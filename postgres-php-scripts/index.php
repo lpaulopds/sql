@@ -22,51 +22,16 @@ catch (\Exception $e) {
  * CLASSE DE CRIAÇÃO DO BANCO DE DADOS
  * CRIA BANCO DE DADOS loja
  */
-
 // use \App\Controller\DatabaseCreator;
 // new DatabaseCreator();
-
 // die;
 
 /**
  * CLASSE PARA CRIAÇÃO DE TABELAS
  */
-use \App\Model\CreateTables as CreateTables;
-$tablesCreator = new CreateTables($pdo);
-
-/**
- * CRIA TABELAS DEPARTAMENTO
- */
-try
-{
-    $tables = $tablesCreator->createTablesLoja();
-    $tables ? print 'Created Tables departamento <br> ----- <br>' :
-        print 'Error in query create table';
-}
-catch (\PDOException $e) {
-    print $e->getMessage();
-}
+use \App\Controller\CreateBusinessTables;
+new CreateBusinessTables();
 // die;
-
-/**
- * CRIA TABELAS LOCADORA
- */
-try
-{
-    $tablesLocadora = $tablesCreator->createTablesLocadora();
-    $tablesLocadora ? print 'Created Tables Locadora.<br><br> ----- <br>' :
-        print 'Error in query create table';
-}
-catch (\PDOException $e) {
-    print $e->getMessage();
-}
-
-/**
- * MOSTRA NOMES DAS TABELAS DO BANCO DE DADOS
- */
-$descTables = $tablesCreator->getTables();
-print_r($descTables);
-print '<br><br> ----- <br>';
 
 /**
  * CLASSE DE INSERÇÃO
