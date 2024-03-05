@@ -101,7 +101,7 @@ class InsertInTables
             filter_var($this->data[0], FILTER_SANITIZE_SPECIAL_CHARS);
             filter_var($this->data[1], FILTER_SANITIZE_SPECIAL_CHARS);
 
-            $this->instanceInsertionsIntoTables()->InsertIntoTableDeps([
+            $this->instaInseIntoTables()->InsertIntoTableDeps([
                 [
                     'departamento' => $this->data[0],
                     'divisao' => $this->data[1]
@@ -136,7 +136,7 @@ class InsertInTables
             filter_var($this->data[1], FILTER_SANITIZE_SPECIAL_CHARS);
             filter_var($this->data[2], FILTER_SANITIZE_SPECIAL_CHARS);
 
-            $this->instanceInsertionsIntoTables()->InsertIntoTableLoca([
+            $this->instaInseIntoTables()->InsertIntoTableLoca([
                 [
                     'idRegiao' => $this->data[0],
                     'localizacao' => $this->data[1],
@@ -178,7 +178,7 @@ class InsertInTables
             filter_var($this->data[7], FILTER_SANITIZE_SPECIAL_CHARS);
             filter_var($this->data[8], FILTER_SANITIZE_SPECIAL_CHARS);
 
-            $this->instanceInsertionsIntoTables()->InsertIntoTableFunc([
+            $this->instaInseIntoTables()->InsertIntoTableFunc([
                 [
                     'idFuncionario' => $this->data[0],
                     'nome' => $this->data[1],
@@ -220,7 +220,7 @@ class InsertInTables
             filter_var($this->data[1], FILTER_SANITIZE_SPECIAL_CHARS);
             filter_var($this->data[2], FILTER_SANITIZE_SPECIAL_CHARS);
 
-            $this->instanceInsertionsIntoTables()->InsertIntoTableMaqs([
+            $this->instaInseIntoTables()->InsertIntoTableMaqs([
                 [
                     'maquina' => $this->data[0],
                     'dia' => $this->data[1],
@@ -255,7 +255,7 @@ class InsertInTables
             filter_var($this->data[0], FILTER_SANITIZE_SPECIAL_CHARS);
             filter_var($this->data[1], FILTER_SANITIZE_SPECIAL_CHARS);
 
-            $this->instanceInsertionsIntoTables()->InsertIntoTableGene([
+            $this->instaInseIntoTables()->InsertIntoTableGene([
                 [
                     'IDGENERO' => $this->data[0],
                     'NOME' => $this->data[1]
@@ -291,7 +291,7 @@ class InsertInTables
             filter_var($this->data[2], FILTER_SANITIZE_SPECIAL_CHARS);
             filter_var($this->data[3], FILTER_SANITIZE_SPECIAL_CHARS);
 
-            $this->instanceInsertionsIntoTables()->InsertIntoTableFilm([
+            $this->instaInseIntoTables()->InsertIntoTableFilm([
                 [
                     'IDFILME' => $this->data[0],
                     'NOME' => $this->data[1],
@@ -330,7 +330,7 @@ class InsertInTables
             filter_var($this->data[3], FILTER_SANITIZE_SPECIAL_CHARS);
             filter_var($this->data[4], FILTER_SANITIZE_SPECIAL_CHARS);
 
-            $this->instanceInsertionsIntoTables()->InsertIntoTableLocacao([
+            $this->instaInseIntoTables()->InsertIntoTableLocacao([
                 [
                     'IDLOCACAO' => $this->data[0],
                     'DATA' => $this->data[1],
@@ -347,7 +347,7 @@ class InsertInTables
     /**
      * @return \App\Model\InsertionsIntoTables
      */
-    private function instanceInsertionsIntoTables(): \App\Model\InsertionsIntoTables
+    private function instaInseIntoTables(): \App\Model\InsertionsIntoTables
     {
         $this->insert = new Insertion($this->setDBConn());
         return $this->insert;

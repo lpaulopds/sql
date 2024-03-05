@@ -28,11 +28,11 @@ class DatabaseCreator
 
     private function getDatabaseCreator(): \App\Model\CreateDatabase
     {
-        $this->instanceCreateDatabase();
+        $this->instCreateDatabase();
         return $this->databaseCreator->createDB();
     }
 
-    private function instanceCreateDatabase(): \App\Model\CreateDatabase
+    private function instCreateDatabase(): \App\Model\CreateDatabase
     {
         $this->databaseCreator = new CreateDatabase($this->setDBConn());
         return $this->databaseCreator;

@@ -33,23 +33,23 @@ class CreateBusinessTables
 
     private function getLojaTableCreator(): \App\Model\CreateTables
     {
-        $this->instanceCreateTables();
+        $this->instCreateTables();
         return $this->tablesCreator->createTablesLoja();
     }
 
     private function getLocadoraTableCreator(): \App\Model\CreateTables
     {
-        $this->instanceCreateTables();
+        $this->instCreateTables();
         return $this->tablesCreator->createTablesLocadora();
     }
 
     private function getShowNameTables(): array
     {
-        $this->instanceCreateTables();
+        $this->instCreateTables();
         return $this->tablesCreator->getTables();
     }
 
-    private function instanceCreateTables(): \App\Model\CreateTables
+    private function instCreateTables(): \App\Model\CreateTables
     {
         $this->tablesCreator = new CreateTables($this->setDBConn());
         return $this->tablesCreator;
