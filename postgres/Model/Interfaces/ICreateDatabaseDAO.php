@@ -2,6 +2,6 @@
 
 namespace App\Model\Interfaces;
 
-interface InterfaceCreateDatabaseDAO {
+interface ICreateDatabaseDAO {
     public function createDB();
 }

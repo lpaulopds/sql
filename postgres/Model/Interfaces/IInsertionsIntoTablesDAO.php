@@ -2,7 +2,7 @@
 
 namespace App\Model\Interfaces;
 
-interface InterfaceInsertionsIntoTablesDAO
+interface IInsertionsIntoTablesDAO
 {
     public function InsertIntoTableDeps($data);
     public function InsertIntoTableLoca($data);

@@ -2,7 +2,7 @@
 
 namespace App\Model\Interfaces;
 
-interface InterfaceCreateTablesDAO
+interface ICreateTablesDAO
 {
     public function createTablesLoja();
     public function createTablesLocadora();
