@@ -1,13 +1,12 @@
 <?php declare(strict_types=1);
 
 namespace App\Model;
-
-use App\Model\Interfaces\InterfaceInsertionsIntoTablesDAO;
+use App\Model\Interfaces\IInsertionsIntoTablesDAO;
 
 /**
  * Insert data in PostgreSQL tables.
  */
-class InsertionsIntoTables implements InterfaceInsertionsIntoTablesDAO
+class InsertionsIntoTables implements IInsertionsIntoTablesDAO
 {
     /**
      * PDO object

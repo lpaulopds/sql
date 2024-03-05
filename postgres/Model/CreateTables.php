@@ -4,10 +4,9 @@
 // // caso as tabelas não tenham sido criadas.
 
 namespace App\Model;
+use \App\Model\Interfaces\ICreateTablesDAO;
 
-use \App\Model\Interfaces\InterfaceCreateTablesDAO;
-
-class CreateTables implements InterfaceCreateTablesDAO
+class CreateTables implements ICreateTablesDAO
 {
     /**
      * PDO object

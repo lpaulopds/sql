@@ -1,13 +1,12 @@
 <?php declare(strict_types=1);
 
 namespace App\Model;
-
-use App\Model\Interfaces\InterfaceCreateDatabaseDAO;
+use App\Model\Interfaces\ICreateDatabaseDAO;
 
 /**
  * Create database in PostgreSQL from PHP demo
  */
-class CreateDatabase implements InterfaceCreateDatabaseDAO
+class CreateDatabase implements ICreateDatabaseDAO
 {
     /**
      * PDO object
