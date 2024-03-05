@@ -45,7 +45,8 @@ RUN apt-get update && apt-get install -y libpq-dev && \
 RUN a2enmod rewrite && \
     a2enmod headers && \
     a2enmod proxy && \ 
-    a2enmod proxy_http
+    a2enmod proxy_http && \
+    a2enmod headers
 
 ### Reinicia serviço do apache2
 RUN service apache2 restart
