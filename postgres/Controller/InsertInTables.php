@@ -20,72 +20,22 @@ class InsertInTables
     /**
      * @var resource
      */
-    private $fileDeps;
+    private $file;
 
     /**
-     * @var array
+     * @var integer
      */
-    private $resultsDeps;
+    private $batchSize;
 
     /**
-     * @var resource
+     * @var string
      */
-    private $fileLoca;
+    private $lines;
 
     /**
-     * @var array
+     * @var string
      */
-    private $resultsLoca;
-
-    /**
-     * @var resource
-     */
-    private $fileFunc;
-
-    /**
-     * @var array
-     */
-    private $resultsFunc;
-
-    /**
-     * @var resource
-     */
-    private $fileMach;
-
-    /**
-     * @var array
-     */
-    private $resultsMach;
-
-    /**
-     * @var resource
-     */
-    private $fileGene;
-
-    /**
-     * @var array
-     */
-    private $resultsGene;
-
-    /**
-     * @var resource
-     */
-    private $fileFilm;
-
-    /**
-     * @var array
-     */
-    private $resultsFilm;
-
-    /**
-     * @var resource
-     */
-    private $fileLocacao;
-
-    /**
-     * @var array
-     */
-    private $resultsLocacao;
+    public $data;
 
     /**
      * @return mixed
@@ -94,228 +44,318 @@ class InsertInTables
     {
         echo "<pre>";
         print 'Propriedades da tabela departamentos<br>';
-        print_r($this->getInsertInDeps());
+        $this->getInsertInDeps();
         echo "</pre>";
 
         echo "<pre>";
         print 'Propriedades da tabela localizacao<br>';
-        print_r($this->getInsertInLocalizacao());
+        $this->getInsertInLocalizacao();
         echo "</pre>";
 
         echo "<pre>";
         print 'Propriedades da tabela funcionarios<br>';
-        print_r($this->getInsertInFunc());
+        $this->getInsertInFunc();
         echo "</pre>";
 
         echo "<pre>";
         print 'Propriedades da tabela maquinas<br>';
-        print_r($this->getInsertInMaquinas());
+        $this->getInsertInMaquinas();
         echo "</pre>";
 
         echo "<pre>";
         print 'Propriedades da tabela genero<br>';
-        print_r($this->getInsertInGenero());
+        $this->getInsertInGenero();
         echo "</pre>";
 
         echo "<pre>";
         print 'Propriedades da tabela Filme<br>';
-        print_r($this->getInsertInFilme());
+        $this->getInsertInFilme();
         echo "</pre>";
 
         echo "<pre>";
         print 'Propriedades da tabela Locacao<br>';
-        print_r($this->getInsertInLocacao());
+        $this->getInsertInLocacao();
         echo "</pre>";
     }
 
-    private function getInsertInDeps(): array {
+    /**
+     * @return string
+     */
+    private function getInsertInDeps() {
         return $this->setInsertInDeps();
     }
 
-    private function setInsertInDeps(): array
+    /**
+     * @return string
+     */
+    private function setInsertInDeps()
     {
-        $this->fileDeps = fopen('../postgres/data-db/departamentos.txt', 'r');
-        while (!feof($this->fileDeps)) {
-            $this->resultsDeps[] = explode(",", fgets($this->fileDeps));
-        }    
-        fclose($this->fileDeps);
+        $this->file = fopen('../postgres/data-db/departamentos.txt', 'r');
+        $this->batchSize = 10;
 
-        foreach ($this->resultsDeps as $dataDeps)
+        while (!feof($this->file) && !feof($this->file) <= $this->batchSize)
         {
+            $this->lines = fgets($this->file);
+            $this->data = explode(',', $this->lines);
+
+            filter_var($this->data[0], FILTER_SANITIZE_SPECIAL_CHARS);
+            filter_var($this->data[1], FILTER_SANITIZE_SPECIAL_CHARS);
+
             $this->instanceInsertionsIntoTables()->InsertIntoTableDeps([
                 [
-                    'departamento' => $dataDeps[0],
-                    'divisao' => $dataDeps[1]
+                    'departamento' => $this->data[0],
+                    'divisao' => $this->data[1]
                 ]
             ]);
+            print_r($this->data);
         }
-        return $this->resultsDeps;
+        fclose($this->file);
     }
 
-    private function getInsertInLocalizacao(): array {
+    /**
+     * @return string
+     */
+    private function getInsertInLocalizacao() {
         return $this->setInsertInLocalizacao();
     }
 
-    private function setInsertInLocalizacao(): array
+    /**
+     * @return string
+     */
+    private function setInsertInLocalizacao()
     {
-        $this->fileLoca = fopen('../postgres/data-db/localizacao.txt', 'r');
-        while (!feof($this->fileLoca)) {
-            $this->resultsLoca[] = explode(",", fgets($this->fileLoca));
-        }
-        fclose($this->fileLoca);
+        $this->file = fopen('../postgres/data-db/localizacao.txt', 'r');
+        $this->batchSize = 10;
 
-        foreach ($this->resultsLoca as $dataLoca)
+        while (!feof($this->file) && !feof($this->file) <= $this->batchSize)
         {
+            $this->lines = fgets($this->file);
+            $this->data = explode(',', $this->lines);
+
+            filter_var($this->data[0], FILTER_SANITIZE_SPECIAL_CHARS);
+            filter_var($this->data[1], FILTER_SANITIZE_SPECIAL_CHARS);
+            filter_var($this->data[2], FILTER_SANITIZE_SPECIAL_CHARS);
+
             $this->instanceInsertionsIntoTables()->InsertIntoTableLoca([
                 [
-                    'idRegiao' => $dataLoca[0],
-                    'localizacao' => $dataLoca[1],
-                    'pais' => $dataLoca[2]
+                    'idRegiao' => $this->data[0],
+                    'localizacao' => $this->data[1],
+                    'pais' => $this->data[2]
                 ]
             ]);
+            print_r($this->data);
         }
-        return $this->resultsLoca;
+        fclose($this->file);
     }
 
-    private function getInsertInFunc(): array {
+    /**
+     * @return string
+     */
+    private function getInsertInFunc() {
         return $this->setInsertInFunc();
     }
 
-    private function setInsertInFunc(): array
+    /**
+     * @return string
+     */
+    private function setInsertInFunc()
     {
-        $this->fileFunc = fopen('../postgres/data-db/funcionarios.txt', 'r');
-        while (!feof($this->fileFunc)) {
-            $this->resultsFunc[] = explode(",", fgets($this->fileFunc));
-        }
-        fclose($this->fileFunc);
+        $this->file = fopen('../postgres/data-db/funcionarios.txt', 'r');
+        $this->batchSize = 100;
 
-        foreach ($this->resultsFunc as $dataFunc)
+        while (!feof($this->file) && !feof($this->file) <= $this->batchSize)
         {
+            $this->lines = fgets($this->file);
+            $this->data = explode(',', $this->lines);
+
+            filter_var($this->data[0], FILTER_SANITIZE_SPECIAL_CHARS);
+            filter_var($this->data[1], FILTER_SANITIZE_SPECIAL_CHARS);
+            filter_var($this->data[2], FILTER_SANITIZE_SPECIAL_CHARS);
+            filter_var($this->data[3], FILTER_SANITIZE_SPECIAL_CHARS);
+            filter_var($this->data[4], FILTER_SANITIZE_SPECIAL_CHARS);
+            filter_var($this->data[5], FILTER_SANITIZE_SPECIAL_CHARS);
+            filter_var($this->data[6], FILTER_SANITIZE_SPECIAL_CHARS);
+            filter_var($this->data[7], FILTER_SANITIZE_SPECIAL_CHARS);
+            filter_var($this->data[8], FILTER_SANITIZE_SPECIAL_CHARS);
+
             $this->instanceInsertionsIntoTables()->InsertIntoTableFunc([
                 [
-                    'idFuncionario' => $dataFunc[0],
-                    'nome' => $dataFunc[1],
-                    'email' => $dataFunc[2],
-                    'sexo' => $dataFunc[3],
-                    'departamento' => $dataFunc[4],
-                    'admissao' => $dataFunc[5],
-                    'salario' => $dataFunc[6],
-                    'cargo' => $dataFunc[7],
-                    'idRegiao' => $dataFunc[8]
+                    'idFuncionario' => $this->data[0],
+                    'nome' => $this->data[1],
+                    'email' => $this->data[2],
+                    'sexo' => $this->data[3],
+                    'departamento' => $this->data[4],
+                    'admissao' => $this->data[5],
+                    'salario' => $this->data[6],
+                    'cargo' => $this->data[7],
+                    'idRegiao' => $this->data[8]
                 ]
             ]);
+            print_r($this->data); 
         }
-        return $this->resultsFunc;
+        fclose($this->file);
     }
 
-    private function getInsertInMaquinas(): array {
+    /**
+     * @return string
+     */
+    private function getInsertInMaquinas() {
         return $this->setInsertInMaquinas();
     }
 
-    private function setInsertInMaquinas(): array
+    /**
+     * @return string
+     */
+    private function setInsertInMaquinas()
     {
-        $this->fileMach = fopen('../postgres/data-db/maquinas.txt', 'r');
-        while (!feof($this->fileMach)) {
-            $this->resultsMach[] = explode(",", fgets($this->fileMach));
-        }
-        fclose($this->fileMach);
+        $this->file = fopen('../postgres/data-db/maquinas.txt', 'r');
+        $this->batchSize = 10;
 
-        foreach ($this->resultsMach as $dataMach)
+        while (!feof($this->file) && !feof($this->file) <= $this->batchSize)
         {
+            $this->lines = fgets($this->file);
+            $this->data = explode(',', $this->lines);
+
+            filter_var($this->data[0], FILTER_SANITIZE_SPECIAL_CHARS);
+            filter_var($this->data[1], FILTER_SANITIZE_SPECIAL_CHARS);
+            filter_var($this->data[2], FILTER_SANITIZE_SPECIAL_CHARS);
+
             $this->instanceInsertionsIntoTables()->InsertIntoTableMaqs([
                 [
-                    'maquina' => $dataMach[0],
-                    'dia' => $dataMach[1],
-                    'qtd' => $dataMach[2]
+                    'maquina' => $this->data[0],
+                    'dia' => $this->data[1],
+                    'qtd' => $this->data[2]
                 ]
             ]);
+            print_r($this->data);
         }
-        return $this->resultsMach;
+        fclose($this->file);
     }
 
-    private function getInsertInGenero(): array {
+    /**
+     * @return string
+     */
+    private function getInsertInGenero() {
         return $this->setInsertInGenero();
     }
 
-    private function setInsertInGenero(): array
+    /**
+     * @return string
+     */
+    private function setInsertInGenero()
     {
-        $this->fileGene = fopen('../postgres/data-db/genero.txt', 'r');
-        while (!feof($this->fileGene)) {
-            $this->resultsGene[] = explode(",", fgets($this->fileGene));
-        }
-        fclose($this->fileGene);
+        $this->file = fopen('../postgres/data-db/genero.txt', 'r');
+        $this->batchSize = 10;
 
-        foreach ($this->resultsGene as $dataGene)
+        while (!feof($this->file) && !feof($this->file) <= $this->batchSize)
         {
+            $this->lines = fgets($this->file);
+            $this->data = explode(',', $this->lines);
+
+            filter_var($this->data[0], FILTER_SANITIZE_SPECIAL_CHARS);
+            filter_var($this->data[1], FILTER_SANITIZE_SPECIAL_CHARS);
+
             $this->instanceInsertionsIntoTables()->InsertIntoTableGene([
                 [
-                    'IDGENERO' => $dataGene[0],
-                    'NOME' => $dataGene[1]
+                    'IDGENERO' => $this->data[0],
+                    'NOME' => $this->data[1]
                 ]
             ]);
+            print_r($this->data);
         }
-        return $this->resultsGene;
+        fclose($this->file);
     }
 
-    private function getInsertInFilme(): array {
+    /**
+     * @return string
+     */
+    private function getInsertInFilme() {
         return $this->setInsertInFilme();
     }
 
-    private function setInsertInFilme(): array
+    /**
+     * @return string
+     */
+    private function setInsertInFilme()
     {
-        $this->fileFilm = fopen('../postgres/data-db/filme.txt', 'r');
-        while (!feof($this->fileFilm)) {
-            $this->resultsFilm[] = explode(",", fgets($this->fileFilm));
-        }
-        fclose($this->fileFilm);
+        $this->file = fopen('../postgres/data-db/filme.txt', 'r');
+        $this->batchSize = 10;
 
-        foreach ($this->resultsFilm as $dataFilm)
+        while (!feof($this->file) && !feof($this->file) <= $this->batchSize)
         {
+            $this->lines = fgets($this->file);
+            $this->data = explode(',', $this->lines);
+
+            filter_var($this->data[0], FILTER_SANITIZE_SPECIAL_CHARS);
+            filter_var($this->data[1], FILTER_SANITIZE_SPECIAL_CHARS);
+            filter_var($this->data[2], FILTER_SANITIZE_SPECIAL_CHARS);
+            filter_var($this->data[3], FILTER_SANITIZE_SPECIAL_CHARS);
+
             $this->instanceInsertionsIntoTables()->InsertIntoTableFilm([
                 [
-                    'IDFILME' => $dataFilm[0],
-                    'NOME' => $dataFilm[1],
-                    'ANO' => $dataFilm[2],
-                    'ID_GENERO' => $dataFilm[3]
+                    'IDFILME' => $this->data[0],
+                    'NOME' => $this->data[1],
+                    'ANO' => $this->data[2],
+                    'ID_GENERO' => $this->data[3]
                 ]
             ]);
+            print_r($this->data);
         }
-        return $this->resultsFilm;
+        fclose($this->file);
     }
 
-    private function getInsertInLocacao(): array {
+    /**
+     * @return string
+     */
+    private function getInsertInLocacao() {
         return $this->setInsertInLocacao();
     }
 
-    private function setInsertInLocacao(): array
+    /**
+     * @return string
+     */
+    private function setInsertInLocacao()
     {
-        $this->fileLocacao = fopen('../postgres/data-db/locacao.txt', 'r');
-        while (!feof($this->fileLocacao)) {
-            $this->resultsLocacao[] = explode(",", fgets($this->fileLocacao));
-        }
-        fclose($this->fileLocacao);
+        $this->file = fopen('../postgres/data-db/locacao.txt', 'r');
+        $this->batchSize = 10;
 
-        foreach ($this->resultsLocacao as $dataLocacao)
+        while (!feof($this->file) && !feof($this->file) <= $this->batchSize)
         {
+            $this->lines = fgets($this->file);
+            $this->data = explode(',', $this->lines);
+
+            filter_var($this->data[0], FILTER_SANITIZE_SPECIAL_CHARS);
+            filter_var($this->data[1], FILTER_SANITIZE_SPECIAL_CHARS);
+            filter_var($this->data[2], FILTER_SANITIZE_SPECIAL_CHARS);
+            filter_var($this->data[3], FILTER_SANITIZE_SPECIAL_CHARS);
+            filter_var($this->data[4], FILTER_SANITIZE_SPECIAL_CHARS);
+
             $this->instanceInsertionsIntoTables()->InsertIntoTableLocacao([
                 [
-                    'IDLOCACAO' => $dataLocacao[0],
-                    'DATA' => $dataLocacao[1],
-                    'MIDIA' => $dataLocacao[2],
-                    'DIAS' => $dataLocacao[3],
-                    'ID_FILME' => $dataLocacao[4]
+                    'IDLOCACAO' => $this->data[0],
+                    'DATA' => $this->data[1],
+                    'MIDIA' => $this->data[2],
+                    'DIAS' => $this->data[3],
+                    'ID_FILME' => $this->data[4]
                 ]
             ]);
+            print_r($this->data);
         }
-        return $this->resultsLocacao;
+        fclose($this->file);
     }
 
+    /**
+     * @return \App\Model\InsertionsIntoTables
+     */
     private function instanceInsertionsIntoTables(): \App\Model\InsertionsIntoTables
     {
         $this->insert = new Insertion($this->setDBConn());
         return $this->insert;
     }
 
+    /**
+     * @return \PDO
+     */
     private function setDBConn(): \PDO
     {
         ($this->pdo = Connection::get()->connect()) ??
