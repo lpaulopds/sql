@@ -17,4 +17,5 @@ localhost:8080
 - No arquivo index.php existe scripts PHP com querys básicas de CRUD PostgreSQL.
 
 - Conecta banco de dados com PSQL
+psql loja -U postgres -h postgres
 \c[onnect] {[DBNAME|- USER|- HOST|- PORT|-] | conninfo}
