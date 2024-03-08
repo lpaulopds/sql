@@ -3,28 +3,17 @@
 // // GPG key routine for github
 // // GPG_TTY=$(tty) && export GPG_TTY && eval $(ssh-agent -s)
 
+$time_start = microtime(true);
+////////////////////
+
+
 require 'vendor/autoload.php';
 
-use \App\Http\Request;
-
-$obRequest = new Request;
-echo "<pre>";
-print_r($obRequest);
-// print_r($obRequest->getHeaders()['Host']);
-// print_r($obRequest->getHttpMethod());
-// print_r($obRequest->getUri());
-echo "</pre>";
-
-die;
-
-
 use \App\Http\Router;
-// use \App\Http\Request;
+use \App\Http\Response;
+use \App\Controller\InfraBusiness;
 
 $obRouter = new Router();
-$obRequest = new Request();
-
-// print_r($obRouter);die;
 
 $obRouter->addRoute('GET', '/' , function()
 {
@@ -36,11 +25,14 @@ $obRouter->addRoute('GET', '/' , function()
 });
 
 $obRouter->addRoute('GET', '/postgres/' , function() {
-    require 'postgres-php-scripts/index.php';
+    return new Response(200, new InfraBusiness());
 });
 
-// $method = $_SERVER['REQUEST_METHOD'];
-// $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-// $obRouter->dispatch($method, $path);
-
+$obRequest = $obRouter->requestRouter();
 $obRouter->dispatch($obRequest->getHttpMethod(), $obRequest->getUri());
+
+
+////////////////////
+$time_end = microtime(true);
+$time = $time_end - $time_start;
+print "Tempo de execução: " . $time . " segundos";
