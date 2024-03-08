@@ -6,6 +6,20 @@ class Router
 {
     private $routes = [];
 
+    /**
+     * @var Request
+     */
+    private $request;
+
+    public function __construct()
+    {
+        $this->request = new Request();
+    }
+
+    public function requestRouter() {
+        return $this->request;
+    }
+
     public function addRoute($method, $path, $callback) {
         $this->routes[$method][$path] = $callback;
     }
