@@ -90,9 +90,9 @@ class InsertInTables
      */
     private function setInsertInDeps()
     {
-        $this->file = fopen('../postgres/data-db/departamentos.txt', 'r');
+        $this->file = fopen('postgres/data-db/departamentos.txt', 'r');
         $this->batchSize = 10;
-
+        // print_r($this->file);die;
         while (!feof($this->file) && !feof($this->file) <= $this->batchSize)
         {
             $this->lines = fgets($this->file);
@@ -124,7 +124,7 @@ class InsertInTables
      */
     private function setInsertInLocalizacao()
     {
-        $this->file = fopen('../postgres/data-db/localizacao.txt', 'r');
+        $this->file = fopen('postgres/data-db/localizacao.txt', 'r');
         $this->batchSize = 10;
 
         while (!feof($this->file) && !feof($this->file) <= $this->batchSize)
@@ -160,7 +160,7 @@ class InsertInTables
      */
     private function setInsertInFunc()
     {
-        $this->file = fopen('../postgres/data-db/funcionarios.txt', 'r');
+        $this->file = fopen('postgres/data-db/funcionarios.txt', 'r');
         $this->batchSize = 100;
 
         while (!feof($this->file) && !feof($this->file) <= $this->batchSize)
@@ -208,7 +208,7 @@ class InsertInTables
      */
     private function setInsertInMaquinas()
     {
-        $this->file = fopen('../postgres/data-db/maquinas.txt', 'r');
+        $this->file = fopen('postgres/data-db/maquinas.txt', 'r');
         $this->batchSize = 10;
 
         while (!feof($this->file) && !feof($this->file) <= $this->batchSize)
@@ -244,7 +244,7 @@ class InsertInTables
      */
     private function setInsertInGenero()
     {
-        $this->file = fopen('../postgres/data-db/genero.txt', 'r');
+        $this->file = fopen('postgres/data-db/genero.txt', 'r');
         $this->batchSize = 10;
 
         while (!feof($this->file) && !feof($this->file) <= $this->batchSize)
@@ -278,7 +278,7 @@ class InsertInTables
      */
     private function setInsertInFilme()
     {
-        $this->file = fopen('../postgres/data-db/filme.txt', 'r');
+        $this->file = fopen('postgres/data-db/filme.txt', 'r');
         $this->batchSize = 10;
 
         while (!feof($this->file) && !feof($this->file) <= $this->batchSize)
@@ -316,7 +316,7 @@ class InsertInTables
      */
     private function setInsertInLocacao()
     {
-        $this->file = fopen('../postgres/data-db/locacao.txt', 'r');
+        $this->file = fopen('postgres/data-db/locacao.txt', 'r');
         $this->batchSize = 10;
 
         while (!feof($this->file) && !feof($this->file) <= $this->batchSize)
