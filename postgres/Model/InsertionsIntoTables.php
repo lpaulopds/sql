@@ -24,7 +24,7 @@ class InsertionsIntoTables implements IInsertionsIntoTablesDAO
 
     /**
      * Insert multiples Deps into table departamentos
-     * @param $data array
+     * @param array $data
      * @return array
      */
     public function InsertIntoTableDeps($data)
@@ -47,7 +47,7 @@ class InsertionsIntoTables implements IInsertionsIntoTablesDAO
 
     /**
      * Insert multiples Locations into table localização
-     * @param $data array
+     * @param array $data
      * @return array
      */
     public function InsertIntoTableLoca($data)
@@ -71,7 +71,7 @@ class InsertionsIntoTables implements IInsertionsIntoTablesDAO
 
     /**
      * Insert multiples funcionários into table funcionarios
-     * @param $data array
+     * @param array $data
      * @return array
      */
     public function InsertIntoTableFunc($data)
@@ -103,7 +103,7 @@ class InsertionsIntoTables implements IInsertionsIntoTablesDAO
 
     /**
      * Insert multiples logs into table funcionarios
-     * @param $data array
+     * @param array $data
      * @return array
      */
     public function InsertIntoTableMaqs($data)
@@ -127,7 +127,7 @@ class InsertionsIntoTables implements IInsertionsIntoTablesDAO
 
     /**
      * Insert multiples genero into table GENERO
-     * @param $data array
+     * @param array $data
      * @return array
      */
     public function InsertIntoTableGene($data)
@@ -150,7 +150,7 @@ class InsertionsIntoTables implements IInsertionsIntoTablesDAO
 
     /**
      * Insert multiples filme into table FILME
-     * @param $data array
+     * @param array $data
      * @return array
      */
     public function InsertIntoTableFilm($data)
@@ -175,7 +175,7 @@ class InsertionsIntoTables implements IInsertionsIntoTablesDAO
 
     /**
      * Insert multiples locacao into table LOCACAO
-     * @param $data array
+     * @param array $data
      * @return array
      */
     public function InsertIntoTableLocacao($data)
