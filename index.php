@@ -12,20 +12,30 @@ require 'vendor/autoload.php';
 use \App\Http\Router;
 use \App\Http\Response;
 use \App\Controller\InfraBusiness;
+use \App\Controller\EmployeeInseFormController;
 
 $obRouter = new Router();
 
-$obRouter->addRoute('GET', '/' , function()
-{
-    echo "<pre>";
-    // print_r($_SERVER);
-    print_r(getallheaders());
-    echo "</pre>";
-    // phpinfo();
+$obRouter->addRoute('GET', '/' ,
+function() {
+    phpinfo();
 });
 
-$obRouter->addRoute('GET', '/postgres/' , function() {
+$obRouter->addRoute('GET', '/postgres/',
+function() {
     return new Response(200, new InfraBusiness());
+});
+
+$obRouter->addRoute('GET', '/postgres-employee-insertion-form/',
+function() {
+    require 'postgres/view/employee-insert-form.html';
+});
+
+$obRouter->addRoute('POST', '/postgres-employee-insertion-form/', 
+function()
+{
+    $obEmployeeInsert = new EmployeeInseFormController();
+    return new Response(200, $obEmployeeInsert->getInsertEmployee());
 });
 
 $obRequest = $obRouter->requestRouter();
