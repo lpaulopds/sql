@@ -64,6 +64,9 @@ class EmployeeInsertionForm
      */
     public $data;
 
+    /**
+     * @var string
+     */
     public $hora;
 
     /**
