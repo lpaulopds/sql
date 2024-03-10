@@ -48,7 +48,7 @@ class CreateTables implements ICreateTablesDAO
             'DROP TABLE IF EXISTS funcionarios;',
                 'CREATE TABLE funcionarios 
                 (
-                    idFuncionario integer,
+                    idFuncionario SERIAL PRIMARY KEY,
                     nome varchar(100),
                     email varchar(200),
                     sexo varchar(10),
@@ -57,7 +57,8 @@ class CreateTables implements ICreateTablesDAO
                     salario integer,
                     cargo varchar(100),
                     idRegiao int,
-                    primary key (idFuncionario)
+                    dataRegistro date,
+                    horaRegistro varchar(15)
                 );',
             'DROP TABLE IF EXISTS maquinas;',
                 'CREATE TABLE maquinas
