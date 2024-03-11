@@ -92,7 +92,7 @@ class InsertInTables
     {
         $this->file = fopen('postgres/data-db/departamentos.txt', 'r');
         $this->batchSize = 10;
-        // print_r($this->file);die;
+
         while (!feof($this->file) && !feof($this->file) <= $this->batchSize)
         {
             $this->lines = fgets($this->file);
@@ -101,7 +101,7 @@ class InsertInTables
             filter_var($this->data[0], FILTER_SANITIZE_SPECIAL_CHARS);
             filter_var($this->data[1], FILTER_SANITIZE_SPECIAL_CHARS);
 
-            $this->instaInseIntoTables()->InsertIntoTableDeps([
+            $this->setInseIntoTables()->InsertIntoTableDeps([
                 [
                     'departamento' => $this->data[0],
                     'divisao' => $this->data[1]
@@ -136,7 +136,7 @@ class InsertInTables
             filter_var($this->data[1], FILTER_SANITIZE_SPECIAL_CHARS);
             filter_var($this->data[2], FILTER_SANITIZE_SPECIAL_CHARS);
 
-            $this->instaInseIntoTables()->InsertIntoTableLoca([
+            $this->setInseIntoTables()->InsertIntoTableLoca([
                 [
                     'idRegiao' => $this->data[0],
                     'localizacao' => $this->data[1],
@@ -156,11 +156,11 @@ class InsertInTables
     }
 
     /**
-     * @return string
+     * @return array
      */
     private function setInsertInFunc()
     {
-        $this->file = fopen('postgres/data-db/funcionarios.txt', 'r');
+        $this->file = fopen('postgres/data-db/funcionarios-no-id.txt', 'r');
         $this->batchSize = 100;
 
         while (!feof($this->file) && !feof($this->file) <= $this->batchSize)
@@ -176,22 +176,20 @@ class InsertInTables
             filter_var($this->data[5], FILTER_SANITIZE_SPECIAL_CHARS);
             filter_var($this->data[6], FILTER_SANITIZE_SPECIAL_CHARS);
             filter_var($this->data[7], FILTER_SANITIZE_SPECIAL_CHARS);
-            filter_var($this->data[8], FILTER_SANITIZE_SPECIAL_CHARS);
 
-            $this->instaInseIntoTables()->InsertIntoTableFunc([
+            $this->setInseIntoTables()->InsertIntoTableFunc([
                 [
-                    'idFuncionario' => $this->data[0],
-                    'nome' => $this->data[1],
-                    'email' => $this->data[2],
-                    'sexo' => $this->data[3],
-                    'departamento' => $this->data[4],
-                    'admissao' => $this->data[5],
-                    'salario' => $this->data[6],
-                    'cargo' => $this->data[7],
-                    'idRegiao' => $this->data[8]
+                    'nome' => $this->data[0],
+                    'email' => $this->data[1],
+                    'sexo' => $this->data[2],
+                    'departamento' => $this->data[3],
+                    'admissao' => $this->data[4],
+                    'salario' => $this->data[5],
+                    'cargo' => $this->data[6],
+                    'idRegiao' => $this->data[7]
                 ]
             ]);
-            print_r($this->data); 
+            print_r($this->data);
         }
         fclose($this->file);
     }
@@ -220,7 +218,7 @@ class InsertInTables
             filter_var($this->data[1], FILTER_SANITIZE_SPECIAL_CHARS);
             filter_var($this->data[2], FILTER_SANITIZE_SPECIAL_CHARS);
 
-            $this->instaInseIntoTables()->InsertIntoTableMaqs([
+            $this->setInseIntoTables()->InsertIntoTableMaqs([
                 [
                     'maquina' => $this->data[0],
                     'dia' => $this->data[1],
@@ -255,7 +253,7 @@ class InsertInTables
             filter_var($this->data[0], FILTER_SANITIZE_SPECIAL_CHARS);
             filter_var($this->data[1], FILTER_SANITIZE_SPECIAL_CHARS);
 
-            $this->instaInseIntoTables()->InsertIntoTableGene([
+            $this->setInseIntoTables()->InsertIntoTableGene([
                 [
                     'IDGENERO' => $this->data[0],
                     'NOME' => $this->data[1]
@@ -291,7 +289,7 @@ class InsertInTables
             filter_var($this->data[2], FILTER_SANITIZE_SPECIAL_CHARS);
             filter_var($this->data[3], FILTER_SANITIZE_SPECIAL_CHARS);
 
-            $this->instaInseIntoTables()->InsertIntoTableFilm([
+            $this->setInseIntoTables()->InsertIntoTableFilm([
                 [
                     'IDFILME' => $this->data[0],
                     'NOME' => $this->data[1],
@@ -330,7 +328,7 @@ class InsertInTables
             filter_var($this->data[3], FILTER_SANITIZE_SPECIAL_CHARS);
             filter_var($this->data[4], FILTER_SANITIZE_SPECIAL_CHARS);
 
-            $this->instaInseIntoTables()->InsertIntoTableLocacao([
+            $this->setInseIntoTables()->InsertIntoTableLocacao([
                 [
                     'IDLOCACAO' => $this->data[0],
                     'DATA' => $this->data[1],
@@ -344,18 +342,12 @@ class InsertInTables
         fclose($this->file);
     }
 
-    /**
-     * @return \App\Model\InsertionsIntoTables
-     */
-    private function instaInseIntoTables(): \App\Model\InsertionsIntoTables
+    private function setInseIntoTables(): \App\Model\InsertionsIntoTables
     {
         $this->insert = new Insertion($this->setDBConn());
         return $this->insert;
     }
 
-    /**
-     * @return \PDO
-     */
     private function setDBConn(): \PDO
     {
         ($this->pdo = Connection::get()->connect()) ??
