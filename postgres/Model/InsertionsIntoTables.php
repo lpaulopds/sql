@@ -31,18 +31,16 @@ class InsertionsIntoTables implements IInsertionsIntoTablesDAO
     {
         $this->pdo->beginTransaction();
         $sql = 'INSERT INTO departamentos(departamento, divisao)
-                    VALUES (:departamento, :divisao)';
+                    VALUES (:V1, :V2)';
         $stmt = $this->pdo->prepare($sql);
-        $dtListDeps = [];
 
         foreach ($data as $list)
         {
-            $stmt->bindValue(':departamento', $list['departamento']);
-            $stmt->bindValue(':divisao', $list['divisao']);
+            $stmt->bindValue(':V1', $list['departamento']);
+            $stmt->bindValue(':V2', $list['divisao']);
             $stmt->execute();
-            $this->pdo->commit();
+            ($this->pdo->commit()) ?? $this->pdo->rollBack();
         }
-        return $dtListDeps;
     }
 
     /**
@@ -54,19 +52,17 @@ class InsertionsIntoTables implements IInsertionsIntoTablesDAO
     {
         $this->pdo->beginTransaction();
         $sql = 'INSERT INTO localizacao(idRegiao, localizacao, pais)
-                    VALUES (:idRegiao, :localizacao, :pais)';
+                    VALUES (:V0, :V1, :V2)';
         $stmt = $this->pdo->prepare($sql);
-        $dtListLoca = [];
-    
+
         foreach ($data as $list)
         {
-            $stmt->bindValue(':idRegiao', $list['idRegiao']);
-            $stmt->bindValue(':localizacao', $list['localizacao']);
-            $stmt->bindValue(':pais', $list['pais']);
+            $stmt->bindValue(':V0', $list['idRegiao']);
+            $stmt->bindValue(':V1', $list['localizacao']);
+            $stmt->bindValue(':V2', $list['pais']);
             $stmt->execute();
             ($this->pdo->commit()) ?? $this->pdo->rollBack();
         }
-        return $dtListLoca;
     }
 
     /**
@@ -77,28 +73,30 @@ class InsertionsIntoTables implements IInsertionsIntoTablesDAO
     public function InsertIntoTableFunc($data)
     {
         $this->pdo->beginTransaction();
-        $sql = 'INSERT INTO funcionarios(idFuncionario, nome, email, sexo,
-                                departamento, admissao, salario, cargo, idRegiao)
-                        VALUES (:idFuncionario, :nome, :email, :sexo,
-                                    :departamento, :admissao, :salario, :cargo, :idRegiao)';
+        $sql = 'INSERT INTO funcionarios(nome, email, sexo, departamento, admissao,
+                            salario, cargo, idRegiao, dataregistro, horaregistro)
+                        VALUES (:V0, :V1, :V2, :V3, :V4, :V5, :V6, :V7, :V8, :V9)';
         $stmt = $this->pdo->prepare($sql);
-        $dtListFunc = [];
-    
+
+        date_default_timezone_set('America/Sao_Paulo');
+        $dataReg = date('d/m/Y');
+        $horaReg = date('H:i:s');
+
         foreach ($data as $list)
         {
-            $stmt->bindValue(':idFuncionario', $list['idFuncionario']);
-            $stmt->bindValue(':nome', $list['nome']);
-            $stmt->bindValue(':email', $list['email']);
-            $stmt->bindValue(':sexo', $list['sexo']);
-            $stmt->bindValue(':departamento', $list['departamento']);
-            $stmt->bindValue(':admissao', $list['admissao']);
-            $stmt->bindValue(':salario', $list['salario']);
-            $stmt->bindValue(':cargo', $list['cargo']);
-            $stmt->bindValue(':idRegiao', $list['idRegiao']);
+            $stmt->bindValue(':V0', $list['nome']);
+            $stmt->bindValue(':V1', $list['email']);
+            $stmt->bindValue(':V2', $list['sexo']);
+            $stmt->bindValue(':V3', $list['departamento']);
+            $stmt->bindValue(':V4', $list['admissao']);
+            $stmt->bindValue(':V5', $list['salario']);
+            $stmt->bindValue(':V6', $list['cargo']);
+            $stmt->bindValue(':V7', $list['idRegiao']);
+            $stmt->bindValue(':V8', $dataReg);
+            $stmt->bindValue(':V9', $horaReg);
             $stmt->execute();
             ($this->pdo->commit()) ?? $this->pdo->rollBack();
         }
-        return $dtListFunc;
     }
 
     /**
@@ -110,19 +108,17 @@ class InsertionsIntoTables implements IInsertionsIntoTablesDAO
     {
         $this->pdo->beginTransaction();
         $sql = 'INSERT INTO maquinas(maquina, dia, qtd)
-                    VALUES (:maquina,:dia,:qtd)';
+                    VALUES (:V1,:V2,:V3)';
         $stmt = $this->pdo->prepare($sql);
-        $dtListMaqs = [];
 
         foreach ($data as $list)
         {
-            $stmt->bindValue(':maquina', $list['maquina']);
-            $stmt->bindValue(':dia', $list['dia']);
-            $stmt->bindValue(':qtd', $list['qtd']);
+            $stmt->bindValue(':V1', $list['maquina']);
+            $stmt->bindValue(':V2', $list['dia']);
+            $stmt->bindValue(':V3', $list['qtd']);
             $stmt->execute();
             ($this->pdo->commit()) ?? $this->pdo->rollBack();
         }
-        return $dtListMaqs;
     }
 
     /**
@@ -134,18 +130,16 @@ class InsertionsIntoTables implements IInsertionsIntoTablesDAO
     {
         $this->pdo->beginTransaction();
         $sql = 'INSERT INTO GENERO(IDGENERO, NOME)
-                    VALUES (:IDGENERO, :NOME)';
+                    VALUES (:V0, :V1)';
         $stmt = $this->pdo->prepare($sql);
-        $dtListGene = [];
 
         foreach ($data as $list)
         {
-            $stmt->bindValue(':IDGENERO', $list['IDGENERO']);
-            $stmt->bindValue(':NOME', $list['NOME']);
+            $stmt->bindValue(':V0', $list['IDGENERO']);
+            $stmt->bindValue(':V1', $list['NOME']);
             $stmt->execute();
             ($this->pdo->commit()) ?? $this->pdo->rollBack();
         }
-        return $dtListGene;
     }
 
     /**
@@ -157,20 +151,18 @@ class InsertionsIntoTables implements IInsertionsIntoTablesDAO
     {
         $this->pdo->beginTransaction();
         $sql = 'INSERT INTO FILME(IDFILME, NOME, ANO, ID_GENERO)
-                    VALUES (:IDFILME, :NOME, :ANO, :ID_GENERO)';
+                    VALUES (:V0, :V1, :V2, :V3)';
         $stmt = $this->pdo->prepare($sql);
-        $dtListFilm = [];
 
         foreach ($data as $list)
         {
-            $stmt->bindValue(':IDFILME', $list['IDFILME']);
-            $stmt->bindValue(':NOME', $list['NOME']);
-            $stmt->bindValue(':ANO', $list['ANO']);
-            $stmt->bindValue(':ID_GENERO', $list['ID_GENERO']);
+            $stmt->bindValue(':V0', $list['IDFILME']);
+            $stmt->bindValue(':V1', $list['NOME']);
+            $stmt->bindValue(':V2', $list['ANO']);
+            $stmt->bindValue(':V3', $list['ID_GENERO']);
             $stmt->execute();
             ($this->pdo->commit()) ?? $this->pdo->rollBack();
         }
-        return $dtListFilm;
     }
 
     /**
@@ -182,20 +174,18 @@ class InsertionsIntoTables implements IInsertionsIntoTablesDAO
     {
         $this->pdo->beginTransaction();
         $sql = 'INSERT INTO LOCACAO(IDLOCACAO, DATA, MIDIA, DIAS, ID_FILME)
-                    VALUES (:IDLOCACAO, :DATA, :MIDIA, :DIAS, :ID_FILME)';
+                    VALUES (:V0, :V1, :V2, :V3, :V4)';
         $stmt = $this->pdo->prepare($sql);
-        $dtListLocacao = [];
 
         foreach ($data as $list)
         {
-            $stmt->bindValue(':IDLOCACAO', $list['IDLOCACAO']);
-            $stmt->bindValue(':DATA', $list['DATA']);
-            $stmt->bindValue(':MIDIA', $list['MIDIA']);
-            $stmt->bindValue(':DIAS', $list['DIAS']);
-            $stmt->bindValue(':ID_FILME', $list['ID_FILME']);
+            $stmt->bindValue(':V0', $list['IDLOCACAO']);
+            $stmt->bindValue(':V1', $list['DATA']);
+            $stmt->bindValue(':V2', $list['MIDIA']);
+            $stmt->bindValue(':V3', $list['DIAS']);
+            $stmt->bindValue(':V4', $list['ID_FILME']);
             $stmt->execute();
             ($this->pdo->commit()) ?? $this->pdo->rollBack();
         }
-        return $dtListLocacao;
     }
 }
