@@ -90,8 +90,8 @@ class EmployeeInsertionForm
     private function setEmployeeInsert()
     {
         $this->pdo->beginTransaction();
-        $this->sql = 'INSERT INTO funcionarios(nome, email, sexo, departamento,
-                                        admissao, salario, cargo, idregiao, dataRegistro, horaRegistro)
+        $this->sql = 'INSERT INTO funcionarios(nome, email, sexo, departamento,admissao,
+                                        salario, cargo, idregiao, dataRegistro, horaRegistro)
                             VALUES (:V1, :V2, :V3, :V4, :V5, :V6, :V7, :V8, :V9, :V10)';
         $this->stmt = $this->pdo->prepare($this->sql);
 
@@ -111,6 +111,6 @@ class EmployeeInsertionForm
         $this->stmt->bindValue(':V10', $this->hora);
         
         $this->stmt->execute();
-        $this->pdo->commit();
+        ($this->pdo->commit()) ?? $this->pdo->rollBack();
     }
 }
