@@ -21,17 +21,17 @@ function() {
     phpinfo();
 });
 
-$obRouter->addRoute('GET', '/postgres/',
+$obRouter->addRoute('GET', '/psql/',
 function() {
     return new Response(200, new InfraBusiness());
 });
 
-$obRouter->addRoute('GET', '/postgres-employee-insertion-form/',
+$obRouter->addRoute('GET', '/psql-employee-insert-form/',
 function() {
     require 'postgres/view/employee-insert-form.html';
 });
 
-$obRouter->addRoute('POST', '/postgres-employee-insertion-form/', 
+$obRouter->addRoute('POST', '/psql-employee-insert-form/',
 function()
 {
     $obEmployeeInsert = new EmployeeInseFormController();
