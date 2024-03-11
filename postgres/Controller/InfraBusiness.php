@@ -27,7 +27,7 @@ class InfraBusiness
     {
         // $this->dataCrea = new DatabaseCreator();
         $this->creaBusiTabl = new CreateBusinessTables();
-        // $this->inseTabl = new InsertInTables();
+        $this->inseTabl = new InsertInTables();
     }
 
     public function getDatabaseCreator() {
