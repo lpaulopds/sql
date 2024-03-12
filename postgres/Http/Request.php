@@ -10,6 +10,8 @@ class Request
 
     private $headers = [];
 
+    private $queryParams = [];
+
     private $postVars = [];
 
     public function __construct()
@@ -18,6 +20,7 @@ class Request
         $this->uri = $_SERVER['REQUEST_URI'] ?? '';
         // $this->setUri();
         $this->headers = getallheaders();
+        $this->queryParams = $_GET ?? '';
         $this->setPostVars();
     }
 
@@ -38,6 +41,11 @@ class Request
         // // remove parametros da uri
         $remoParaURI = explode('?', $this->uri);
         $this->uri = $remoParaURI[0];
+        // return $this->uri;
+    }
+
+    public function getQueryParams() {
+        return $this->queryParams;
     }
 
     public function getPostVars() {
