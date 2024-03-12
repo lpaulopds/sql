@@ -13,6 +13,7 @@ use \App\Http\Router;
 use \App\Http\Response;
 use \App\Controller\InfraBusiness;
 use \App\Controller\EmployeeInseFormController;
+use \App\Controller\SearchEmployeeController;
 
 $obRouter = new Router();
 
@@ -37,6 +38,20 @@ function()
     $obEmployeeInsert = new EmployeeInseFormController();
     return new Response(200, $obEmployeeInsert->getInsertEmployee());
 });
+
+$obRouter->addRoute('GET', '/psql-search-employee/',
+function() {
+    require 'postgres/view/search-employee.html';
+});
+
+$queryStr = $_SERVER['REDIRECT_QUERY_STRING'] ?? NULL;
+$obRouter->addRoute('GET', "/psql-search-employee/?".$queryStr,
+function()
+{
+    $obSearch = new SearchEmployeeController();
+    return new Response(200, $obSearch->getSearchEmployeeController());
+});
+
 
 $obRequest = $obRouter->requestRouter();
 $obRouter->dispatch($obRequest->getHttpMethod(), $obRequest->getUri());
