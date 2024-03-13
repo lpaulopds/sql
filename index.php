@@ -19,7 +19,9 @@ $obRouter = new Router();
 
 $obRouter->addRoute('GET', '/' ,
 function() {
-    phpinfo();
+    print date('Y/m/d');
+    print date('H:m:s');
+    // phpinfo();
 });
 
 $obRouter->addRoute('GET', '/psql/',
@@ -44,8 +46,7 @@ function() {
     require 'postgres/view/search-employee.html';
 });
 
-$queryStr = $_SERVER['REDIRECT_QUERY_STRING'] ?? NULL;
-$obRouter->addRoute('GET', "/psql-search-employee/?".$queryStr,
+$obRouter->addRoute('GET', "/psql-search-employee/?*",
 function()
 {
     $obSearch = new SearchEmployeeController();
