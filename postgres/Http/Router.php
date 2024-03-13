@@ -21,7 +21,15 @@ class Router
     }
 
     public function addRoute($method, $path, $callback) {
-        $this->routes[$method][$path] = $callback;
+        if ($this->request->getQueryParams())
+        {
+            $path = $this->request->getUri();
+            $this->routes[$method][$path] = $callback;
+        }
+        else {
+            $this->routes[$method][$path] = $callback;
+        }
+        
     }
 
     public function dispatch($method, $path)
