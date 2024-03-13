@@ -27,14 +27,16 @@ class SearchEmployeeController
         $obRouter = new Router();
         $request = $obRouter->requestRouter();
         $arrQueryParam = $request->getQueryParams();
-
         $obSearch = $this->setSearchEmployee();
 
-        $obSearch->searchTerm = $arrQueryParam['search'];
-        $obSearch->getSearchEmployee();
-        echo '<pre>';
-        print_r($obSearch->getSearchEmployee());
-        echo '</pre>';
+        if ($arrQueryParam)
+        {
+            $obSearch->searchTerm = $arrQueryParam['search'];
+            // $obSearch->getSearchEmployee();
+            echo '<pre>';
+            print_r($obSearch->getSearchEmployee());
+            echo '</pre>';
+        }
     }
 
     /**
