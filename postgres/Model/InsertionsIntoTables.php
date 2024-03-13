@@ -74,13 +74,13 @@ class InsertionsIntoTables implements IInsertionsIntoTablesDAO
     {
         $this->pdo->beginTransaction();
         $sql = 'INSERT INTO funcionarios(nome, email, sexo, departamento, admissao,
-                            salario, cargo, idRegiao, dataregistro, horaregistro)
+                            salario, cargo, idRegiao, dataRegistro, horaRegistro)
                         VALUES (:V0, :V1, :V2, :V3, :V4, :V5, :V6, :V7, :V8, :V9)';
         $stmt = $this->pdo->prepare($sql);
 
         date_default_timezone_set('America/Sao_Paulo');
-        $dataReg = date('d/m/Y');
-        $horaReg = date('H:i:s');
+        $dataReg = date('Y-m-d');
+        $horaReg = date('H:m:s');
 
         foreach ($data as $list)
         {

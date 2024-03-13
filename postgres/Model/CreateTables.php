@@ -58,7 +58,7 @@ class CreateTables implements ICreateTablesDAO
                     cargo varchar(100),
                     idRegiao int,
                     dataRegistro date,
-                    horaRegistro varchar(15)
+                    horaRegistro time
                 );',
             'DROP TABLE IF EXISTS maquinas;',
                 'CREATE TABLE maquinas

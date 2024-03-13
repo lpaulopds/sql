@@ -96,8 +96,8 @@ class EmployeeInsertionForm
         $this->stmt = $this->pdo->prepare($this->sql);
 
         date_default_timezone_set('America/Sao_Paulo');
-        $this->data = date('d/m/Y');
-        $this->hora = date('H:i:s');
+        $this->data = date('Y-m-d');
+        $this->hora = date('H:m:s');
 
         $this->stmt->bindValue(':V1', $this->nome);
         $this->stmt->bindValue(':V2', $this->email);
