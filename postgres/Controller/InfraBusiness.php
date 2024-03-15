@@ -2,12 +2,12 @@
 
 namespace App\Controller;
 
-use \App\Controller\DatabaseCreator;
-use \App\Controller\CreateBusinessTables;
-use \App\Controller\InsertInTables;
-
 class InfraBusiness 
 {
+    /**
+     * @var \PDO;
+     */
+    private $pdo;
     /**
      * @var DatabaseCreator
      */
@@ -23,11 +23,26 @@ class InfraBusiness
      */
     private $inseTabl;
 
+    /**
+     * @var ClientStrategyStore
+     */
+    private $insert;
+
     public function __construct()
     {
         // $this->dataCrea = new DatabaseCreator();
         $this->creaBusiTabl = new CreateBusinessTables();
-        $this->inseTabl = new InsertInTables();
+        // $this->inseTabl = new InsertInTables();
+
+        // Triggers Strategy store
+        $this->insert = new ClientStrategyStore();
+        $this->insert->insertDataDepartStore($this->pdo);
+        $this->insert->insertDataLocalizationStore($this->pdo);
+        $this->insert->insertDataEmployeeStore($this->pdo);
+        $this->insert->insertDataMachinesStore($this->pdo);
+        $this->insert->insertDataGenderStore($this->pdo);
+        $this->insert->insertDataFilmStore($this->pdo);
+        $this->insert->insertDataLocationStore($this->pdo);
     }
 
     public function getDatabaseCreator() {
@@ -40,5 +55,9 @@ class InfraBusiness
 
     public function getInsertInTables() {
         return $this->inseTabl;
+    }
+
+    public function getInsert() {
+        return $this->insert;
     }
 }
