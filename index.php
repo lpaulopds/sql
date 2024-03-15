@@ -21,7 +21,7 @@ $obRouter->addRoute('GET', '/' ,
 function() {
     print date('Y/m/d');
     print date('H:m:s');
-    // phpinfo();
+    phpinfo();
 });
 
 $obRouter->addRoute('GET', '/psql/',
