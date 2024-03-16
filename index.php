@@ -9,11 +9,10 @@ $time_start = microtime(true);
 
 require 'vendor/autoload.php';
 
+use App\Controller\ClientStrategyStore;
 use \App\Http\Router;
 use \App\Http\Response;
 use \App\Controller\InfraBusiness;
-use \App\Controller\EmployeeInseFormController;
-use \App\Controller\SearchEmployeeController;
 
 $obRouter = new Router();
 
@@ -37,8 +36,8 @@ function() {
 $obRouter->addRoute('POST', '/psql-employee-insert-form/',
 function()
 {
-    $obEmployeeInsert = new EmployeeInseFormController();
-    return new Response(200, $obEmployeeInsert->getInsertEmployee());
+    $obInsert = new ClientStrategyStore();
+    return new Response(200, $obInsert->insertEmployeeFormStore(null));
 });
 
 $obRouter->addRoute('GET', '/psql-search-employee/',
@@ -49,8 +48,8 @@ function() {
 $obRouter->addRoute('GET', "/psql-search-employee/?*",
 function()
 {
-    $obSearch = new SearchEmployeeController();
-    return new Response(200, $obSearch->getSearchEmployeeController());
+    $obSearch = new ClientStrategyStore();
+    return new Response(200, $obSearch->searchEmployeeStore(null));
 });
 
 
