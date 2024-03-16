@@ -1,8 +1,9 @@
-<?php declare(strict_types=1); // Strategy - Classe Auxiliar
+<?php declare(strict_types=1); // Strategy - helper Class
 
 namespace App\Controller;
 
 use \App\Connect\Connection as Connection;
+
 use \App\Model\DataEntryDepartmentStore;
 use \App\Model\DataEntryLocalizationStore;
 use \App\Model\DataEntryEmployeeStore;
@@ -40,13 +41,19 @@ class SecureDataStore
      */
     private $dataPack;
 
+    private function getInsertDepart()
+    {
+        $this->insert = new DataEntryDepartmentStore($this->setDBConn());
+        return $this->insert;
+    }
+
     /**
      * @return array
      */
     public function enterDataDepartment()
     {
         $this->file = fopen('postgres/data-db/departamentos.txt', 'r');
-        $this->batchSize = 10;
+        $this->batchSize = 20;
 
         while (!feof($this->file) && !feof($this->file) <= $this->batchSize)
         {
@@ -57,11 +64,17 @@ class SecureDataStore
             filter_var($this->dataPack[1], FILTER_SANITIZE_SPECIAL_CHARS);
 
             $this->getInsertDepart()->algorithm($this->dataPack);
-            echo '<pre>';
-            print_r($this->dataPack);
-            echo '</pre>';
+            // echo '<pre>';
+            // print_r($this->dataPack);
+            // echo '</pre>';
         }
         fclose($this->file);
+    }
+
+    private function getInsertLocation()
+    {
+        $this->insert = new DataEntryLocationStore($this->setDBConn());
+        return $this->insert;
     }
 
     public function enterDataLocalization()
@@ -84,6 +97,12 @@ class SecureDataStore
             echo '</pre>';
         }
         fclose($this->file);
+    }
+
+    private function getInsertEmployee()
+    {
+        $this->insert = new DataEntryEmployeeStore($this->setDBConn());
+        return $this->insert;
     }
 
     public function enterDataEmployee()
@@ -113,6 +132,12 @@ class SecureDataStore
         fclose($this->file);
     }
 
+    private function getInsertMachines()
+    {
+        $this->insert = new DataEntryMachineStore($this->setDBConn());
+        return $this->insert;
+    }
+
     public function enterDataMachines()
     {
         $this->file = fopen('postgres/data-db/maquinas.txt', 'r');
@@ -135,6 +160,12 @@ class SecureDataStore
         fclose($this->file);
     }
 
+    private function getInsertGender()
+    {
+        $this->insert = new DataEntryGenderStore($this->setDBConn());
+        return $this->insert;
+    }
+
     public function enterDataGender()
     {
         $this->file = fopen('postgres/data-db/genero.txt', 'r');
@@ -154,6 +185,12 @@ class SecureDataStore
             echo '</pre>';
         }
         fclose($this->file);
+    }
+
+    private function getInsertFilm()
+    {
+        $this->insert = new DataEntryFilmStore($this->setDBConn());
+        return $this->insert;
     }
 
     public function enterDataFilm()
@@ -179,6 +216,12 @@ class SecureDataStore
         fclose($this->file);
     }
 
+    private function getInsertLocalization()
+    {
+        $this->insert = new DataEntryLocalizationStore($this->setDBConn());
+        return $this->insert;
+    }
+
     public function enterDataLocation()
     {
         $this->file = fopen('postgres/data-db/locacao.txt', 'r');
@@ -201,51 +244,6 @@ class SecureDataStore
             echo '</pre>';
         }
         fclose($this->file);
-    }
-
-    /**
-     * @return DataEntryDepartmentStore
-     */
-    private function getInsertDepart()
-    {
-        $this->insert = new DataEntryDepartmentStore($this->setDBConn());
-        return $this->insert;
-    }
-
-    private function getInsertLocalization()
-    {
-        $this->insert = new DataEntryLocalizationStore($this->setDBConn());
-        return $this->insert;
-    }
-
-    private function getInsertEmployee()
-    {
-        $this->insert = new DataEntryEmployeeStore($this->setDBConn());
-        return $this->insert;
-    }
-
-    private function getInsertMachines()
-    {
-        $this->insert = new DataEntryMachineStore($this->setDBConn());
-        return $this->insert;
-    }
-
-    private function getInsertGender()
-    {
-        $this->insert = new DataEntryGenderStore($this->setDBConn());
-        return $this->insert;
-    }
-
-    private function getInsertFilm()
-    {
-        $this->insert = new DataEntryFilmStore($this->setDBConn());
-        return $this->insert;
-    }
-
-    private function getInsertLocation()
-    {
-        $this->insert = new DataEntryLocationStore($this->setDBConn());
-        return $this->insert;
     }
 
     private function setDBConn(): \PDO
