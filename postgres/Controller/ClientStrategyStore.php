@@ -11,6 +11,9 @@ use App\Model\DataEntryGenderStore;
 use App\Model\DataEntryFilmStore;
 use App\Model\DataEntryLocationStore;
 
+use App\Model\SearchEmployee;
+use App\Model\InsertEmployeeFormStore;
+
 class ClientStrategyStore
 {
     public function insertDataDepartStore($pdo)
@@ -66,6 +69,22 @@ class ClientStrategyStore
         $secure = new SecureDataStore();
         $context = new ContextStrategyStore(new DataEntryLocationStore($pdo));
         $secure->enterDataLocation();
+        $context->contextAlgorithm($secure->setEntry());
+    }
+
+    public function searchEmployeeStore($pdo)
+    {
+        $secure = new SearchEmployeeStore();
+        $context = new ContextStrategyStore(new SearchEmployee($pdo));
+        $secure->getSearchEmployee();
+        $context->contextAlgorithm($secure->setEntry());
+    }
+
+    public function insertEmployeeFormStore($pdo)
+    {
+        $secure = new InsertEmployeeStore();
+        $context = new ContextStrategyStore(new InsertEmployeeFormStore($pdo));
+        $secure->getInsertEmployee();
         $context->contextAlgorithm($secure->setEntry());
     }
 }
