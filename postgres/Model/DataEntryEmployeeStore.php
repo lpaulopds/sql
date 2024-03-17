@@ -42,7 +42,7 @@ class DataEntryEmployeeStore implements IStrategyStore
         $this->tableMaster = IStrategyStore::TABLEEMPLOYEE;
 
         $this->pdo->beginTransaction();
-        $this->sql = "INSERT INTO funcionarios(nome, email, sexo, departamento, admissao,
+        $this->sql = "INSERT INTO $this->tableMaster (nome, email, sexo, departamento, admissao,
                                     salario, cargo, idRegiao, dataRegistro, horaRegistro)
                                 VALUES (:V0, :V1, :V2, :V3, :V4, :V5, :V6, :V7, :V8, :V9)";
         $this->stmt = $this->pdo->prepare($this->sql);
