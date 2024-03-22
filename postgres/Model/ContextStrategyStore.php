@@ -8,6 +8,7 @@ class ContextStrategyStore
 {
     /**
      * Referência ao objeto
+     * @var IStrategyStore
      */
     private $strategy;
 
@@ -24,6 +25,6 @@ class ContextStrategyStore
     public function contextAlgorithm(Array $dataPack)
     {
         $this->dataPack = $dataPack;
-        // $this->strategy->algorithm($this->dataPack);
+        $this->strategy->algorithm($this->dataPack);
     }
 }
