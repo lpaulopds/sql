@@ -37,7 +37,7 @@ $obRouter->addRoute('POST', '/psql-employee-insert-form/',
 function()
 {
     $obInsert = new ClientStrategyStore();
-    return new Response(200, $obInsert->insertEmployeeFormStore(null));
+    return new Response(200, $obInsert->insertEmployeeFormStore());
 });
 
 $obRouter->addRoute('GET', '/psql-search-employee/',
@@ -49,7 +49,7 @@ $obRouter->addRoute('GET', "/psql-search-employee/?*",
 function()
 {
     $obSearch = new ClientStrategyStore();
-    return new Response(200, $obSearch->searchEmployeeStore(null));
+    return new Response(200, $obSearch->searchEmployeeStore());
 });
 
 
