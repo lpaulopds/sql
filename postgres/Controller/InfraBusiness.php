@@ -5,10 +5,6 @@ namespace App\Controller;
 class InfraBusiness 
 {
     /**
-     * @var \PDO;
-     */
-    private $pdo;
-    /**
      * @var DatabaseCreator
      */
     private $dataCrea;
@@ -34,15 +30,15 @@ class InfraBusiness
         $this->creaBusiTabl = new CreateBusinessTables();
         // $this->inseTabl = new InsertInTables();
 
-        // Triggers Strategy store
+        // // Triggers Strategy store
         $this->insert = new ClientStrategyStore();
-        $this->insert->insertDataDepartStore($this->pdo);
-        $this->insert->insertDataLocalizationStore($this->pdo);
-        $this->insert->insertDataEmployeeStore($this->pdo);
-        $this->insert->insertDataMachinesStore($this->pdo);
-        $this->insert->insertDataGenderStore($this->pdo);
-        $this->insert->insertDataFilmStore($this->pdo);
-        $this->insert->insertDataLocationStore($this->pdo);
+        $this->insert->insertDataDepartStore();
+        $this->insert->insertDataLocalizationStore();
+        $this->insert->insertDataEmployeeStore();
+        $this->insert->insertDataMachinesStore();
+        $this->insert->insertDataGenderStore();
+        $this->insert->insertDataFilmStore();
+        $this->insert->insertDataLocationStore();
     }
 
     public function getDatabaseCreator() {
