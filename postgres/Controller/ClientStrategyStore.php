@@ -16,74 +16,96 @@ use App\Model\InsertEmployeeFormStore as InsertEmployeeF;
 
 class ClientStrategyStore
 {
-    public function insertDataDepartStore($pdo)
+    public function insertDataDepartStore()
     {
         $secure = new SecureDataStore();
-        $context = new Context(new InsertDepart($pdo));
-        $secure->enterDataDepartment();
-        $context->contextAlgorithm($secure->setEntry());
+        $context = new Context(new InsertDepart());
+        foreach ($secure->enterDataDepartment() as $value)
+        {
+            $value = explode(",", $value);
+            $context->contextAlgorithm($value);
+            print_r($value);
+        }
     }
 
-    public function insertDataLocalizationStore($pdo)
+    public function insertDataLocalizationStore()
     {
         $secure = new SecureDataStore();
-        $context = new Context(new InsertLocalization($pdo));
-        $secure->enterDataLocalization();
-        $context->contextAlgorithm($secure->setEntry());
+        $context = new Context(new InsertLocalization());
+        foreach ($secure->enterDataLocalization() as $value)
+        {
+            $value = explode(",", $value);
+            $context->contextAlgorithm($value);
+        }
     }
 
-    public function insertDataEmployeeStore($pdo)
+    public function insertDataEmployeeStore()
     {
         $secure = new SecureDataStore();
-        $context = new Context(new InsertEmployee($pdo));
-        $secure->enterDataEmployee();
-        $context->contextAlgorithm($secure->setEntry());
+        $context = new Context(new InsertEmployee());
+        foreach ($secure->enterDataEmployee() as $value)
+        {
+            $value = explode(",", $value);
+            $context->contextAlgorithm($value);
+        }
     }
 
-    public function insertDataMachinesStore($pdo)
+    public function insertDataMachinesStore()
     {
         $secure = new SecureDataStore();
-        $context = new Context(new InsertMachine($pdo));
-        $secure->enterDataMachines();
-        $context->contextAlgorithm($secure->setEntry());
+        $context = new Context(new InsertMachine());
+        foreach ($secure->enterDataMachines() as $value)
+        {
+            $value = explode(",", $value);
+            $context->contextAlgorithm($value);
+        }
     }
 
-    public function insertDataGenderStore($pdo)
+    public function insertDataGenderStore()
     {
         $secure = new SecureDataStore();
-        $context = new Context(new InsertGender($pdo));
-        $secure->enterDataGender();
-        $context->contextAlgorithm($secure->setEntry());
+        $context = new Context(new InsertGender());
+        foreach ($secure->enterDataGender() as $value)
+        {
+            $value = explode(",", $value);
+            $context->contextAlgorithm($value);
+        }
     }
 
-    public function insertDataFilmStore($pdo)
+    public function insertDataFilmStore()
     {
         $secure = new SecureDataStore();
-        $context = new Context(new InsertFilm($pdo));
-        $secure->enterDataFilm();
-        $context->contextAlgorithm($secure->setEntry());
+        $context = new Context(new InsertFilm());
+        foreach ($secure->enterDataFilm() as $value)
+        {
+            $value = explode(",", $value);
+            $context->contextAlgorithm($value);
+        }
     }
 
-    public function insertDataLocationStore($pdo)
+    public function insertDataLocationStore()
     {
         $secure = new SecureDataStore();
-        $context = new Context(new InsertLocation($pdo));
-        $secure->enterDataLocation();
-        $context->contextAlgorithm($secure->setEntry());
+        $context = new Context(new InsertLocation());
+        foreach ($secure->enterDataLocation() as $value)
+        {
+            $value = explode(",", $value);
+            $context->contextAlgorithm($value);
+        }
     }
 
-    public function searchEmployeeStore($pdo)
+    public function searchEmployeeStore()
     {
         $secure = new SearchEmployeeStore();
-        $context = new Context(new Search($pdo));
+        $context = new Context(new Search());
         $secure->getSearchEmployee();
         $context->contextAlgorithm($secure->setEntry());
     }
 
-    public function insertEmployeeFormStore($pdo)
+    public function insertEmployeeFormStore()
     {
         $secure = new InsertEmployeeStore();
-        $context = new Context(new InsertEmployeeF($pdo));
+        $context = new Context(new InsertEmployeeF());
         $secure->getInsertEmployee();
         $context->contextAlgorithm($secure->setEntry());
     }
