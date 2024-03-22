@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use App\Model\Interfaces\IStrategyStore;
+use App\Connect\Connection;
 
 class DataEntryDepartmentStore implements IStrategyStore
 {
@@ -31,8 +32,9 @@ class DataEntryDepartmentStore implements IStrategyStore
      */
     private $stmt;
 
-    public function __construct($pdo)
+    public function __construct()
     {
+        $pdo = Connection::get()->connect();
         $this->pdo = $pdo;
     }
 
@@ -47,8 +49,8 @@ class DataEntryDepartmentStore implements IStrategyStore
 
         $this->stmt = $this->pdo->prepare($this->sql);
 
-        $this->stmt->bindValue(':V1', $this->dataPack[0]);
         $this->stmt->bindValue(':V2', $this->dataPack[1]);
+        $this->stmt->bindValue(':V1', $this->dataPack[0]);
 
         // echo '<pre>';
         // print_r($this->dataPack);
