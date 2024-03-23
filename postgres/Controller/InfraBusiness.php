@@ -13,11 +13,6 @@ class InfraBusiness
      * @var CreateBusinessTables
      */
     private $creaBusiTabl;
-    
-    /**
-     * @var InsertInTables
-     */
-    private $inseTabl;
 
     /**
      * @var ClientStrategyStore
@@ -26,9 +21,9 @@ class InfraBusiness
 
     public function __construct()
     {
+        // // Instances for create database and tabless
         // $this->dataCrea = new DatabaseCreator();
         $this->creaBusiTabl = new CreateBusinessTables();
-        // $this->inseTabl = new InsertInTables();
 
         // // Triggers Strategy store
         $this->insert = new ClientStrategyStore();
@@ -47,10 +42,6 @@ class InfraBusiness
 
     public function getCreateBusiTables() {
         return $this->creaBusiTabl;
-    }
-
-    public function getInsertInTables() {
-        return $this->inseTabl;
     }
 
     public function getInsert() {
