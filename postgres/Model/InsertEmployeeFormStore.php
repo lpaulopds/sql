@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use App\Model\Interfaces\IStrategyStore;
+use \App\Connect\Connection;
 
 class InsertEmployeeFormStore implements IStrategyStore
 {
@@ -82,10 +83,11 @@ class InsertEmployeeFormStore implements IStrategyStore
     private $dataPack;
 
     /**
-     * @param type $pdo
+     * @param \PDO
      */
-    public function __construct($pdo)
+    public function __construct()
     {
+        $pdo = Connection::get()->connect();
         $this->pdo = $pdo;
     }
 
@@ -96,7 +98,7 @@ class InsertEmployeeFormStore implements IStrategyStore
 
         $this->pdo->beginTransaction();
         $this->sql = "INSERT INTO $this->tableMaster (nome, email, sexo, departamento,admissao,
-                                                salario, cargo, idregiao, dataRegistro, horaRegistro)
+                                            salario, cargo, idregiao, dataRegistro, horaRegistro)
                                 VALUES (:V1, :V2, :V3, :V4, :V5, :V6, :V7, :V8, :V9, :V10)";
 
         $this->stmt = $this->pdo->prepare($this->sql);

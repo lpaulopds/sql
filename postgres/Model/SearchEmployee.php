@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use App\Model\Interfaces\IStrategyStore;
+use \App\Connect\Connection;
 
 class SearchEmployee implements IStrategyStore
 {
@@ -36,8 +37,9 @@ class SearchEmployee implements IStrategyStore
      */
     private $stmt;
 
-    public function __construct($pdo)
+    public function __construct()
     {
+        $pdo = Connection::get()->connect();
         $this->pdo = $pdo;        
     }
 
