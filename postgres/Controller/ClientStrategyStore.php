@@ -24,7 +24,9 @@ class ClientStrategyStore
         {
             $value = explode(",", $value);
             $context->contextAlgorithm($value);
+            echo '<pre>';
             print_r($value);
+            echo '</pre>';
         }
     }
 
@@ -36,6 +38,9 @@ class ClientStrategyStore
         {
             $value = explode(",", $value);
             $context->contextAlgorithm($value);
+            echo '<pre>';
+            print_r($value);
+            echo '</pre>';
         }
     }
 
@@ -47,6 +52,9 @@ class ClientStrategyStore
         {
             $value = explode(",", $value);
             $context->contextAlgorithm($value);
+            echo '<pre>';
+            print_r($value);
+            echo '</pre>';
         }
     }
 
@@ -58,6 +66,9 @@ class ClientStrategyStore
         {
             $value = explode(",", $value);
             $context->contextAlgorithm($value);
+            echo '<pre>';
+            print_r($value);
+            echo '</pre>';
         }
     }
 
@@ -69,6 +80,9 @@ class ClientStrategyStore
         {
             $value = explode(",", $value);
             $context->contextAlgorithm($value);
+            echo '<pre>';
+            print_r($value);
+            echo '</pre>';
         }
     }
 
@@ -80,6 +94,9 @@ class ClientStrategyStore
         {
             $value = explode(",", $value);
             $context->contextAlgorithm($value);
+            echo '<pre>';
+            print_r($value);
+            echo '</pre>';
         }
     }
 
@@ -91,6 +108,9 @@ class ClientStrategyStore
         {
             $value = explode(",", $value);
             $context->contextAlgorithm($value);
+            echo '<pre>';
+            print_r($value);
+            echo '</pre>';
         }
     }
 
