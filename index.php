@@ -17,9 +17,10 @@ use \App\Controller\InfraBusiness;
 $obRouter = new Router();
 
 $obRouter->addRoute('GET', '/' ,
-function() {
-    print date('Y/m/d');
-    print date('H:m:s');
+function()
+{
+    print date('Y/m/d') . "<br>";
+    print date('H:m:s') . "<br>";
     phpinfo();
 });
 
