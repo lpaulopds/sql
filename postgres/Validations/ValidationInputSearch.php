@@ -1,32 +1,28 @@
-<?php declare(strict_types=1);
+<?php declare(strict_types=1); // Strategy - Validation
 
 namespace App\Validations;
 
-class ValidationInputSearch
+use App\Model\Interfaces\IStrategySearchEmployee;
+
+class ValidationInputSearch implements IStrategySearchEmployee
 {
-    public static function validInputSearch($str)
+    /**
+     * @param mixed
+     * @return bool
+     */
+    public static function validate($data): bool
     {
-        $rules= !empty($str) &&
-                strlen($str) >= 3 &&
-                strlen($str) <= 10 &&
-                !is_numeric($str) &&
-                strstr($str, '');
-        if ($rules)
-        {
-            return TRUE;
-            exit;
-        }
-        if (filter_var($str, FILTER_VALIDATE_EMAIL)) 
-        {
-            return TRUE;
-            exit;
-        }
-        else
-        {
-            echo '<h1>False</h1>';
-            die;
-        }
+        $rules= !empty($data) &&
+                strlen($data) >= 3 &&
+                strlen($data) <= 10 &&
+                !is_numeric($data) &&
+                strstr($data, '');
 
+        if ($rules) return TRUE;
 
+        if (filter_var($data, FILTER_VALIDATE_EMAIL)) return TRUE;
+        print '<p style=color:red>Sem resultado</p>';
+
+        return FALSE;
     }
 }

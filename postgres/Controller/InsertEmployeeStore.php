@@ -2,17 +2,11 @@
 
 namespace App\Controller;
 
-use \App\Connect\Connection as Connection;
-use \App\Model\InsertEmployeeFormStore;
-use \App\Http\Router;
+use App\Model\InsertEmployeeFormStore;
+use App\Http\Router;
 
 class InsertEmployeeStore
 {
-    /**
-     * @var \PDO
-     */
-    private $pdo;
-
     /**
      * @var InsertEmployeeFormStore
      */
@@ -47,16 +41,14 @@ class InsertEmployeeStore
 
         $this->obInsert = $this->setInsertEmployeeForm();
 
-        $this->obInsert->nome = $this->dataPack['nome'];
-        $this->obInsert->email = $this->dataPack['email'];
-        $this->obInsert->sexo = $this->dataPack['sexo'];
-        $this->obInsert->departamento = $this->dataPack['departamento'];
-        $this->obInsert->admissao = $this->dataPack['admissao'];
-        $this->obInsert->salario = $this->dataPack['salario'];
-        $this->obInsert->cargo = $this->dataPack['cargo'];
-        $this->obInsert->regiao = $this->dataPack['regiao'];
-
-        $this->obInsert->algorithm($this->dataPack);
+        $this->obInsert->nome = filter_var($this->dataPack['nome'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $this->obInsert->email = filter_var($this->dataPack['email'], FILTER_SANITIZE_EMAIL);
+        $this->obInsert->sexo = filter_var($this->dataPack['sexo'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $this->obInsert->departamento = filter_var($this->dataPack['departamento'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $this->obInsert->admissao = filter_var($this->dataPack['admissao'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $this->obInsert->salario = filter_var($this->dataPack['salario'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $this->obInsert->cargo = filter_var($this->dataPack['cargo'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $this->obInsert->regiao = filter_var($this->dataPack['regiao'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
         // echo '<pre>';
         // print_r($this->dataPack);
@@ -68,18 +60,8 @@ class InsertEmployeeStore
      */
     private function setInsertEmployeeForm()
     {
-        $this->insert = new InsertEmployeeFormStore($this->setDBConn());
+        $this->insert = new InsertEmployeeFormStore();
         return $this->insert;
-    }
-
-    /**
-     * @return \PDO
-     */
-    private function setDBConn()
-    {
-        ($this->pdo = Connection::get()->connect()) ??
-            throw new \PDOException("Not connected.");
-        return $this->pdo;
     }
 
     /**
