@@ -23,9 +23,6 @@ class ValidationInputSearch implements IStrategySearchEmployee
 
         if ($rules) return TRUE;
 
-
-        // if (preg_match($pattern, $data)) return FALSE;
-
         if (filter_var($data, FILTER_VALIDATE_EMAIL)) return TRUE;
         print '<p style=color:red>Sem resultado</p>';
 
