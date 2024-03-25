@@ -118,7 +118,9 @@ class ClientStrategyStore
     {
         $secure = new SearchEmployeeStore();
         $context = new Context(new Search());
-        $secure->getSearchEmployee();
+        print '<pre>';
+        print_r($secure->getSearchEmployee());
+        print '</pre>';
         $context->contextAlgorithm($secure->setEntry());
     }
 
@@ -126,7 +128,9 @@ class ClientStrategyStore
     {
         $secure = new InsertEmployeeStore();
         $context = new Context(new InsertEmployeeF());
-        $secure->getInsertEmployee();
+        print '<pre>';
+        print_r($secure->getInsertEmployee());
+        print '</pre>';
         $context->contextAlgorithm($secure->setEntry());
     }
 }
