@@ -12,13 +12,19 @@ class ValidationInputSearch implements IStrategySearchEmployee
      */
     public static function validate($data): bool
     {
+        $pattern = '/[0-9]+/';
+
         $rules= !empty($data) &&
                 strlen($data) >= 3 &&
                 strlen($data) <= 10 &&
                 !is_numeric($data) &&
+                !preg_match($pattern, $data) &&
                 strstr($data, '');
 
         if ($rules) return TRUE;
+
+
+        // if (preg_match($pattern, $data)) return FALSE;
 
         if (filter_var($data, FILTER_VALIDATE_EMAIL)) return TRUE;
         print '<p style=color:red>Sem resultado</p>';
