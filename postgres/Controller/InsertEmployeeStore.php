@@ -49,10 +49,7 @@ class InsertEmployeeStore
         $this->obInsert->salario = filter_var($this->dataPack['salario'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $this->obInsert->cargo = filter_var($this->dataPack['cargo'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $this->obInsert->regiao = filter_var($this->dataPack['regiao'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-
-        // echo '<pre>';
-        // print_r($this->dataPack);
-        // echo '</pre>';die;
+        return $this->dataPack;
     }
 
     /**
