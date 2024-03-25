@@ -42,10 +42,7 @@ class SearchEmployeeStore
         {
             $obClientValid = new ClientStrategyValid();
             $obClientValid->searchEmployeeValidation(htmlspecialchars($this->dataPack['search']));
-
-            echo '<pre>';
-            print_r($this->obSearch->algorithm($this->dataPack));
-            echo '</pre>';
+            return $this->obSearch->algorithm($this->dataPack);
         }
     }
 
