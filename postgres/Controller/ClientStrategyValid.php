@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Model\ContextStrategyValidation as Context;
-use App\Validations\ValidationInputSearch as Validation;
+use App\Validations\InputsValidation as Validation;
 
 class ClientStrategyValid
 {
@@ -11,5 +11,11 @@ class ClientStrategyValid
     {
         $context = new Context(new Validation());
         $context->ContextValidationSearch($data);
+    }
+
+    public function nameEmployeeValidation($data)
+    {
+        $context = new Context(new Validation());
+        $context->ContextValidationEmployeeName($data);
     }
 }
