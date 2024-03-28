@@ -23,21 +23,44 @@ class InsertEmployeeStore
     private $obRouter;
 
     /**
+     * @var ClientStrategyValid
+     */
+    private $obValid;
+
+    /**
      * @var array
      */
     private $dataPack;
 
     /**
-     * @return string
+     * Método para retornar validação e inserção
+     * @return mixed
      */
-    public function getInsertEmployee() {
+    public function getInsertEmployee()
+    {
+        $this->employeeInsertValidation();
         return $this->setInsertEmployee();
     }
 
+    /**
+     * Valida os inputs de funcionário antes da inserção
+     * @return void
+     */
+    private function employeeInsertValidation()
+    {
+        $this->dataPack = $this->setRouter()->requestRouter()->getPostVars();
+
+        $this->obValid = new ClientStrategyValid();
+        $this->obValid->nameEmployeeValidation($this->dataPack['nome']);
+    }
+
+    /**
+     * Sanitiza e insere os dados
+     * @return array
+     */
     private function setInsertEmployee()
     {
-        $this->obRouter = new Router();
-        $this->dataPack = $this->obRouter->requestRouter()->getPostVars();
+        $this->dataPack = $this->setRouter()->requestRouter()->getPostVars();
 
         $this->obInsert = $this->setInsertEmployeeForm();
 
@@ -53,12 +76,23 @@ class InsertEmployeeStore
     }
 
     /**
+     * Instância da classe de inserção
      * @return InsertEmployeeFormStore
      */
     private function setInsertEmployeeForm()
     {
         $this->insert = new InsertEmployeeFormStore();
         return $this->insert;
+    }
+
+    /**
+     * Instância da classe de rotas
+     * @return Router
+     */
+    private function setRouter()
+    {
+        $this->obRouter = new Router();
+        return $this->obRouter;
     }
 
     /**
