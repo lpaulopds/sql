@@ -23,36 +23,72 @@ class SearchEmployeeStore
     private $obRouter;
 
     /**
+     * @var ClientStrategyValid
+     */
+    private $obValid;
+
+    /**
      * @var array
      */
     private $dataPack;
 
-    public function getSearchEmployee() {
+    /**
+     * Retorna validação e busca de funcionário
+     * @return array
+     */
+    public function getSearchEmployee()
+    {
+        $this->employeeSearchValidation();
         return $this->setSearchEmployeeStore();
     }
 
+    /**
+     * Validação da busca de funcionário
+     * @return void
+     */
+    private function employeeSearchValidation()
+    {
+        $this->dataPack = $this->setRouter()->requestRouter()->getQueryParams();
+
+        $this->obValid = new ClientStrategyValid();
+        $this->obValid->searchEmployeeValidation($this->dataPack['search']);
+    }
+
+    /**
+     * Sanitiza e faz busca de funcionário
+     * @return array
+     */
     private function setSearchEmployeeStore()
     {
-        $this->obRouter = new Router();
-        $this->dataPack = $this->obRouter->requestRouter()->getQueryParams();
-        
+        $this->dataPack = $this->setRouter()->requestRouter()->getQueryParams();
+
         $this->obSearch = $this->setSearchEmployee();
 
         if ($this->dataPack)
         {
-            $obClientValid = new ClientStrategyValid();
-            $obClientValid->searchEmployeeValidation(htmlspecialchars($this->dataPack['search']));
+            filter_var($this->dataPack['search'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             return $this->obSearch->algorithm($this->dataPack);
         }
     }
 
     /**
+     * Instância da classe de busca de funcionário
      * @return SearchEmployee
      */
     private function setSearchEmployee()
     {
         $this->search = new SearchEmployee();
         return $this->search;
+    }
+
+    /**
+     * Instância da classe de rotas
+     * @return Router
+     */
+    private function setRouter()
+    {
+        $this->obRouter = new Router();
+        return $this->obRouter;
     }
 
     /**
