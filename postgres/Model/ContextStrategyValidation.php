@@ -2,13 +2,13 @@
 
 namespace App\Model;
 
-use App\Model\Interfaces\IStrategySearchEmployee as ISearch;
+use App\Model\Interfaces\IStrategyValidations as IValidations;
 
 class ContextStrategyValidation
 {
     private $validStrategy;
 
-    public function __construct(ISearch $validStrategy) {
+    public function __construct(IValidations $validStrategy) {
         $this->validStrategy = $validStrategy;
     }
 
@@ -17,6 +17,14 @@ class ContextStrategyValidation
         if ($this->validStrategy === null) {
             throw new \Exception("Error Processing Request", 1);
         }
-        return $this->validStrategy->validate($data);
+        return $this->validStrategy->validateSearch($data);
+    }
+
+    public function ContextValidationEmployeeName($data): bool
+    {
+        if ($this->validStrategy === null) {
+            throw new \Exception("Error Processing Request", 1);
+        }
+        return $this->validStrategy->validateEmployeeName($data);
     }
 }
