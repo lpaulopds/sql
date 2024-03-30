@@ -3,7 +3,7 @@
 namespace App\Model;
 
 use App\Model\Interfaces\IStrategyStore;
-use \App\Connect\Connection;
+use App\Connect\Connection;
 
 class InsertEmployeeFormStore implements IStrategyStore
 {
