@@ -15,12 +15,12 @@ COPY ./scripts-init/entrypoint.sh /docker-entrypoint-initdb.d/
 
 ### Instala apt packages
 ### Mantém cache do container no compose up
-# RUN apt-get update && \
-#     apt-get install -y git && \
-#     apt-get install -y nano && \
-#     apt-get install -y net-tools && \
-#     apt-get install -y unzip && \
-#     apt-get install -y gzip
+RUN apt-get update && \
+    apt-get install -y git && \
+    apt-get install -y nano && \
+    apt-get install -y net-tools && \
+    apt-get install -y unzip && \
+    apt-get install -y gzip
     # && \
     # apt-get install -y apt-transport-https && \
     # apt-get install -y libicu-dev && \
