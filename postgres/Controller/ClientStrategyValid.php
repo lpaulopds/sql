@@ -18,4 +18,16 @@ class ClientStrategyValid
         $context = new Context(new Validation());
         $context->ContextValidationEmployeeName($data);
     }
+
+    public function emailEmployeeValidation($data)
+    {
+        $context = new Context(new Validation());
+        $context->ContextValidationEmployeeEmail($data);
+    }
+
+    public function sexoEmployeeValidation($data)
+    {
+        $context = new Context(new Validation());
+        $context->ContextValidationEmployeeSexo($data);
+    }
 }
