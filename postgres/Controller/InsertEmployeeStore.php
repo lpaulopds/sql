@@ -52,6 +52,8 @@ class InsertEmployeeStore
 
         $this->obValid = new ClientStrategyValid();
         $this->obValid->nameEmployeeValidation($this->dataPack['nome']);
+        $this->obValid->emailEmployeeValidation($this->dataPack['email']);
+        $this->obValid->sexoEmployeeValidation($this->dataPack['sexo']);
     }
 
     /**
