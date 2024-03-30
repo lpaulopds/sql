@@ -27,4 +27,20 @@ class ContextStrategyValidation
         }
         return $this->validStrategy->validateEmployeeName($data);
     }
+
+    public function ContextValidationEmployeeEmail($data): bool
+    {
+        if ($this->validStrategy === null) {
+            throw new \Exception("Error Processing Request", 1);
+        }
+        return $this->validStrategy->validateEmployeeEmail($data);
+    }
+
+    public function ContextValidationEmployeeSexo($data): bool
+    {
+        if ($this->validStrategy === null) {
+            throw new \Exception("Error Processing Request", 1);
+        }
+        return $this->validStrategy->validateEmployeeSexo($data);
+    }
 }
