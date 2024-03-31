@@ -1,4 +1,4 @@
-<?php declare(strict_types=1); // Error Strategy
+<?php declare(strict_types=1); // Error Strategy interface
 
 namespace App\Model\Interfaces;
 
