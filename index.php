@@ -14,14 +14,18 @@ use App\Http\Router;
 use App\Http\Response;
 use App\Controller\InfraBusiness;
 use App\Controller\ClientStrategyError;
+use App\Controller\EmployeeInsertForm;
 
 $obRouter = new Router();
+$obSelect = new ClientStrategyStore();
 
-$obRouter->addRoute('GET', '/' ,
+
+$obRouter->addRoute('GET', '/',
 function()
 {
     print date('Y/m/d') . "<br>";
     print date('H:m:s') . "<br>";
+
     phpinfo();
 });
 
@@ -32,7 +36,7 @@ function() {
 
 $obRouter->addRoute('GET', '/psql-employee-insert-form/',
 function() {
-    require 'postgres/view/employee-insert-form.html';
+    return new Response(200, EmployeeInsertForm::EmployeeInsertForm());
 });
 
 $obRouter->addRoute('POST', '/psql-employee-insert-form/',
@@ -44,7 +48,7 @@ function()
 
 $obRouter->addRoute('GET', '/psql-search-employee/',
 function() {
-    require 'postgres/view/search-employee.html';
+    require 'postgres/resources/view/search-employee.html';
 });
 
 $obRouter->addRoute('GET', "/psql-search-employee/?*",
