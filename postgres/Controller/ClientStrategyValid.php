@@ -7,27 +7,32 @@ use App\Validations\InputsValidation as Validation;
 
 class ClientStrategyValid
 {
+    /**
+     * @var Context
+     */
+    private $context;
+
     public function searchEmployeeValidation($data)
     {
-        $context = new Context(new Validation());
-        $context->ContextValidationSearch($data);
+        $this->context = new Context(new Validation());
+        $this->context->ContextValidationSearch($data);
     }
 
     public function nameEmployeeValidation($data)
     {
-        $context = new Context(new Validation());
-        $context->ContextValidationEmployeeName($data);
+        $this->context = new Context(new Validation());
+        $this->context->ContextValidationEmployeeName($data);
     }
 
     public function emailEmployeeValidation($data)
     {
-        $context = new Context(new Validation());
-        $context->ContextValidationEmployeeEmail($data);
+        $this->context = new Context(new Validation());
+        $this->context->ContextValidationEmployeeEmail($data);
     }
 
     public function sexoEmployeeValidation($data)
     {
-        $context = new Context(new Validation());
-        $context->ContextValidationEmployeeSexo($data);
+        $this->context = new Context(new Validation());
+        $this->context->ContextValidationEmployeeSexo($data);
     }
 }
