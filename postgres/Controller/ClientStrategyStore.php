@@ -1,8 +1,9 @@
-<?php declare(strict_types=1); // Strategy - Client
+<?php declare(strict_types=1); // Strategy - Client Store
 
 namespace App\Controller;
 
 use App\Model\ContextStrategyStore as Context;
+use App\Model\EmployeeSelect as EmployeeSelect;
 use App\Model\Insert\DataEntryDepartmentStore as InsertDepart;
 use App\Model\Insert\DataEntryLocalizationStore as InsertLocalization;
 use App\Model\Insert\DataEntryEmployeeStore as InsertEmployee;
@@ -187,5 +188,13 @@ class ClientStrategyStore
             print_r($this->secure->getInsertEmployee());
         echo '</pre>';
         $this->context->contextAlgorithm($this->secure->setEntry());
+    }
+
+    public function selectEmployee()
+    {
+        $selectEmployee = new SelectEmployee();
+        $this->context = new Context(new EmployeeSelect());
+        $selectEmployee->getSelect();
+        $this->context->contextAlgorithm(array(0));
     }
 }
