@@ -1,4 +1,4 @@
-<?php declare(strict_types=1); // Strategy Search Employee
+<?php declare(strict_types=1); // Strategy - Model Search Employee
 
 namespace App\Model;
 
