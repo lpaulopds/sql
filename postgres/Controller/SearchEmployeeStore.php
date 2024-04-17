@@ -1,4 +1,4 @@
-<?php declare(strict_types=1); // Strategy - Helper class
+<?php declare(strict_types=1); // Strategy - Controller Helper class
 
 namespace App\Controller;
 
