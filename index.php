@@ -19,7 +19,7 @@ use App\Controller\EmployeeInsertForm;
 $obRouter = new Router();
 $obSelect = new ClientStrategyStore();
 
-
+// // Página home
 $obRouter->addRoute('GET', '/',
 function()
 {
@@ -29,16 +29,19 @@ function()
     phpinfo();
 });
 
+// // Cria tabelas e faz inserções
 $obRouter->addRoute('GET', '/psql/',
 function() {
     return new Response(200, new InfraBusiness());
 });
 
+// // Chama formulário para inserção de funcionários
 $obRouter->addRoute('GET', '/psql-employee-insert-form/',
 function() {
     return new Response(200, EmployeeInsertForm::EmployeeInsertForm());
 });
 
+// // Faz a inserção de funcionários
 $obRouter->addRoute('POST', '/psql-employee-insert-form/',
 function()
 {
@@ -46,6 +49,7 @@ function()
     return new Response(200, $obInsert->insertEmployeeFormStore());
 });
 
+// // Chama tabela com projeção de funcionários
 $obRouter->addRoute('GET', '/psql-employee-table/',
 function()
 {
@@ -53,11 +57,13 @@ function()
     return new Response(200, $obSelect->selectEmployee());
 });
 
+// // Chama formulário de busca de funcionário
 $obRouter->addRoute('GET', '/psql-search-employee/',
 function() {
     require 'postgres/resources/view/search-employee.html';
 });
 
+// // Retorna resultado da busca de funcionário
 $obRouter->addRoute('GET', "/psql-search-employee/?*",
 function()
 {
