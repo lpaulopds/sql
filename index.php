@@ -35,10 +35,11 @@ function() {
     return new Response(200, new InfraBusiness());
 });
 
-// // Chama formulário para inserção de funcionários
+// // Retorna formulário para inserção de funcionários
 $obRouter->addRoute('GET', '/psql-employee-insert-form/',
 function() {
-    return new Response(200, EmployeeInsertForm::EmployeeInsertForm());
+    $obEmpForm = new EmployeeInsertForm();
+    return new Response(200, $obEmpForm->EmployeeInsertForm());
 });
 
 // // Faz a inserção de funcionários
@@ -49,7 +50,7 @@ function()
     return new Response(200, $obInsert->insertEmployeeFormStore());
 });
 
-// // Chama tabela com projeção de funcionários
+// // Retorna tabela com projeção de funcionários
 $obRouter->addRoute('GET', '/psql-employee-table/',
 function()
 {
@@ -57,7 +58,7 @@ function()
     return new Response(200, $obSelect->selectEmployee());
 });
 
-// // Chama formulário de busca de funcionário
+// // Retorna formulário de busca de funcionário
 $obRouter->addRoute('GET', '/psql-search-employee/',
 function() {
     require 'postgres/resources/view/search-employee.html';
@@ -72,7 +73,7 @@ function()
 });
 
 
-// // Mostra e salva log de erro
+// // Retorna e salva log de erro
 ClientStrategyError::displayError();
 
 $obRequest = $obRouter->requestRouter();
