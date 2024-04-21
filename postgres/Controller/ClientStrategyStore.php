@@ -11,8 +11,6 @@ use App\Model\Insert\DataEntryMachineStore as InsertMachine;
 use App\Model\Insert\DataEntryGenderStore as InsertGender;
 use App\Model\Insert\DataEntryFilmStore as InsertFilm;
 use App\Model\Insert\DataEntryLocationStore as InsertLocation;
-use App\Model\SelectMenuDepart as SelectDepart;
-
 use App\Model\SearchEmployee as Search;
 use App\Model\InsertEmployeeFormStore as InsertEmployeeF;
 
@@ -62,6 +60,11 @@ class ClientStrategyStore
      * @var string
      */
     private $location;
+
+    /**
+     * @var SelectEmployee
+     */
+    private $selectEmployee;
 
     public function insertDataDepartStore()
     { 
@@ -171,15 +174,6 @@ class ClientStrategyStore
         $this->context->contextAlgorithm($this->secure->setEntry());
     }
 
-    public function selectMenuDepart()
-    {
-        $selectDepart = new SelectDepartEmployee();
-        $this->context = new Context(new SelectDepart);
-        $sel = $selectDepart->getSelect();
-        $this->context->contextAlgorithm(array(0));
-        return $sel;
-    }
-
     public function insertEmployeeFormStore()
     {
         $this->secure = new InsertEmployeeStore();
@@ -192,9 +186,9 @@ class ClientStrategyStore
 
     public function selectEmployee()
     {
-        $selectEmployee = new SelectEmployee();
+        $this->selectEmployee = new SelectEmployee();
         $this->context = new Context(new EmployeeSelect());
-        $selectEmployee->getSelect();
+        $this->selectEmployee->getSelect();
         $this->context->contextAlgorithm(array(0));
     }
 }
