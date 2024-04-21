@@ -1,9 +1,9 @@
-<?php declare(strict_types=1); // Strategy - Model Employee Select
+<?php declare(strict_types=1); // Strategy Employee Select - Model
 
 namespace App\Model;
 
 use App\Model\Interfaces\IStrategyStore;
-use \App\Connect\Connection;
+use App\Connect\Connection;
 
 class EmployeeSelect implements IStrategyStore
 {

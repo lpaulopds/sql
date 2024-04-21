@@ -1,4 +1,4 @@
-<?php declare(strict_types=1); // Strategy Insert Employee
+<?php declare(strict_types=1); // Strategy Insert Employee - Model
 
 namespace App\Model;
 

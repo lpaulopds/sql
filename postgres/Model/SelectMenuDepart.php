@@ -1,4 +1,4 @@
-<?php declare(strict_types=1); // Strategy Menu Select
+<?php declare(strict_types=1); // Strategy Menu Select - Model
 
 namespace App\Model;
 
