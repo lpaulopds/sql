@@ -33,13 +33,23 @@ class SearchEmployeeStore
     private $dataPack;
 
     /**
-     * Retorna validação e busca de funcionário
-     * @return array
+     * Instância da classe de busca de funcionário
+     * @return SearchEmployee
      */
-    public function getSearchEmployee()
+    private function setSearchEmployee()
     {
-        $this->employeeSearchValidation();
-        return $this->setSearchEmployeeStore();
+        $this->search = new SearchEmployee();
+        return $this->search;
+    }
+
+    /**
+     * Instância da classe de rotas
+     * @return Router
+     */
+    private function setRouter()
+    {
+        $this->obRouter = new Router();
+        return $this->obRouter;
     }
 
     /**
@@ -48,8 +58,10 @@ class SearchEmployeeStore
      */
     private function employeeSearchValidation()
     {
+        // Retorna paramentro da URL
         $this->dataPack = $this->setRouter()->requestRouter()->getQueryParams();
 
+        // Valida input do usuário
         $this->obValid = new ClientStrategyValid();
         $this->obValid->searchEmployeeValidation($this->dataPack['search']);
     }
@@ -72,23 +84,13 @@ class SearchEmployeeStore
     }
 
     /**
-     * Instância da classe de busca de funcionário
-     * @return SearchEmployee
+     * Retorna validação e busca de funcionário
+     * @return array
      */
-    private function setSearchEmployee()
+    public function getSearchEmployee()
     {
-        $this->search = new SearchEmployee();
-        return $this->search;
-    }
-
-    /**
-     * Instância da classe de rotas
-     * @return Router
-     */
-    private function setRouter()
-    {
-        $this->obRouter = new Router();
-        return $this->obRouter;
+        $this->employeeSearchValidation();
+        return $this->setSearchEmployeeStore();
     }
 
     /**
