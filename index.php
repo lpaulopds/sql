@@ -61,7 +61,8 @@ function()
 // // Retorna formulário de busca de funcionário
 $obRouter->addRoute('GET', '/psql-search-employee/',
 function() {
-    require 'postgres/resources/view/search-employee.html';
+    $obSearchForm = new ClientStrategyStore();
+    return new Response(200, $obSearchForm->searchForm());
 });
 
 // // Retorna resultado da busca de funcionário
