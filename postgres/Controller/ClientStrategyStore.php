@@ -164,6 +164,18 @@ class ClientStrategyStore
         }
     }
 
+    /**
+     * Retorna formulário de busca
+     */
+    public function searchForm()
+    {
+        $obSearchForm = new EmployeeSearchForm();
+        $obSearchForm->setEmployeeSearchForm();
+    }
+
+    /**
+     * Retorna resultado da busca
+     */
     public function searchEmployeeStore()
     {
         $this->secure = new SearchEmployeeStore();
