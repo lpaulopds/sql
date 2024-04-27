@@ -40,7 +40,7 @@ class SearchEmployee implements IStrategyStore
     public function __construct()
     {
         $pdo = Connection::get()->connect();
-        $this->pdo = $pdo;        
+        $this->pdo = $pdo;
     }
 
     public function algorithm(Array $dataPack)
