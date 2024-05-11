@@ -5,26 +5,29 @@ FROM php:8.2-apache
 WORKDIR /var/www
 
 ### Atualiza sistema e instala programas necessários
-# RUN apt-get update
-    # apt-get install -y build-essential && \
+RUN apt-get update && \
+    apt-get install -y build-essential && \
     # apt-get install -y apt-transport-https && \
-    # apt-get install -y curl && \
-    # apt-get install -y net-tools && \
+    apt-get install -y curl && \
+    apt-get install -y net-tools && \
+    apt-get install -y zip && \
+    apt-get install -y unzip && \
+    apt-get install -y nano && \
+    apt-get install -y systemctl && \
+    apt-get install -y tcpdump && \
+    # apt-get install -y tshark && \
+    # apt-get install -y termshark && \
     # apt-get install -y libtool && \
     # apt-get install -y icu-devtools && \
-    # apt-get install -y zip && \
-    # apt-get install -y unzip && \
     # apt-get install -y locales && \
     # apt-get install -y openssl && \
-    # apt-get install -y nano && \
     # apt-get install -y libaio1 && \
     # apt-get install -y libaio-dev && \
     # apt-get install -y libfreetype6-dev && \
     # apt-get install -y libjpeg62-turbo-dev && \
     # apt-get install -y libpng-dev && \
     # apt-get install -y psmisc && \
-    # apt-get install -y systemctl && \
-    # apt-get install -y wget
+    apt-get install -y wget
 
 COPY ./php.ini /usr/local/etc/php/php.ini
 COPY ./apache/etc/apache2.conf /etc/apache2/apache2.conf
