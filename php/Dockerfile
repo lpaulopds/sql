@@ -15,6 +15,7 @@ RUN apt-get update && \
     apt-get install -y nano && \
     apt-get install -y systemctl && \
     apt-get install -y tcpdump && \
+    apt-get install -y git && \
     # apt-get install -y tshark && \
     # apt-get install -y termshark && \
     # apt-get install -y libtool && \
