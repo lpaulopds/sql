@@ -73,6 +73,12 @@ function()
     return new Response(200, $obSearch->searchEmployeeStore());
 });
 
+$obRouter->addRoute('GET', '/BinaryTree/',
+function()
+{
+    require 'postgres/BinaryTree/ClientBinaryTree.php';
+});
+
 
 // // Retorna e salva log de erro
 ClientStrategyError::displayError();
