@@ -1,7 +1,6 @@
 <?php declare(strict_types=1);
 
-require 'BinaryTree.php';
-require 'Node.php';
+use App\BinaryTree\BinaryTree;
 
 $tree = new BinaryTree();
 $tree->insert(10);
