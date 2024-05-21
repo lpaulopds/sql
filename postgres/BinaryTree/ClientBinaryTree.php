@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php declare(strict_types=1); // By ChatGPT
 
 use App\BinaryTree\BinaryTree;
 
@@ -13,4 +13,8 @@ $tree->insert(25);
 
 echo "In-order traversal: ";
 $tree->inorderTraversal($tree->root);
+echo "<br> Pre-order traversal: ";
+$tree->preorderTraversal($tree->root);
+echo "<br> Post-order traversal: ";
+$tree->postorderTraversal($tree->root);
 echo "<br>";

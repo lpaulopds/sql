@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php declare(strict_types=1); // By ChatGPT
 
 namespace App\BinaryTree;
 
@@ -42,6 +42,26 @@ class BinaryTree
             $this->inorderTraversal($node->left);
             echo $node->value . " ";
             $this->inorderTraversal($node->right);
+        }
+    }
+
+    public function preorderTraversal($node)
+    {
+        if ($node !== null)
+        {
+            echo $node->value . " ";
+            $this->inorderTraversal($node->left);
+            $this->inorderTraversal($node->right);
+        }
+    }
+
+    public function postorderTraversal($node)
+    {
+        if ($node !== null)
+        {
+            $this->inorderTraversal($node->left);
+            $this->inorderTraversal($node->right);
+            echo $node->value . " ";
         }
     }
 }
