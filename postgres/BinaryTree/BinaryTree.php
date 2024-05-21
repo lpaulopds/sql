@@ -50,8 +50,8 @@ class BinaryTree
         if ($node !== null)
         {
             echo $node->value . " ";
-            $this->inorderTraversal($node->left);
-            $this->inorderTraversal($node->right);
+            $this->preorderTraversal($node->left);
+            $this->preorderTraversal($node->right);
         }
     }
 
@@ -59,8 +59,8 @@ class BinaryTree
     {
         if ($node !== null)
         {
-            $this->inorderTraversal($node->left);
-            $this->inorderTraversal($node->right);
+            $this->postorderTraversal($node->left);
+            $this->postorderTraversal($node->right);
             echo $node->value . " ";
         }
     }
