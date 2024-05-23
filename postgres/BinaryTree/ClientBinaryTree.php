@@ -18,3 +18,9 @@ $tree->preorderTraversal($tree->root);
 echo "<br> Post-order traversal: ";
 $tree->postorderTraversal($tree->root);
 echo "<br>";
+
+$searchValue = 7;
+$foundNode = $tree->search($searchValue);
+echo $foundNode ?
+    "Node $searchValue found.<br>" :
+        "Node $searchValue not found.<br>";

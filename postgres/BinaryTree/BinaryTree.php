@@ -35,6 +35,34 @@ class BinaryTree
         }
     }
 
+    public function search($value) {
+        return $this->searchNode($this->root, $value);
+    }
+
+    private function searchNode($node, $value)
+    {
+        if ($node === null) {
+            return $node;
+        }
+        elseif ($value < $node->value) {
+            return $this->searchNode($node->left, $value);
+        }
+        elseif ($value > $node->value) {
+            return $this->searchNode($node->right, $value);
+        }
+        else {
+            return $node;
+        }
+    }
+
+    private function findMinNode($node)
+    {
+        while ($node->left !== null) {
+            $node = $node->left;
+        }
+        return $node;
+    }
+
     public function inorderTraversal($node)
     {
         if ($node !== null)
