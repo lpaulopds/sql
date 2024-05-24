@@ -19,8 +19,14 @@ echo "<br> Post-order traversal: ";
 $tree->postorderTraversal($tree->root);
 echo "<br>";
 
-$searchValue = 7;
+$searchValue = 15;
 $foundNode = $tree->search($searchValue);
 echo $foundNode ?
     "Node $searchValue found.<br>" :
         "Node $searchValue not found.<br>";
+
+$removeValue = 20;
+$tree->remove($removeValue);
+echo "After removing $removeValue, <br>In-order traversal: ";
+$tree->inorderTraversal($tree->root);
+echo "<br>";

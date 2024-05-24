@@ -73,7 +73,7 @@ function()
 });
 
 // // Retorna resultado da busca de funcionário
-$obRouter->addRoute('GET', "/psql-search-employee/?*",
+$obRouter->addRoute('GET', "/psql-search-employee/?search=*",
 function()
 {
     $obSearch = new ClientStrategyStore();

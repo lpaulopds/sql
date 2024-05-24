@@ -55,6 +55,46 @@ class BinaryTree
         }
     }
 
+    public function remove($value) {
+        $this->root = $this->removeNode($this->root, $value);
+    }
+
+    private function removeNode($node, $value)
+    {
+        if ($node === null) {
+            return null;
+        }
+        elseif ($value < $node->value)
+        {
+            $node->left = $this->removeNode($node->left, $value);
+            return $node;
+        }
+        elseif ($value > $node->value)
+        {
+            $node->right = $this->removeNode($node->right, $value);
+            return $node;
+        }
+        else
+        {
+            if ($node->left === null && $node->right === null) {
+                return null;
+            }
+            elseif ($node->left === null) {
+                return $node->right;
+            }
+            elseif ($node->right === null) {
+                return $node->left;
+            }
+            else
+            {
+                $minRightNode = $this->findMinNode($node->right);
+                $node->value = $minRightNode->value;
+                $node->right = $this->removeNode($node->right, $minRightNode->value);
+                return $node;
+            }
+        }
+    }
+
     private function findMinNode($node)
     {
         while ($node->left !== null) {
