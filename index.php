@@ -15,6 +15,7 @@ use App\Controller\InfraBusiness;
 use App\Controller\ClientStrategyStore;
 use App\Controller\ClientStrategyError;
 use App\Controller\EmployeeInsertForm;
+use App\BinaryTree\ClientBinaryTree;
 
 $obRouter = new Router();
 $obSelect = new ClientStrategyStore();
@@ -58,10 +59,10 @@ function()
     return new Response(200, $obSelect->selectEmployee());
 });
 
-$obRouter->addRoute('GET', '/BinaryTree/',
+$obRouter->addRoute('GET', '/psql-binary-tree/',
 function()
 {
-    require 'postgres/BinaryTree/ClientBinaryTree.php';
+    return new Response(200, new ClientBinaryTree());
 });
 
 // // Retorna formulário de busca de funcionário
