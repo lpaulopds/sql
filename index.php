@@ -21,8 +21,7 @@ $obRouter = new Router();
 $obSelect = new ClientStrategyStore();
 
 // // Página home
-$obRouter->addRoute('GET', '/',
-function()
+$obRouter->get('/', function()
 {
     print date('Y/m/d') . "<br>";
     print date('H:m:s') . "<br>";
@@ -31,51 +30,49 @@ function()
 });
 
 // // Cria tabelas e faz inserções
-$obRouter->addRoute('GET', '/psql/',
-function() {
+$obRouter->get('/environment', function() {
     return new Response(200, new InfraBusiness());
 });
 
 // // Retorna formulário para inserção de funcionários
-$obRouter->addRoute('GET', '/psql-employee-insert-form/',
-function() {
+$obRouter->get('/insert', function()
+{
     $obEmpForm = new EmployeeInsertForm();
     return new Response(200, $obEmpForm->EmployeeInsertForm());
 });
 
 // // Faz a inserção de funcionários
-$obRouter->addRoute('POST', '/psql-employee-insert-form/',
-function()
+$obRouter->post('/insert', function()
 {
     $obInsert = new ClientStrategyStore();
     return new Response(200, $obInsert->insertEmployeeFormStore());
 });
 
 // // Retorna tabela com projeção de funcionários
-$obRouter->addRoute('GET', '/psql-employee-table/',
-function()
+$obRouter->get('/table', function()
 {
     $obSelect = new ClientStrategyStore();
     return new Response(200, $obSelect->selectEmployee());
 });
 
-$obRouter->addRoute('GET', '/psql-binary-tree/',
-function()
-{
+$obRouter->get('/binary-tree', function() {
     return new Response(200, new ClientBinaryTree());
 });
 
 // // Retorna formulário de busca de funcionário
-$obRouter->addRoute('GET', '/psql-search-employee/',
-function()
+$obRouter->get('/search', function()
 {
     $obSearchForm = new ClientStrategyStore();
     return new Response(200, $obSearchForm->searchForm());
 });
 
 // // Retorna resultado da busca de funcionário
-$obRouter->addRoute('GET', "/psql-search-employee/?search=*",
-function()
+// print_r($obRouter->requestRouter()->getQueryParams());
+$queryKeyParam = array_keys($obRouter->requestRouter()->getQueryParams());
+$queryValueParam = array_values($obRouter->requestRouter()->getQueryParams());
+$key = json_encode($queryKeyParam);
+$value = json_encode($queryValueParam);
+$obRouter->get("/search?$key=$value", function()
 {
     $obSearch = new ClientStrategyStore();
     return new Response(200, $obSearch->searchEmployeeStore());
@@ -88,7 +85,6 @@ ClientStrategyError::displayError();
 
 $obRequest = $obRouter->requestRouter();
 $obRouter->dispatch($obRequest->getHttpMethod(), $obRequest->getUri());
-
 
 ////////////////////
 $time_end = microtime(true);

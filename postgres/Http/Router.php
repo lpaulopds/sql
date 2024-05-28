@@ -11,8 +11,7 @@ class Router
      */
     private $request;
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->request = new Request();
     }
 
@@ -20,7 +19,13 @@ class Router
         return $this->request;
     }
 
-    public function addRoute($method, $path, $callback) {
+    /**
+     * @param string $method
+     * @param string $path
+     * @param mixed $callback
+     */
+    private function addRoute($method, $path, $callback)
+    {
         if ($this->request->getQueryParams())
         {
             $path = $this->request->getUri();
@@ -29,10 +34,25 @@ class Router
         else {
             $this->routes[$method][$path] = $callback;
         }
-        
     }
 
-    public function dispatch($method, $path)
+    /**
+     * @param string $path
+     * @param array $callback
+     */
+    public function get($path, $callback = []) {
+        return $this->addRoute('GET', $path, $callback);
+    }
+
+    /**
+     * @param string $path
+     * @param array $callback
+     */
+    public function post($path, $callback = []) {
+        return $this->addRoute('POST', $path, $callback);
+    }
+
+    public function dispatch(string $method, string $path)
     {
         $arrMethod = array_key_exists($method, $this->routes);
         $arrPath = array_key_exists($path, $this->routes[$method]);
