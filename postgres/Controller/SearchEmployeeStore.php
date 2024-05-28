@@ -76,7 +76,7 @@ class SearchEmployeeStore
 
         $this->obSearch = $this->setSearchEmployee();
 
-        if ($this->dataPack)
+        if ($this->dataPack['search'])
         {
             filter_var($this->dataPack['search'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             return $this->obSearch->algorithm($this->dataPack);
