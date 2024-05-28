@@ -40,8 +40,8 @@ class Request
     {
         // // remove parametros da uri
         $remoParaURI = explode('?', $this->uri);
-        $this->uri = $remoParaURI[0];
-        // return $this->uri;
+        // $this->uri = $remoParaURI[0];
+        return $this->uri;
     }
 
     public function getQueryParams() {
